@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using Plan;
 using UnityEngine;
 
 namespace Evenements
 {
     public class Evenement : ScriptableObject
     {
-        public LieuxSettings.Lieu lieu;
-
+        public Lieu lieu;
+        public Sprite imageOverride;
         public string intro;
 
         public string description;
