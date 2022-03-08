@@ -6,19 +6,19 @@ using UnityEngine;
 
 namespace Plan
 {
-    public class LieuxSettings : MonoBehaviour
+    public class ListeLieux : MonoBehaviour
     {
         [Header("Debug")]
         public bool debug = true;
         [SerializeField] private Color couleurDebug;
 
-        private static LieuxSettings cela;
-        public static LieuxSettings Instance
+        private static ListeLieux cela;
+        public static ListeLieux Instance
         {
             get
             {
-                if (!cela) cela = FindObjectOfType<LieuxSettings>();
-                if (!cela) cela = new GameObject("LieuxSettings").AddComponent<LieuxSettings>();
+                if (!cela) cela = FindObjectOfType<ListeLieux>();
+                if (!cela) cela = new GameObject("LieuxSettings").AddComponent<ListeLieux>();
                 return cela;
             }
         }
@@ -51,9 +51,20 @@ namespace Plan
             }
         }
 
-        public Lieu RecupererLieu(string nom)
+        public Lieu RecupLieu(string nom)
         {
             return lieux.Find(lieu => lieu.nom == nom);
+        }
+
+        public string[] RecupNomsLieux()
+        {
+            string[] nomsLieux = new string[lieux.Count];
+            for (int i = 0; i < nomsLieux.Length; i++)
+            {
+                nomsLieux[i] = lieux[i].nom;
+            }
+
+            return nomsLieux;
         }
     }
 }

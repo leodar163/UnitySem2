@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Plan
 {
     [Serializable]
-    public struct Lieu
+    public class Lieu
     {
         public string nom;
         [SerializeField] private Vector2 position;

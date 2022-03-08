@@ -1,3 +1,13 @@
-﻿fileFormatVersion: 2
+fileFormatVersion: 2
 guid: f5f8d9a093dd43dd8f84e26c483d59b5
-timeCreated: 1646671633
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - imagePlan: {instanceID: 0}
+  - pinsBase: {fileID: 2748917064932870341, guid: f1669f07e5b944740b5e7f8553d1d57e, type: 3}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: b1e9774f588ba4b43901eaa74e7f5a0f, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Evenements
 {
+    [CreateAssetMenu(fileName = "NvChoix", menuName = "Evénement/Choix")]
     public class Choix : ScriptableObject
     {
         [Serializable]
@@ -14,17 +15,19 @@ namespace Evenements
             [Range(0, 100)] public float etude;
         }
 
-        [SerializeField][HideInInspector] private readonly List<ConditionsSettings.Condition> conditions = new List<ConditionsSettings.Condition>();
-        [SerializeField][HideInInspector] private readonly List<ConditionsSettings.Condition> consequences = new List<ConditionsSettings.Condition>();
+        [SerializeField][HideInInspector] private readonly List<Condition> conditions = new List<Condition>();
+        [SerializeField][HideInInspector] private readonly List<Condition> consequences = new List<Condition>();
 
-        public List<ConditionsSettings.Condition> Conditions => conditions;
-        public List<ConditionsSettings.Condition> Consequences => consequences;
+        public List<Condition> Conditions => conditions;
+        public List<Condition> Consequences => consequences;
 
         [SerializeField] private Evenement evenementSuivant;
     
         [SerializeField] private Gain couts;
         [SerializeField] private Gain gains;
 
+        public static readonly string pathFichiers = "Assets/Narration/Choix";
+        
         public Gain Couts
         {
             get => couts;
