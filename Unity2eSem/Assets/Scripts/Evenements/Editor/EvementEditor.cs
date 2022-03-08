@@ -141,7 +141,7 @@ namespace Evenements.Editor
                 "non"))
             {
                 evenement.listeChoix.Remove(choix);
-                DestroyImmediate(choix);
+                DestroyImmediate(choix, true);
             }
         }
     }
