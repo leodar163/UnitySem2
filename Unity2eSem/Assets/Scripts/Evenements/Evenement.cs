@@ -11,12 +11,12 @@ namespace Evenements
         [Space]
         [SerializeField] public Sprite imageOverride;
         [Space]
-        [TextArea(2,4)][SerializeField] public string intro;
+        [TextArea(2,4)][SerializeField] public string intro = "";
 
         [Space]
-        [TextArea(20,1000)][SerializeField] public string description;
+        [TextArea(20,1000)][SerializeField] public string description = "";
 
-        [SerializeField][HideInInspector] private List<Choix> choix;
+        [SerializeField][HideInInspector] private List<Choix> choix = new List<Choix>();
         public List<Choix> listeChoix => choix; 
 
         #if UNITY_EDITOR

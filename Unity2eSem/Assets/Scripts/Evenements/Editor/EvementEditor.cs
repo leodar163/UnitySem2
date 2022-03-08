@@ -22,11 +22,11 @@ namespace Evenements.Editor
 
         public static void DessinerInspecteur(Evenement evenement)
         {
-           DessinerChoixLieu(evenement);
-           GUILayout.Space(15);
-           DessinerDescritpions(evenement);
-           GUILayout.Space(15);
-           DessinerListeChoix(evenement);
+            DessinerChoixLieu(evenement);
+            GUILayout.Space(15);
+            DessinerDescritpions(evenement);
+            GUILayout.Space(15);
+            DessinerListeChoix(evenement);
         }
 
         private static void DessinerChoixLieu(Evenement evenement)
@@ -39,6 +39,7 @@ namespace Evenements.Editor
                 }
             };
             
+            
             if (ListeLieux.Instance)
             {
                 if (ListeLieux.Instance.Lieux.Count == 0)
@@ -47,6 +48,8 @@ namespace Evenements.Editor
                 }
                 else
                 {
+                    evenement.lieu ??= ListeLieux.Instance.Lieux[0];
+                    
                     int indexSelectionLieu = ListeLieux.Instance.Lieux.LastIndexOf(evenement.lieu);
                     indexSelectionLieu = indexSelectionLieu < 0 ? 0 : indexSelectionLieu;
                     string[] optionsLieux = ListeLieux.Instance.RecupNomsLieux();
@@ -68,11 +71,15 @@ namespace Evenements.Editor
             
             GUILayout.Label("Description");
             evenement.description = GUILayout.TextArea(evenement.description,30);
+            
+            GUILayout.Space(10);
+            
+            GUILayout.Label("Illustration spécifique (par défaut, c'est l'illu du lieu qui est utilisée)");
+            evenement.imageOverride = EditorGUILayout.ObjectField(evenement.imageOverride, typeof(Sprite), false) as Sprite;
         }
 
         private static void DessinerListeChoix(Evenement evenement)
         {
-            List<int> choixASupprimer = new List<int>();
             Color couleurDefaut = GUI.backgroundColor;
             
             GUILayout.Label("LES CHOIX");
@@ -83,7 +90,7 @@ namespace Evenements.Editor
                 
                 GUILayout.BeginHorizontal();
 
-                GUILayoutOption[] optionsBouton = new[]
+                GUILayoutOption[] optionsBouton =
                 {
                     GUILayout.Height(25),
                     GUILayout.Width(25)
@@ -94,26 +101,23 @@ namespace Evenements.Editor
                     evenement.FocusChoix = estFocus ? -1 : i;
                 }
 
-                choix.name = GUILayout.TextField(choix.name, GUILayout.Height(25));
-            
+                string nvNomChoix = GUILayout.TextField(choix.name, GUILayout.Height(25));
+                if (nvNomChoix != choix.name)
+                {
+                    AssetDatabase.RenameAsset(Choix.pathFichiers + '/' + choix.name + ".asset", nvNomChoix);
+                    choix.name = nvNomChoix;
+                }
                 
                 GUI.backgroundColor = Color.red;
                 if (GUILayout.Button("X", optionsBouton))
-                {
-                    
-                  SupprimerChoix(choix, evenement); 
+                {   
+                    SupprimerChoix(choix, evenement); 
                 }
                 GUI.backgroundColor = couleurDefaut;
                 
                 GUILayout.EndHorizontal();
             }
 
-            foreach (var index in choixASupprimer)
-            {
-                Destroy(evenement.listeChoix[index]);
-                evenement.listeChoix.RemoveAt(index);
-            }
-            
             GUI.backgroundColor = Color.green;
             if (GUILayout.Button("Ajouter Choix"))
             {
@@ -126,8 +130,16 @@ namespace Evenements.Editor
         {
             if (CreateInstance(typeof(Choix)) is Choix nvChoix)
             {
-                AssetDatabase.CreateAsset(nvChoix, Choix.pathFichiers + "/Choix" + evenement.listeChoix.Count + ".asset");
+                int indexNom = 0;
+                while (AssetDatabase.FindAssets("Choix" + indexNom, new[] {Choix.pathFichiers}).Length > 0)
+                {
+                    indexNom++;
+                }
+                string nomNvChoix = "Choix"+indexNom;
+                
+                AssetDatabase.CreateAsset(nvChoix, Choix.pathFichiers + '/' + nomNvChoix + ".asset");
                 AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
                 evenement.listeChoix.Add(nvChoix);
             }
 
@@ -140,6 +152,7 @@ namespace Evenements.Editor
                 "non"))
             {
                 evenement.listeChoix.Remove(choix);
+                AssetDatabase.DeleteAsset(Choix.pathFichiers + '/' + choix.name + ".asset");
                 DestroyImmediate(choix, true);
             }
         }
