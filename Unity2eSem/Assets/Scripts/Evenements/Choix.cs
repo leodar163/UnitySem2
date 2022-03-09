@@ -5,29 +5,33 @@ using UnityEngine;
 namespace Evenements
 {
     [CreateAssetMenu(fileName = "NvChoix", menuName = "Evénement/Choix")]
-    public class Choix : ScriptableObject
+    public class Choix : ScriptableNarration
     {
         [Serializable]
         public struct Gain
         {
             [Min(0)] public int argent;
-            [Range(0, 100)] public float santeeMentale;
-            [Range(0, 100)] public float etude;
+            [Range(0, 100)] public int santeMentale;
+            [Range(0, 100)] public int etude;
         }
 
-        [SerializeField][HideInInspector] private readonly List<Condition> conditions = new List<Condition>();
-        [SerializeField][HideInInspector] private readonly List<Condition> consequences = new List<Condition>();
-
-        public List<Condition> Conditions => conditions;
+        [SerializeField] public string Description;
+        
+        [SerializeField][HideInInspector] private List<Condition> conditions = new List<Condition>();
+        [SerializeField][HideInInspector] private List<Condition> consequences = new List<Condition>();
+ 
+        [SerializeField] public List<Condition> Conditions => conditions;
         public List<Condition> Consequences => consequences;
 
-        [SerializeField] private Evenement evenementSuivant;
+        #if UNITY_EDITOR
+        [HideInInspector] public bool montrerEvenementSuivant; 
+        #endif
+        
+        [SerializeField] public Evenement evenementSuivant;
     
         [SerializeField] private Gain couts;
         [SerializeField] private Gain gains;
 
-        public static readonly string pathFichiers = "Assets/Narration/Choix";
-        
         public Gain Couts
         {
             get => couts;

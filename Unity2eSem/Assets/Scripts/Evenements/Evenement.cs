@@ -5,16 +5,16 @@ using UnityEngine;
 namespace Evenements
 {
     [CreateAssetMenu(fileName = "NvlEvenement", menuName = "Evénement/Evenement")]
-    public class Evenement : ScriptableObject
+    public class Evenement : ScriptableNarration
     {
-        [SerializeField][HideInInspector] public Lieu lieu;
-        [Space]
+        [SerializeField] public Lieu lieu;
+        
         [SerializeField] public Sprite imageOverride;
-        [Space]
-        [TextArea(2,4)][SerializeField] public string intro = "";
+        
+        [SerializeField] public string intro = "";
 
-        [Space]
-        [TextArea(20,1000)][SerializeField] public string description = "";
+        
+        [SerializeField] public string description = "";
 
         [SerializeField][HideInInspector] private List<Choix> choix = new List<Choix>();
         public List<Choix> listeChoix => choix; 
@@ -32,10 +32,7 @@ namespace Evenements
             
         }
         #endif
-        
-        
-        public static readonly string pathFichiers = "Assets/Narration/Evenements";
-        
+
         public void RetirerChoix(Choix choixARetirer)
         {
             if (!choix.Contains(choixARetirer)) return;

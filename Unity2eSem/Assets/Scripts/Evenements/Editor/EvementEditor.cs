@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Editor;
 using Plan;
 using UnityEngine;
 
@@ -7,9 +8,8 @@ namespace Evenements.Editor
     using UnityEditor;
     
     [CustomEditor(typeof(Evenement))]
-    public class EvementEditor : Editor
+    public class EvementEditor : ScrObjEditor
     {
-
         public override void OnInspectorGUI()
         {
              
@@ -20,6 +20,8 @@ namespace Evenements.Editor
             DessinerInspecteur(evenement);
         }
 
+        
+        
         public static void DessinerInspecteur(Evenement evenement)
         {
             DessinerChoixLieu(evenement);
@@ -27,6 +29,8 @@ namespace Evenements.Editor
             DessinerDescritpions(evenement);
             GUILayout.Space(15);
             DessinerListeChoix(evenement);
+            GUILayout.Space(15);
+            DessinerSauvegarde(evenement);
         }
 
         private static void DessinerChoixLieu(Evenement evenement)
@@ -67,10 +71,10 @@ namespace Evenements.Editor
         private static void DessinerDescritpions(Evenement evenement)
         {
             GUILayout.Label("Intro d'infobulle");
-            evenement.intro = GUILayout.TextArea(evenement.intro,3);
+            evenement.intro = GUILayout.TextArea(evenement.intro);
             
             GUILayout.Label("Description");
-            evenement.description = GUILayout.TextArea(evenement.description,30);
+            evenement.description = GUILayout.TextArea(evenement.description);
             
             GUILayout.Space(10);
             
@@ -102,9 +106,10 @@ namespace Evenements.Editor
                 }
 
                 string nvNomChoix = GUILayout.TextField(choix.name, GUILayout.Height(25));
-                if (nvNomChoix != choix.name)
+                if (nvNomChoix != choix.name && AssetDatabase.FindAssets(RecupChemin<Choix>() + '/' + 
+                                                                         nvNomChoix + ".asset").Length == 0)
                 {
-                    AssetDatabase.RenameAsset(Choix.pathFichiers + '/' + choix.name + ".asset", nvNomChoix);
+                    AssetDatabase.RenameAsset(RecupChemin<Choix>() + '/' + choix.name + ".asset", nvNomChoix);
                     choix.name = nvNomChoix;
                 }
                 
@@ -121,38 +126,18 @@ namespace Evenements.Editor
             GUI.backgroundColor = Color.green;
             if (GUILayout.Button("Ajouter Choix"))
             {
-                AjouterChoix(evenement);
+                evenement.listeChoix.Add(CreerAssetNarration<Choix>());
             }
             GUI.backgroundColor = couleurDefaut;
         }
         
-        private static Choix AjouterChoix(Evenement evenement)
-        {
-            if (CreateInstance(typeof(Choix)) is Choix nvChoix)
-            {
-                int indexNom = 0;
-                while (AssetDatabase.FindAssets("Choix" + indexNom, new[] {Choix.pathFichiers}).Length > 0)
-                {
-                    indexNom++;
-                }
-                string nomNvChoix = "Choix"+indexNom;
-                
-                AssetDatabase.CreateAsset(nvChoix, Choix.pathFichiers + '/' + nomNvChoix + ".asset");
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-                evenement.listeChoix.Add(nvChoix);
-            }
-
-            return null;
-        }
-
         private static void SupprimerChoix(Choix choix, Evenement evenement)
         {
-            if (EditorUtility.DisplayDialog("Supprimer Choix", "T sûr de vouloir surpprimer" + choix.name + " ?", "oui",
-                "non"))
+            if (EditorUtility.DisplayDialog("Supprimer Choix", "T sûr de vouloir surpprimer " + choix.name + " ?", "oui",
+                "annuler"))
             {
                 evenement.listeChoix.Remove(choix);
-                AssetDatabase.DeleteAsset(Choix.pathFichiers + '/' + choix.name + ".asset");
+                AssetDatabase.DeleteAsset(RecupChemin<Choix>() + '/' + choix.name + ".asset");
                 DestroyImmediate(choix, true);
             }
         }
