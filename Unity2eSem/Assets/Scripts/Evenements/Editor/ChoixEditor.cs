@@ -142,21 +142,20 @@ namespace Evenements.Editor
                 {
                     
                     GUILayout.BeginHorizontal();
-                    string nvNomEvenement = "";
-                    nvNomEvenement = GUILayout.TextField(nvNomEvenement, GUILayout.Height(25));
-                    if (GUILayout.Button("Renomer"))
+                    if (choix.evenementSuivant.nomTemporaire == "")
+                        choix.evenementSuivant.nomTemporaire = choix.evenementSuivant.name;
+                    
+                    choix.evenementSuivant.nomTemporaire = 
+                        GUILayout.TextField(choix.evenementSuivant.nomTemporaire, 
+                            GUILayout.Height(20));
+                    
+                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
                     {
-                        //EditorUtility.SaveFilePanel("Renomer" + )
+                        RenomerAssetNarration(choix.evenementSuivant, choix.evenementSuivant.nomTemporaire);
                     }
-                    // if (nvNomEvenement != choix.name && AssetDatabase.FindAssets(RecupChemin<Evenement>() + '/' + 
-                    //     nvNomEvenement + ".asset").Length == 0)
-                    // {
-                    //     AssetDatabase.RenameAsset(RecupChemin<Evenement>() + '/' + 
-                    //                               choix.evenementSuivant.name + ".asset", nvNomEvenement);
-                    //     choix.evenementSuivant.name = nvNomEvenement;
-                    // }
                     
                     GUILayout.EndHorizontal();
+                    GUILayout.Space(15);
                     EvementEditor.DessinerInspecteur(choix.evenementSuivant);   
                 }
                 

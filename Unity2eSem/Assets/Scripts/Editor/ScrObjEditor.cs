@@ -1,6 +1,8 @@
 ﻿
      using System;
+     using System.Collections.Generic;
      using Evenements;
+     using Plan;
      using UnityEngine;
      using Object = System.Object;
 
@@ -100,7 +102,11 @@
                 
                 string chemin = RecupChemin<T>();
                 int indexNom = 0;
-                while (AssetDatabase.FindAssets("Choix" + indexNom, new[] {chemin}).Length > 0)
+
+                AssetExisteDeja<T>(typeof(T).Name + indexNom);
+                
+                //Debug.Log(AssetDatabase.FindAssets("name:"+typeof(T).Name + indexNom, new[] {chemin}).Length);
+                while (AssetExisteDeja<T>(typeof(T).Name+indexNom))
                 {
                     indexNom++;
                 }
@@ -109,7 +115,7 @@
                 nvScriptNarration.name = nomNvChoix;
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
-
+                EditorUtility.SetDirty(nvScriptNarration);
                 return nvScriptNarration;
 
             }
@@ -117,24 +123,62 @@
             protected static void RenomerAssetNarration(ScriptableNarration assetNarration, string nvNom)
             {
                 //EditorUtility.SaveFilePanel("Renomer " + assetNarration.name, )
-                if (!EstNomValide(assetNarration.GetType(), nvNom))
+                if (!NomEstValide(assetNarration.GetType(), nvNom))
                 {
                     EditorUtility.DisplayDialog("Nom invalide", "Le nom choisi est soit trop court, soit existe déjà",
                         "Mince");
                 }
                 else
                 {
+                    //Debug.Log(ListeLieux.Instance.Lieux[0].nom);
                     AssetDatabase.RenameAsset(RecupChemin(assetNarration.GetType()) + '/' + 
                                               assetNarration.name + ".asset", nvNom);
                     assetNarration.name = nvNom;
+                    //Debug.Log(ListeLieux.Instance.Lieux[0].nom);
                 }
             }
 
-            protected static bool EstNomValide(Type type, string nvNom)
+            protected static bool NomEstValide(Type type, string nvNom)
             {
                 string chemin = RecupChemin(type);
 
-                return !(nvNom.Length < 1 || AssetDatabase.FindAssets(chemin + '/' + nvNom + ".asset").Length > 0);
+                // Debug.Log(type.Name);
+                // Debug.Log(chemin + '/' + nvNom + ".asset");
+                // Debug.Log(AssetDatabase.FindAssets(nvNom, new []{chemin}).Length);
+                
+                return !(nvNom.Length < 1 || AssetExisteDeja(type, nvNom));
+            }
+
+            protected static bool AssetExisteDeja<T>(string nom) where T : ScriptableNarration
+            {
+                string chemin = RecupChemin<T>();
+                return AssetExisteDeja(chemin, nom);
+            }
+            
+            protected static bool AssetExisteDeja(Type type, string nom)
+            {
+                string chemin = RecupChemin(type);
+                return AssetExisteDeja(chemin, nom);
+            }
+
+            protected static bool AssetExisteDeja(string chemin, string nom)
+            {
+                List<string> assets = new List<string>(AssetDatabase.FindAssets(nom, new[] {chemin}));
+                
+                if (!nom.Contains(".asset"))
+                {
+                    nom += ".asset";
+                }
+                
+                for (int i = 0; i < assets.Count; i++)
+                {
+                    assets[i] = AssetDatabase.GUIDToAssetPath(assets[i]);
+                    assets[i] = assets[i].Remove(0, chemin.Length + 1);
+                    // Debug.Log(assets[i]);
+                    // Debug.Log(nom);
+                }
+
+                return assets.Contains(nom);
             }
         }
     }

@@ -20,17 +20,22 @@ namespace Evenements
         public List<Choix> listeChoix => choix; 
 
         #if UNITY_EDITOR
-        private int focusChoix = -1;
-        public int FocusChoix
+
+        private bool[] choixDeployes;
+
+        public bool[] ChoixDeployes
         {
             get
             {
-                if (focusChoix > choix.Count) focusChoix = -1;
-                return focusChoix;
+                if (choixDeployes == null || choixDeployes.Length != choix.Count)
+                {
+                    choixDeployes = new bool[choix.Count];
+                }
+
+                return choixDeployes;
             }
-            set => focusChoix = value;
-            
         }
+        
         #endif
 
         public void RetirerChoix(Choix choixARetirer)

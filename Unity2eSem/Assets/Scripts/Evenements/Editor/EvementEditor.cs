@@ -52,13 +52,17 @@ namespace Evenements.Editor
                 }
                 else
                 {
+                    
                     evenement.lieu ??= ListeLieux.Instance.Lieux[0];
                     
                     int indexSelectionLieu = ListeLieux.Instance.Lieux.LastIndexOf(evenement.lieu);
+                    
                     indexSelectionLieu = indexSelectionLieu < 0 ? 0 : indexSelectionLieu;
                     string[] optionsLieux = ListeLieux.Instance.RecupNomsLieux();
+                    
                     indexSelectionLieu = EditorGUILayout.Popup("Lieu", indexSelectionLieu, optionsLieux);
                     evenement.lieu = ListeLieux.Instance.Lieux[indexSelectionLieu];
+                    
                 }
             }
             else
@@ -89,38 +93,51 @@ namespace Evenements.Editor
             GUILayout.Label("LES CHOIX");
             for (int i = 0; i < evenement.listeChoix.Count; i++)
             {
-                bool estFocus = evenement.FocusChoix == i;
                 Choix choix = evenement.listeChoix[i];
                 
                 GUILayout.BeginHorizontal();
 
+                evenement.ChoixDeployes[i] = EditorGUILayout.Foldout(evenement.ChoixDeployes[i], choix.name);
+
                 GUILayoutOption[] optionsBouton =
                 {
                     GUILayout.Height(25),
-                    GUILayout.Width(25)
+                    GUILayout.Width(100)
                 };
 
-                if (GUILayout.Button(estFocus ? "^" : "ˇ", optionsBouton))
-                {
-                    evenement.FocusChoix = estFocus ? -1 : i;
-                }
-
-                string nvNomChoix = GUILayout.TextField(choix.name, GUILayout.Height(25));
-                if (nvNomChoix != choix.name && AssetDatabase.FindAssets(RecupChemin<Choix>() + '/' + 
-                                                                         nvNomChoix + ".asset").Length == 0)
-                {
-                    AssetDatabase.RenameAsset(RecupChemin<Choix>() + '/' + choix.name + ".asset", nvNomChoix);
-                    choix.name = nvNomChoix;
-                }
-                
                 GUI.backgroundColor = Color.red;
-                if (GUILayout.Button("X", optionsBouton))
+                if (GUILayout.Button("Supprimer", optionsBouton))
                 {   
-                    SupprimerChoix(choix, evenement); 
+                    SupprimerChoix(choix, evenement);
+                    break;
                 }
                 GUI.backgroundColor = couleurDefaut;
                 
                 GUILayout.EndHorizontal();
+                
+                //Affichhe l'inspecteur quand est déployé
+                if (evenement.ChoixDeployes[i])
+                {
+                    GUILayout.BeginHorizontal();
+                    if (choix.nomTemporaire == "")
+                        choix.nomTemporaire = choix.name;
+                    
+                    choix.nomTemporaire = 
+                        GUILayout.TextField(choix.nomTemporaire, 
+                            GUILayout.Height(20));
+                    
+                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
+                    {
+                        RenomerAssetNarration(choix, choix.nomTemporaire);
+                    }
+                    
+                    GUILayout.EndHorizontal();
+                    GUILayout.Space(15);
+                    
+                    ChoixEditor.DessinerInspecteur(choix, null);
+                }
+                
+                GUILayout.Space(10);
             }
 
             GUI.backgroundColor = Color.green;

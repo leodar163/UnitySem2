@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
   m_Name: Evenement0
   m_EditorClassIdentifier: 
+  nomTemporaire: Evenement0
   lieu:
-    nom: 
-    position: {x: 0, y: 0}
+    nom: ezdqdqd
+    position: {x: 3.45, y: 3.47}
     icone: {fileID: 0}
     illustration: {fileID: 0}
   imageOverride: {fileID: 0}
