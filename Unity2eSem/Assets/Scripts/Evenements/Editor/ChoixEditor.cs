@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Editor;
 using Plan;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace Evenements.Editor
 {
     using UnityEditor;
     [CustomEditor(typeof(Choix))]
-    public class ChoixEditor : ScrObjEditor
+    public class ChoixEditor : ScriptableNarrationEditor
     {
         public override void OnInspectorGUI()
         {
@@ -19,15 +18,18 @@ namespace Evenements.Editor
 
         public static void DessinerInspecteur(Choix choix, ListeConditions conditions)
         {
+            DessinerSauvegarde(choix);
+            GUILayout.Space(15);
             DessinerDescription(choix);
             GUILayout.Space(15);
             DessinerConditions(choix, conditions);
             GUILayout.Space(15);
             DessinerGainCout(choix);
             GUILayout.Space(15);
-            DessinerEvenementSuivant(choix);
-            GUILayout.Space(15);
-            DessinerSauvegarde(choix);
+            //DessinerEvenementSuivant(choix);
+            choix.evenementSuivant =
+                EvenementEditor.DessinerEmbedInspector(choix.evenementSuivant, ref choix.montrerEvenementSuivant,
+                    "Evenement Suivant");
         }
 
         private static void DessinerDescription(Choix choix)
@@ -115,7 +117,71 @@ namespace Evenements.Editor
             choix.Couts = couts;
         }
 
-        private static void DessinerEvenementSuivant(Choix choix)
+        public static Choix DessinerEmbedInspecteur(Choix choix, ref bool estDeploye, string label = "Choix")
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;
+            
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(30);
+            GUILayout.BeginVertical();
+            
+            GUI.backgroundColor = Color.yellow;
+            GUILayout.Button("", GUILayout.Height(10));
+            GUI.backgroundColor = couleurFondDefaut;
+            
+            GUILayout.BeginHorizontal();
+
+            estDeploye = EditorGUILayout.Foldout(estDeploye, choix.name);
+
+            GUILayoutOption[] optionsBouton =
+            {
+                GUILayout.Height(25),
+                GUILayout.Width(100)
+            };
+
+            GUI.backgroundColor = Color.red;
+            if (GUILayout.Button("Supprimer", optionsBouton))
+            {   
+                SupprimerAssetNarration(choix);
+                return null;
+            }
+            GUI.backgroundColor = couleurFondDefaut;
+                
+            GUILayout.EndHorizontal();
+                
+            //Affichhe l'inspecteur quand est déployé
+            if (estDeploye)
+            {
+                GUILayout.BeginHorizontal();
+                if (choix.nomTemporaire == "")
+                    choix.nomTemporaire = choix.name;
+                    
+                choix.nomTemporaire = 
+                    GUILayout.TextField(choix.nomTemporaire, 
+                        GUILayout.Height(20));
+                    
+                if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
+                {
+                    RenomerAssetNarration(choix, choix.nomTemporaire);
+                }
+                    
+                GUILayout.EndHorizontal();
+                GUILayout.Space(15);
+                    
+                DessinerInspecteur(choix, null);
+            }
+
+            GUI.backgroundColor = Color.yellow;
+            GUILayout.Button("", GUILayout.Height(5));
+            GUI.backgroundColor = couleurFondDefaut;
+            
+            GUILayout.EndVertical();
+            GUILayout.EndHorizontal();
+            
+            return choix;
+        }
+
+        /*private static void DessinerEvenementSuivant(Choix choix)
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             if (choix.evenementSuivant == null)
@@ -176,8 +242,9 @@ namespace Evenements.Editor
             }
             
         }
+        */
         
-        private static void SupprimerEvenementSuivant(Choix choix )
+        /*private static void SupprimerEvenementSuivant(Choix choix )
         {
             if (EditorUtility.DisplayDialog("Supprimer Evenement", "T sûr de vouloir surpprimer " + 
                                                                    choix.evenementSuivant.name + " ?", "oui",
@@ -188,5 +255,6 @@ namespace Evenements.Editor
                 choix.evenementSuivant = null;
             }
         }
+        */
     }
 }

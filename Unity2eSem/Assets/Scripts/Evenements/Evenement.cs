@@ -37,14 +37,5 @@ namespace Evenements
         }
         
         #endif
-
-        public void RetirerChoix(Choix choixARetirer)
-        {
-            if (!choix.Contains(choixARetirer)) return;
-            choix.Remove(choixARetirer);
-            Destroy(choixARetirer);
-        }
-
-        
     }
 }
