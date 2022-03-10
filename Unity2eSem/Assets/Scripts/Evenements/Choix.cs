@@ -20,7 +20,7 @@ namespace Evenements
         [SerializeField][HideInInspector] private List<Condition> conditions = new List<Condition>();
         [SerializeField][HideInInspector] private List<Condition> consequences = new List<Condition>();
  
-        [SerializeField] public List<Condition> Conditions => conditions;
+        public List<Condition> Conditions => conditions;
         public List<Condition> Consequences => consequences;
 
         #if UNITY_EDITOR
@@ -42,6 +42,12 @@ namespace Evenements
         {
             get => gains;
             set => gains = value;
+        }
+
+        public void NettoyezConditions()
+        {
+            conditions = conditions.FindAll(condition => condition != null);
+            consequences = consequences.FindAll(condition => condition != null);
         }
     }
 }

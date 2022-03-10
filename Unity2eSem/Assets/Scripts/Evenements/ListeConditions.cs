@@ -27,17 +27,17 @@ namespace Evenements
         
         public string[] RecupNomsConditions(List<Condition> exculsions)
         {
-            string[] noms = new string[conditions.Count - exculsions.Count];
+            List<string> noms = new List<string>();
             
-            for (int i = 0; i < conditions.Count; i++)
+            foreach (var condition in conditions)
             {
-                if (!exculsions.Contains(conditions[i]))
+                if (!exculsions.Contains(condition))
                 {
-                    noms[i] = conditions[i].nom;
+                    noms.Add(condition.nom);
                 }
             }
 
-            return noms;
+            return noms.ToArray();
         }
 
         public Condition RecupCondition(string nom)

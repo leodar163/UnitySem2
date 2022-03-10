@@ -12,25 +12,28 @@ namespace Evenements.Editor
             Semaine semaine = target as Semaine;
             if(!semaine) return;
             
-            DessinerInspecteur(semaine);
+            DessinerInspecteur(semaine, null, true);
         }
 
-        public static void DessinerInspecteur(Semaine semaine)
+        public static void DessinerInspecteur(Semaine semaine, ListeConditions conditions, bool afficherSauvegarde = false)
         {
-            DessinerSauvegarde(semaine);
-            GUILayout.Space(15);
-            DessinerListeEvenements(semaine);
+            if(afficherSauvegarde)
+            {
+                DessinerSauvegarde(semaine);
+                GUILayout.Space(15);
+            }
+            DessinerListeEvenements(semaine, conditions);
             semaine.NettoyerEvenementsDepart();
         }
         
-        private static void DessinerListeEvenements(Semaine semaine)
+        private static void DessinerListeEvenements(Semaine semaine, ListeConditions conditions)
         {
             for (int i = 0; i < semaine.EvenementsDepart.Count; i++)
             {
                 Evenement evenement = semaine.EvenementsDepart[i];
 
                 semaine.EvenementsDepart[i] = 
-                    EvenementEditor.DessinerEmbedInspector(evenement, ref semaine.EvenementsDeployes[i], "Evenement "+i);
+                    EvenementEditor.DessinerEmbedInspector(evenement, ref semaine.EvenementsDeployes[i], conditions, "Evenement "+i);
                 
                 
                 GUILayout.Space(10);
@@ -44,7 +47,7 @@ namespace Evenements.Editor
             }
         }
         
-        public static Semaine DessinerEmbedInspector(Semaine semaine, ref bool estDeploye, string label = "Semaine")
+        public static Semaine DessinerEmbedInspector(Semaine semaine, ref bool estDeploye, ListeConditions conditions, string label = "Semaine")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
@@ -118,7 +121,7 @@ namespace Evenements.Editor
                     GUILayout.EndHorizontal();
                     GUILayout.Space(15);
                     
-                    DessinerInspecteur(semaine);   
+                    DessinerInspecteur(semaine, conditions);   
                 }
             }
             

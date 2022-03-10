@@ -16,20 +16,23 @@ namespace Evenements.Editor
             Evenement evenement = target as Evenement;
             if(!evenement) return;
 
-            DessinerInspecteur(evenement);
+            DessinerInspecteur(evenement, null, true);
         }
 
         
         
-        public static void DessinerInspecteur(Evenement evenement)
+        public static void DessinerInspecteur(Evenement evenement, ListeConditions conditions, bool afficherSauvegarde = false)
         {
-            DessinerSauvegarde(evenement);
-            GUILayout.Space(15);
+            if(afficherSauvegarde)
+            {
+                DessinerSauvegarde(evenement);
+                GUILayout.Space(15);
+            }
             DessinerChoixLieu(evenement);
             GUILayout.Space(15);
             DessinerDescritpions(evenement);
             GUILayout.Space(30);
-            DessinerListeChoix(evenement);
+            DessinerListeChoix(evenement, conditions);
         }
 
         private static void DessinerChoixLieu(Evenement evenement)
@@ -83,7 +86,7 @@ namespace Evenements.Editor
             evenement.imageOverride = EditorGUILayout.ObjectField(evenement.imageOverride, typeof(Sprite), false) as Sprite;
         }
 
-        private static void DessinerListeChoix(Evenement evenement)
+        private static void DessinerListeChoix(Evenement evenement, ListeConditions conditions)
         {
             Color couleurDefaut = GUI.backgroundColor;
             
@@ -103,7 +106,7 @@ namespace Evenements.Editor
             for (int i = 0; i < evenement.listeChoix.Count; i++)
             {
                 ChoixEditor.DessinerEmbedInspecteur(evenement.listeChoix[i], 
-                    ref evenement.ChoixDeployes[i], "Choix" + i);
+                    ref evenement.ChoixDeployes[i], conditions, "Choix" + i);
                 
                 GUILayout.Space(10);
 
@@ -116,7 +119,7 @@ namespace Evenements.Editor
             }
         }
 
-        public static Evenement DessinerEmbedInspector(Evenement evenement, ref bool estDeploye, string label = "Evenement")
+        public static Evenement DessinerEmbedInspector(Evenement evenement, ref bool estDeploye, ListeConditions conditions,  string label = "Evenement")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
@@ -189,7 +192,7 @@ namespace Evenements.Editor
                     
                     GUILayout.EndHorizontal();
                     GUILayout.Space(15);
-                    DessinerInspecteur(evenement);   
+                    DessinerInspecteur(evenement, conditions);   
                 }
             }
             

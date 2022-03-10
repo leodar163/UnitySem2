@@ -11,13 +11,16 @@ namespace Evenements.Editor
         {
             ListeConditions conditions = target as ListeConditions;
             if (!conditions) return;
-            DessinerInspecteur(conditions);
+            DessinerInspecteur(conditions, true);
         }
 
-        public static void DessinerInspecteur(ListeConditions conditions)
+        public static void DessinerInspecteur(ListeConditions conditions, bool afficherSauvegarde = false)
         {
-            DessinerSauvegarde(conditions);
-            GUILayout.Space(15);
+            if (afficherSauvegarde)
+            {
+                DessinerSauvegarde(conditions);
+                GUILayout.Space(15);
+            }
             DessinerListeCondition(conditions);
         }
 
@@ -153,6 +156,7 @@ namespace Evenements.Editor
                         "Retirer la liste va réinitialiser toutes les conditions des choix. T sûr du coup ?",
                         "Allez !", "En fait non"))
                     {
+                        ChoixEditor.NettoyerToutesConditions();
                         return null;    
                     }
                     
@@ -166,6 +170,7 @@ namespace Evenements.Editor
                         "Allez !", "En fait non"))
                     {
                         SupprimerAssetNarration(conditions);
+                        ChoixEditor.NettoyerToutesConditions();
                         return null;
                     }
                 }

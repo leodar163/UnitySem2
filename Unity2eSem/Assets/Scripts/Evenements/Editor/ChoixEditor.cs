@@ -13,13 +13,16 @@ namespace Evenements.Editor
             Choix choix = target as Choix;
             if(choix == null) return;
             
-            DessinerInspecteur(choix, null);
+            DessinerInspecteur(choix, null, true);
         }
 
-        public static void DessinerInspecteur(Choix choix, ListeConditions conditions)
+        public static void DessinerInspecteur(Choix choix, ListeConditions conditions, bool afficherSauvegarde = false)
         {
-            DessinerSauvegarde(choix);
-            GUILayout.Space(15);
+            if (afficherSauvegarde)
+            {
+                DessinerSauvegarde(choix);
+                GUILayout.Space(15);
+            }
             DessinerDescription(choix);
             GUILayout.Space(15);
             DessinerConditions(choix, conditions);
@@ -28,8 +31,8 @@ namespace Evenements.Editor
             GUILayout.Space(15);
             //DessinerEvenementSuivant(choix);
             choix.evenementSuivant =
-                EvenementEditor.DessinerEmbedInspector(choix.evenementSuivant, ref choix.montrerEvenementSuivant,
-                    "Evenement Suivant");
+                EvenementEditor.DessinerEmbedInspector(choix.evenementSuivant, ref choix.montrerEvenementSuivant, 
+                    conditions, "Evenement Suivant");
         }
 
         private static void DessinerDescription(Choix choix)
@@ -41,6 +44,8 @@ namespace Evenements.Editor
         //Bon cette fonction faudra la tester à terme... Pk j'suis pas sûr de son entier fonctionnement
         private static void DessinerConditions(Choix choix, ListeConditions conditions)
         {
+            choix.NettoyezConditions();
+            
             Color couleurFondDefaut = GUI.backgroundColor;
             
             GUIStyle couleurTexteRouge = new(GUI.skin.label)
@@ -58,7 +63,7 @@ namespace Evenements.Editor
             }
             if (conditions.Conditions.Count == 0)
             {
-                GUILayout.Label("Aucune condition disponible dans la liste " + conditions.name);
+                GUILayout.Label("Aucune condition disponible dans la liste " + conditions.name, couleurTexteRouge);
                 return;
             }
 
@@ -73,13 +78,13 @@ namespace Evenements.Editor
                 {
                     GUILayout.BeginHorizontal();
                     string[] conditionsDispoPlusUn = new string[conditionsDispo.Length + 1];
-                    conditionsDispoPlusUn[0] = conditionsChoix[i].nom;
+                    conditionsDispoPlusUn[0] = conditionsChoix[j].nom;
                     conditionsDispo.CopyTo(conditionsDispoPlusUn, 1);
 
                     int indexSelecetion = 0;
-                    indexSelecetion = EditorGUILayout.Popup(i == 0 ? "condition " + i : "consequence " + i,
+                    indexSelecetion = EditorGUILayout.Popup(i == 0 ? "condition " + j : "consequence " + j,
                         indexSelecetion, conditionsDispoPlusUn);
-                    conditionsChoix[i] = conditions.RecupCondition(conditionsDispoPlusUn[indexSelecetion]);
+                    conditionsChoix[j] = conditions.RecupCondition(conditionsDispoPlusUn[indexSelecetion]);
 
                     GUILayout.EndHorizontal();
                 } 
@@ -117,7 +122,7 @@ namespace Evenements.Editor
             choix.Couts = couts;
         }
 
-        public static Choix DessinerEmbedInspecteur(Choix choix, ref bool estDeploye, string label = "Choix")
+        public static Choix DessinerEmbedInspecteur(Choix choix, ref bool estDeploye, ListeConditions conditions, string label = "Choix")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
@@ -168,7 +173,7 @@ namespace Evenements.Editor
                 GUILayout.EndHorizontal();
                 GUILayout.Space(15);
                     
-                DessinerInspecteur(choix, null);
+                DessinerInspecteur(choix, conditions);
             }
 
             GUI.backgroundColor = Color.yellow;
@@ -181,80 +186,17 @@ namespace Evenements.Editor
             return choix;
         }
 
-        /*private static void DessinerEvenementSuivant(Choix choix)
+        public static void NettoyerToutesConditions()
         {
-            Color couleurFondDefaut = GUI.backgroundColor;
-            if (choix.evenementSuivant == null)
-            {
-                GUILayout.BeginHorizontal();
-                choix.evenementSuivant = EditorGUILayout.ObjectField("Evenement Suivant", choix.evenementSuivant,
-                    typeof(Evenement), false) as Evenement;
-                
-                GUI.backgroundColor = Color.green;
-                if (GUILayout.Button("Creer"))
-                {
-                    choix.evenementSuivant = CreerAssetNarration<Evenement>();
-                }
-                GUI.backgroundColor = couleurFondDefaut;
-                
-                GUILayout.EndHorizontal();
-            }
-            else
-            {
-                choix.montrerEvenementSuivant =
-                    EditorGUILayout.Foldout(choix.montrerEvenementSuivant, "Evénement suivant - " + choix.evenementSuivant.name);
+            Object[] tousAssets = AssetDatabase.LoadAllAssetsAtPath(cheminChoix);
 
-                if (choix.montrerEvenementSuivant)
-                {
-                    
-                    GUILayout.BeginHorizontal();
-                    if (choix.evenementSuivant.nomTemporaire == "")
-                        choix.evenementSuivant.nomTemporaire = choix.evenementSuivant.name;
-                    
-                    choix.evenementSuivant.nomTemporaire = 
-                        GUILayout.TextField(choix.evenementSuivant.nomTemporaire, 
-                            GUILayout.Height(20));
-                    
-                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
-                    {
-                        RenomerAssetNarration(choix.evenementSuivant, choix.evenementSuivant.nomTemporaire);
-                    }
-                    
-                    GUILayout.EndHorizontal();
-                    GUILayout.Space(15);
-                    EvementEditor.DessinerInspecteur(choix.evenementSuivant);   
-                }
-                
-                GUILayout.BeginHorizontal();
-                GUI.backgroundColor = new Color32(255, 180, 0, 255);
-                if (GUILayout.Button("Retirer"))
-                {
-                    choix.evenementSuivant = null;
-                }
-                GUI.backgroundColor = Color.red;
-                if (GUILayout.Button("Supprimer"))
-                {   
-                    SupprimerEvenementSuivant(choix);
-                }
-
-                GUI.backgroundColor = couleurFondDefaut;
-                GUILayout.EndHorizontal();
-            }
-            
-        }
-        */
-        
-        /*private static void SupprimerEvenementSuivant(Choix choix )
-        {
-            if (EditorUtility.DisplayDialog("Supprimer Evenement", "T sûr de vouloir surpprimer " + 
-                                                                   choix.evenementSuivant.name + " ?", "oui",
-                "annuler"))
+            foreach (var asset in tousAssets)
             {
-                AssetDatabase.DeleteAsset(RecupChemin<Evenement>() + '/' + choix.evenementSuivant.name + ".asset");
-                DestroyImmediate(choix.evenementSuivant, true);
-                choix.evenementSuivant = null;
+                if (asset is Choix choix)
+                {
+                    choix.NettoyezConditions();
+                }
             }
         }
-        */
     }
 }

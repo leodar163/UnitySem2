@@ -18,7 +18,7 @@ namespace Evenements.Editor
             GUILayoutOption[] options =
             {
                 GUILayout.Height(25),
-                GUILayout.Width(300)
+                GUILayout.Width(280)
             };
             
             GUILayout.BeginHorizontal();

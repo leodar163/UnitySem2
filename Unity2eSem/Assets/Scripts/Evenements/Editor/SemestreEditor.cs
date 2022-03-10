@@ -11,12 +11,15 @@ namespace Evenements.Editor
             Semestre semestre = target as Semestre;
             if(!semestre) return;
             
-            DessinerInspecteur(semestre);
+            DessinerInspecteur(semestre, true);
         }
 
-        public static void DessinerInspecteur(Semestre semestre)
+        public static void DessinerInspecteur(Semestre semestre, bool afficherSauvegarde = false)
         {
-               DessinerSauvegarde(semestre);
+               if (afficherSauvegarde)
+               {
+                   DessinerSauvegarde(semestre);
+               }
             
                DessinerConditions(semestre);
                GUILayout.Space(15);
@@ -37,7 +40,8 @@ namespace Evenements.Editor
                 Semaine semaine = semestre.Semaines[i];
 
                 semestre.Semaines[i] = 
-                    SemaineEditor.DessinerEmbedInspector(semaine, ref semestre.SemainesDeployes[i], "Semaine "+i);
+                    SemaineEditor.DessinerEmbedInspector(semaine, ref semestre.SemainesDeployes[i], 
+                        semestre.conditions, "Semaine "+i);
                 
                 
                 GUILayout.Space(10);
