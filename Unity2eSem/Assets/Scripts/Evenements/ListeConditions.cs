@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Evenements
 {
     [CreateAssetMenu(fileName = "NvlleListeCondition", menuName = "Evénement/Liste de Conditions")]
-    public class ListeConditions : ScriptableObject
+    public class ListeConditions : ScriptableNarration
     {
         [SerializeField] private List<Condition> conditions = new List<Condition>();
 
@@ -19,7 +19,7 @@ namespace Evenements
             
             for (int i = 0; i < conditions.Count; i++)
             {
-                noms[i] = conditions[i].Nom;
+                noms[i] = conditions[i].nom;
             }
 
             return noms;
@@ -33,7 +33,7 @@ namespace Evenements
             {
                 if (!exculsions.Contains(conditions[i]))
                 {
-                    noms[i] = conditions[i].Nom;
+                    noms[i] = conditions[i].nom;
                 }
             }
 
@@ -42,16 +42,26 @@ namespace Evenements
 
         public Condition RecupCondition(string nom)
         {
-            return conditions.Find(condition => condition.Nom == nom);
+            return conditions.Find(condition => condition.nom == nom);
         }
     }
     
     [Serializable]
     public class Condition
     {
-        [SerializeField] private string nom = "nvlleCondition";
-        public string Nom => nom;
+        [SerializeField] [HideInInspector] public string nom = "nvlleCondition";
         public bool estRemplie;
+        
+        #if UNITY_EDITOR
+
+        [HideInInspector] public string nomTemporaire = "";
+
+        #endif
+
+        public Condition(string nomCondition)
+        {
+            nom = nomCondition;
+        }
     }
     
     

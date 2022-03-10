@@ -73,7 +73,7 @@ namespace Evenements.Editor
                 {
                     GUILayout.BeginHorizontal();
                     string[] conditionsDispoPlusUn = new string[conditionsDispo.Length + 1];
-                    conditionsDispoPlusUn[0] = conditionsChoix[i].Nom;
+                    conditionsDispoPlusUn[0] = conditionsChoix[i].nom;
                     conditionsDispo.CopyTo(conditionsDispoPlusUn, 1);
 
                     int indexSelecetion = 0;

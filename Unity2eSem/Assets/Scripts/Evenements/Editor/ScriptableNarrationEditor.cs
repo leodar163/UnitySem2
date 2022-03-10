@@ -18,7 +18,7 @@ namespace Evenements.Editor
             GUILayoutOption[] options =
             {
                 GUILayout.Height(25),
-                GUILayout.Width(120)
+                GUILayout.Width(300)
             };
             
             GUILayout.BeginHorizontal();
@@ -26,12 +26,13 @@ namespace Evenements.Editor
             
             Color couleurFondDefaut = GUI.backgroundColor;
             GUI.backgroundColor = Color.black;
-            if (GUILayout.Button("Sauvegarder", options))
+            if (GUILayout.Button("Sauvegarder "+target.GetType().Name, options))
             {
                 EditorUtility.SetDirty(target);
                 AssetDatabase.SaveAssets();
             }
             GUI.backgroundColor = couleurFondDefaut;
+            GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
         }
 
@@ -219,7 +220,7 @@ namespace Evenements.Editor
                         SupprimerAssetNarration(_evenement);
                     }
                 }
-                
+
                 AssetDatabase.DeleteAsset(RecupChemin(asset.GetType()) + '/' + asset.name + ".asset");
                 DestroyImmediate(asset, true);
             }

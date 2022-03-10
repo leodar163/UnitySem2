@@ -17,11 +17,19 @@ namespace Evenements.Editor
         public static void DessinerInspecteur(Semestre semestre)
         {
                DessinerSauvegarde(semestre);
+            
+               DessinerConditions(semestre);
                GUILayout.Space(15);
                DessinerListeSemaine(semestre);
                semestre.NettoyerSemaines();
         }
 
+        private static void DessinerConditions(Semestre semestre)
+        {
+            semestre.conditions = ListeConditionsEditor.DessinerEmbedInspecteur(semestre.conditions, ref semestre.ConditionsDeployees,
+                semestre.conditions != null ? semestre.conditions.name : "Conditions");
+        }
+        
         private static void DessinerListeSemaine(Semestre semestre)
         {
             for (int i = 0; i < semestre.Semaines.Count; i++)

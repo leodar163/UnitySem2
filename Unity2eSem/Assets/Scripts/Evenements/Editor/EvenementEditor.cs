@@ -159,7 +159,6 @@ namespace Evenements.Editor
                 
                 if (GUILayout.Button("Retirer", optionsBoutons))
                 {
-                    evenement = null;
                     return null;
                 }
                 GUI.backgroundColor = Color.red;
