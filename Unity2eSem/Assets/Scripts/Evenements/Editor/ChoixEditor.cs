@@ -126,7 +126,7 @@ namespace Evenements.Editor
             GUILayout.BeginVertical();
             
             GUI.backgroundColor = Color.yellow;
-            GUILayout.Button("", GUILayout.Height(10));
+            GUILayout.Button("", GUILayout.Height(15));
             GUI.backgroundColor = couleurFondDefaut;
             
             GUILayout.BeginHorizontal();

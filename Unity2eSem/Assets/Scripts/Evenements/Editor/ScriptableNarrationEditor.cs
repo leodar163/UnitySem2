@@ -211,6 +211,14 @@ namespace Evenements.Editor
                         SupprimerAssetNarration(choix.evenementSuivant, true);
                     }
                 }
+
+                if (asset is Semaine semaine)
+                {
+                    foreach (var _evenement in semaine.EvenementsDepart.FindAll(evenement1 => evenement1 != null))
+                    {
+                        SupprimerAssetNarration(_evenement);
+                    }
+                }
                 
                 AssetDatabase.DeleteAsset(RecupChemin(asset.GetType()) + '/' + asset.name + ".asset");
                 DestroyImmediate(asset, true);

@@ -105,14 +105,14 @@ namespace Evenements.Editor
                 ChoixEditor.DessinerEmbedInspecteur(evenement.listeChoix[i], 
                     ref evenement.ChoixDeployes[i], "Choix" + i);
                 
-                GUILayout.Space(5);
+                GUILayout.Space(10);
 
                 if (i < evenement.listeChoix.Count - 1)
                 {
                     GUILayout.Button("", GUILayout.Height(2));
                 }
 
-                GUILayout.Space(5);
+                GUILayout.Space(10);
             }
         }
 
@@ -125,7 +125,7 @@ namespace Evenements.Editor
             GUILayout.BeginVertical();
             
             GUI.backgroundColor = Color.magenta;
-            GUILayout.Button("", GUILayout.Height(10));
+            GUILayout.Button("", GUILayout.Height(15));
             GUI.backgroundColor = couleurFondDefaut;
             
             if (evenement == null)
