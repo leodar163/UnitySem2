@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 041116c8619b4dbb83119f275148a025, type: 3}
-  m_Name: NvSemestre
+  m_Script: {fileID: 11500000, guid: 8740046d20a94e8c96003c15dbcbac31, type: 3}
+  m_Name: Semaine1
   m_EditorClassIdentifier: 
-  nomTemporaire: 
-  semaines:
-  - {fileID: 11400000, guid: 03d28891f3a47d54a91f90b288a8fa82, type: 2}
+  nomTemporaire: Semaine1
+  evenementsDepart:
   - {fileID: 0}
-  conditions: {fileID: 11400000, guid: 7e30a7bc04fc3474baf9a9370c16c78e, type: 2}
-  ConditionsDeployees: 1

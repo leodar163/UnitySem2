@@ -551,12 +551,12 @@ MonoBehaviour:
   debug: 1
   couleurDebug: {r: 0.32485473, g: 0.9811321, b: 0.2906372, a: 1}
   lieux:
-  - nom: ezdqdqd
+  - nom: Bar
     position: {x: 3.45, y: 3.47}
     icone: {fileID: 0}
     illustration: {fileID: 0}
-  - nom: qzdqzdqzdqzdqzd
-    position: {x: 5.55, y: 1.83}
+  - nom: Appartement
+    position: {x: 5.47, y: 1.83}
     icone: {fileID: 0}
     illustration: {fileID: 0}
   - nom: "Universit\xE9"
