@@ -13,10 +13,11 @@ namespace Evenements.Editor
             Choix choix = target as Choix;
             if(choix == null) return;
             
-            DessinerInspecteur(choix, null, true);
+            DessinerInspecteur(choix, null, null, true);
         }
 
-        public static void DessinerInspecteur(Choix choix, ListeConditions conditions, bool afficherSauvegarde = false)
+        public static void DessinerInspecteur(Choix choix, ListeConditions conditions, 
+            ListeLieux lieux, bool afficherSauvegarde = false)
         {
             if (afficherSauvegarde)
             {
@@ -32,7 +33,7 @@ namespace Evenements.Editor
             //DessinerEvenementSuivant(choix);
             choix.evenementSuivant =
                 EvenementEditor.DessinerEmbedInspector(choix.evenementSuivant, ref choix.montrerEvenementSuivant, 
-                    conditions, "Evenement Suivant");
+                    conditions, lieux ? lieux.Lieux : null, lieux, "Evenement Suivant");
         }
 
         private static void DessinerDescription(Choix choix)
@@ -122,17 +123,12 @@ namespace Evenements.Editor
             choix.Couts = couts;
         }
 
-        public static Choix DessinerEmbedInspecteur(Choix choix, ref bool estDeploye, ListeConditions conditions, string label = "Choix")
+        public static Choix DessinerEmbedInspecteur(Choix choix, ref bool estDeploye, ListeConditions conditions,
+            ListeLieux lieux, string label = "Choix")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(30);
-            GUILayout.BeginVertical();
-            
-            GUI.backgroundColor = Color.yellow;
-            GUILayout.Button("", GUILayout.Height(15));
-            GUI.backgroundColor = couleurFondDefaut;
+            CommencerZoneEmbed(Color.yellow);
             
             GUILayout.BeginHorizontal();
 
@@ -173,15 +169,10 @@ namespace Evenements.Editor
                 GUILayout.EndHorizontal();
                 GUILayout.Space(15);
                     
-                DessinerInspecteur(choix, conditions);
+                DessinerInspecteur(choix, conditions, lieux);
             }
 
-            GUI.backgroundColor = Color.yellow;
-            GUILayout.Button("", GUILayout.Height(5));
-            GUI.backgroundColor = couleurFondDefaut;
-            
-            GUILayout.EndVertical();
-            GUILayout.EndHorizontal();
+            FinirZoneEmbed(Color.yellow);
             
             return choix;
         }

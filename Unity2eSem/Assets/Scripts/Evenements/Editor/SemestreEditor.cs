@@ -23,6 +23,8 @@ namespace Evenements.Editor
             
                DessinerConditions(semestre);
                GUILayout.Space(15);
+               DessinerLieux(semestre);
+               GUILayout.Space(15);
                DessinerListeSemaine(semestre);
                semestre.NettoyerSemaines();
         }
@@ -31,6 +33,12 @@ namespace Evenements.Editor
         {
             semestre.conditions = ListeConditionsEditor.DessinerEmbedInspecteur(semestre.conditions, ref semestre.ConditionsDeployees,
                 semestre.conditions != null ? semestre.conditions.name : "Conditions");
+        }
+
+        private static void DessinerLieux(Semestre semestre)
+        {
+            semestre.lieux = ListeLieuxEditor.DessinerEmbedInspecteur(semestre.lieux, ref semestre.LieuxDeployees,
+                semestre.lieux != null ? semestre.lieux.name : "Lieux");
         }
         
         private static void DessinerListeSemaine(Semestre semestre)
@@ -41,7 +49,7 @@ namespace Evenements.Editor
 
                 semestre.Semaines[i] = 
                     SemaineEditor.DessinerEmbedInspector(semaine, ref semestre.SemainesDeployes[i], 
-                        semestre.conditions, "Semaine "+i);
+                        semestre.conditions, semestre.lieux, "Semaine "+i);
                 
                 
                 GUILayout.Space(10);
@@ -53,6 +61,82 @@ namespace Evenements.Editor
 
                 GUILayout.Space(10);
             }
+        }
+
+        public static Semestre DessinerEmbedInspector(Semestre semestre, ref bool estDeploye, string label = "Semestre")
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;
+            
+            CommencerZoneEmbed(Color.grey);
+            
+            if (semestre == null)
+            {
+                GUILayout.BeginHorizontal();
+                semestre = EditorGUILayout.ObjectField(label, semestre,
+                    typeof(Semestre), false) as Semestre;
+                
+                GUI.backgroundColor = Color.green;
+                if (GUILayout.Button("Creer"))
+                {
+                    semestre = CreerAssetNarration<Semestre>();
+                }
+                GUI.backgroundColor = couleurFondDefaut;
+                
+                GUILayout.EndHorizontal();
+            }
+            else
+            {
+                GUILayout.BeginHorizontal();
+                
+                estDeploye =
+                    EditorGUILayout.Foldout(estDeploye, label + " - " + semestre.name);
+                
+                GUI.backgroundColor = new Color32(255, 180, 0, 255);
+
+                GUILayoutOption[] optionsBoutons =
+                {
+                    GUILayout.Width(80)
+                };
+                
+                if (GUILayout.Button("Retirer", optionsBoutons))
+                {
+                    semestre = null;
+                    return null;
+                }
+                GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("Supprimer", optionsBoutons))
+                {   
+                    SupprimerAssetNarration(semestre);
+                    return null;
+                }
+
+                GUI.backgroundColor = couleurFondDefaut;
+                GUILayout.EndHorizontal();
+
+                if (estDeploye)
+                {
+                    GUILayout.BeginHorizontal();
+                    if (semestre.nomTemporaire == "")
+                        semestre.nomTemporaire = semestre.name;
+                    
+                    semestre.nomTemporaire = 
+                        GUILayout.TextField(semestre.nomTemporaire, 
+                            GUILayout.Height(20));
+                    
+                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
+                    {
+                        RenomerAssetNarration(semestre, semestre.nomTemporaire);
+                    }
+                    
+                    GUILayout.EndHorizontal();
+                    GUILayout.Space(15);
+                    
+                    DessinerInspecteur(semestre);   
+                }
+            }
+            
+            FinirZoneEmbed(Color.grey);
+            return semestre;
         }
     }
 }

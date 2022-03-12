@@ -25,13 +25,13 @@ namespace Evenements
             return noms;
         }
         
-        public string[] RecupNomsConditions(List<Condition> exculsions)
+        public string[] RecupNomsConditions(List<Condition> exclusions)
         {
             List<string> noms = new List<string>();
             
             foreach (var condition in conditions)
             {
-                if (!exculsions.Contains(condition))
+                if (!exclusions.Contains(condition))
                 {
                     noms.Add(condition.nom);
                 }

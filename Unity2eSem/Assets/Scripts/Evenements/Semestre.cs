@@ -10,6 +10,7 @@ namespace Evenements
         public List<Semaine> Semaines => semaines;
 
         [SerializeField] [HideInInspector] public ListeConditions conditions;
+        [SerializeField] [HideInInspector] public ListeLieux lieux;
         
         #if UNITY_EDITOR
         private bool[] semainesDeployes;
@@ -28,6 +29,8 @@ namespace Evenements
         }
 
         [HideInInspector] public bool ConditionsDeployees;
+
+        [HideInInspector] public bool LieuxDeployees;
         #endif
         
         public void NettoyerSemaines()

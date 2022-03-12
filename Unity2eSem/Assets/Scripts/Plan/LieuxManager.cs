@@ -6,19 +6,19 @@ using UnityEngine;
 
 namespace Plan
 {
-    public class ListeLieux : MonoBehaviour
+    public class LieuxManager : MonoBehaviour
     {
         [Header("Debug")]
         public bool debug = true;
         [SerializeField] private Color couleurDebug;
 
-        private static ListeLieux cela;
-        public static ListeLieux Instance
+        private static LieuxManager cela;
+        public static LieuxManager Instance
         {
             get
             {
-                if (!cela) cela = FindObjectOfType<ListeLieux>();
-                if (!cela) cela = new GameObject("LieuxSettings").AddComponent<ListeLieux>();
+                if (!cela) cela = FindObjectOfType<LieuxManager>();
+                if (!cela) cela = new GameObject("LieuxSettings").AddComponent<LieuxManager>();
                 return cela;
             }
         }
@@ -36,7 +36,7 @@ namespace Plan
                 {
                     Gizmos.color = couleurDebug;
                     Vector2 decalage= new Vector2(11f, 0.2f);
-                    Gizmos.DrawSphere(lieu.Position,10f);
+                    Gizmos.DrawSphere(lieu.PositionProjetee,10f);
 
                     GUIStyle styleLabel = new GUIStyle
                     {
@@ -46,7 +46,7 @@ namespace Plan
                         },
                         fontSize = 18
                     };
-                    Handles.Label(lieu.Position + decalage,lieu.nom, styleLabel);
+                    Handles.Label(lieu.PositionProjetee + decalage,lieu.nom, styleLabel);
                 }
             }
         }

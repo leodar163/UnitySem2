@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Plan;
+using UnityEngine;
 
 namespace Evenements.Editor
 {
@@ -12,29 +14,36 @@ namespace Evenements.Editor
             Semaine semaine = target as Semaine;
             if(!semaine) return;
             
-            DessinerInspecteur(semaine, null, true);
+            DessinerInspecteur(semaine, null, null, true);
         }
 
-        public static void DessinerInspecteur(Semaine semaine, ListeConditions conditions, bool afficherSauvegarde = false)
+        public static void DessinerInspecteur(Semaine semaine, ListeConditions conditions,
+            ListeLieux lieux, bool afficherSauvegarde = false)
         {
             if(afficherSauvegarde)
             {
                 DessinerSauvegarde(semaine);
                 GUILayout.Space(15);
             }
-            DessinerListeEvenements(semaine, conditions);
+            DessinerListeEvenements(semaine, conditions, lieux);
             semaine.NettoyerEvenementsDepart();
         }
         
-        private static void DessinerListeEvenements(Semaine semaine, ListeConditions conditions)
+        private static void DessinerListeEvenements(Semaine semaine, ListeConditions conditions, ListeLieux lieux)
         {
+            
+            List<Lieu> lieuxDispos = lieux ? new List<Lieu>(lieux.Lieux) : null;
+                
             for (int i = 0; i < semaine.EvenementsDepart.Count; i++)
             {
                 Evenement evenement = semaine.EvenementsDepart[i];
 
                 semaine.EvenementsDepart[i] = 
-                    EvenementEditor.DessinerEmbedInspector(evenement, ref semaine.EvenementsDeployes[i], conditions, "Evenement "+i);
+                    EvenementEditor.DessinerEmbedInspector(evenement, ref semaine.EvenementsDeployes[i], conditions, 
+                        lieuxDispos, lieux, "Evenement "+i);
                 
+                if (evenement && evenement.lieu != null && lieuxDispos != null) 
+                    lieuxDispos.Remove(evenement.lieu);
                 
                 GUILayout.Space(10);
 
@@ -47,23 +56,18 @@ namespace Evenements.Editor
             }
         }
         
-        public static Semaine DessinerEmbedInspector(Semaine semaine, ref bool estDeploye, ListeConditions conditions, string label = "Semaine")
+        public static Semaine DessinerEmbedInspector(Semaine semaine, ref bool estDeploye, ListeConditions conditions,
+            ListeLieux lieux, string label = "Semaine")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(30);
-            GUILayout.BeginVertical();
-            
-            GUI.backgroundColor = Color.cyan;
-            GUILayout.Button("", GUILayout.Height(15));
-            GUI.backgroundColor = couleurFondDefaut;
+            CommencerZoneEmbed(Color.cyan);
             
             if (semaine == null)
             {
                 GUILayout.BeginHorizontal();
                 semaine = EditorGUILayout.ObjectField(label, semaine,
-                    typeof(Evenement), false) as Semaine;
+                    typeof(Semaine), false) as Semaine;
                 
                 GUI.backgroundColor = Color.green;
                 if (GUILayout.Button("Creer"))
@@ -121,16 +125,11 @@ namespace Evenements.Editor
                     GUILayout.EndHorizontal();
                     GUILayout.Space(15);
                     
-                    DessinerInspecteur(semaine, conditions);   
+                    DessinerInspecteur(semaine, conditions, lieux);   
                 }
             }
             
-            GUI.backgroundColor = Color.cyan;
-            GUILayout.Button("", GUILayout.Height(5));
-            GUI.backgroundColor = couleurFondDefaut;
-            
-            GUILayout.EndVertical();
-            GUILayout.EndHorizontal();
+            FinirZoneEmbed(Color.cyan);
             return semaine;
         }
     }

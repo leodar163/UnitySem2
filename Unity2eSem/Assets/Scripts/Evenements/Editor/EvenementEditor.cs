@@ -16,26 +16,27 @@ namespace Evenements.Editor
             Evenement evenement = target as Evenement;
             if(!evenement) return;
 
-            DessinerInspecteur(evenement, null, true);
+            DessinerInspecteur(evenement, null, null, null, true);
         }
 
         
         
-        public static void DessinerInspecteur(Evenement evenement, ListeConditions conditions, bool afficherSauvegarde = false)
+        public static void DessinerInspecteur(Evenement evenement, ListeConditions conditions, 
+            List<Lieu> lieuxDispos, ListeLieux lieux, bool afficherSauvegarde = false)
         {
             if(afficherSauvegarde)
             {
                 DessinerSauvegarde(evenement);
                 GUILayout.Space(15);
             }
-            DessinerChoixLieu(evenement);
+            DessinerChoixLieu(evenement, lieuxDispos);
             GUILayout.Space(15);
             DessinerDescritpions(evenement);
             GUILayout.Space(30);
-            DessinerListeChoix(evenement, conditions);
+            DessinerListeChoix(evenement, lieux, conditions);
         }
 
-        private static void DessinerChoixLieu(Evenement evenement)
+        private static void DessinerChoixLieu(Evenement evenement, List<Lieu> lieux)
         {
             GUIStyle couleurTexteRouge = new(GUI.skin.label)
             {
@@ -46,29 +47,35 @@ namespace Evenements.Editor
             };
             
             
-            if (ListeLieux.Instance)
+            if (lieux != null)
             {
-                if (ListeLieux.Instance.Lieux.Count == 0)
+                if (lieux.Count == 0)
                 {
-                    GUILayout.Label("Aucun lieu assigné dans la liste de lieux", couleurTexteRouge);
+                    GUILayout.Label("Pas assez de lieux dans la liste des lieux", couleurTexteRouge);
+                    evenement.lieu = null;
                 }
                 else
                 {
-                    evenement.lieu ??= ListeLieux.Instance.Lieux[0];
-                    
-                    int indexSelectionLieu = ListeLieux.Instance.Lieux.LastIndexOf(evenement.lieu);
-                    
+                    int indexSelectionLieu = evenement.lieu != null ? lieux.LastIndexOf(evenement.lieu) : 0;
                     indexSelectionLieu = indexSelectionLieu < 0 ? 0 : indexSelectionLieu;
-                    string[] optionsLieux = ListeLieux.Instance.RecupNomsLieux();
+                    
+                    string[] optionsLieux = new string[lieux.Count];
+                    
+                    for (int i = 0; i < lieux.Count; i++)
+                    {
+                        optionsLieux[i] = lieux[i].nom;
+                    }
                     
                     indexSelectionLieu = EditorGUILayout.Popup("Lieu", indexSelectionLieu, optionsLieux);
-                    evenement.lieu = ListeLieux.Instance.Lieux[indexSelectionLieu];
+                    //Debug.Log(indexSelectionLieu);
+                    evenement.lieu = lieux[indexSelectionLieu];
                 }
             }
             else
             {
                 
                 GUILayout.Label("Il n'a pas de liste de lieux assignée dans la scene", couleurTexteRouge);
+                evenement.lieu = null;
             }
         }
 
@@ -86,7 +93,7 @@ namespace Evenements.Editor
             evenement.imageOverride = EditorGUILayout.ObjectField(evenement.imageOverride, typeof(Sprite), false) as Sprite;
         }
 
-        private static void DessinerListeChoix(Evenement evenement, ListeConditions conditions)
+        private static void DessinerListeChoix(Evenement evenement, ListeLieux lieux, ListeConditions conditions)
         {
             Color couleurDefaut = GUI.backgroundColor;
             
@@ -106,7 +113,7 @@ namespace Evenements.Editor
             for (int i = 0; i < evenement.listeChoix.Count; i++)
             {
                 ChoixEditor.DessinerEmbedInspecteur(evenement.listeChoix[i], 
-                    ref evenement.ChoixDeployes[i], conditions, "Choix" + i);
+                    ref evenement.ChoixDeployes[i], conditions, lieux,"Choix" + i);
                 
                 GUILayout.Space(10);
 
@@ -119,17 +126,12 @@ namespace Evenements.Editor
             }
         }
 
-        public static Evenement DessinerEmbedInspector(Evenement evenement, ref bool estDeploye, ListeConditions conditions,  string label = "Evenement")
+        public static Evenement DessinerEmbedInspector(Evenement evenement, ref bool estDeploye,
+            ListeConditions conditions, List<Lieu> lieuxDispos, ListeLieux lieux, string label = "Evenement")
         {
             Color couleurFondDefaut = GUI.backgroundColor;
             
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(30);
-            GUILayout.BeginVertical();
-            
-            GUI.backgroundColor = Color.magenta;
-            GUILayout.Button("", GUILayout.Height(15));
-            GUI.backgroundColor = couleurFondDefaut;
+            CommencerZoneEmbed(Color.magenta);
             
             if (evenement == null)
             {
@@ -192,16 +194,11 @@ namespace Evenements.Editor
                     
                     GUILayout.EndHorizontal();
                     GUILayout.Space(15);
-                    DessinerInspecteur(evenement, conditions);   
+                    DessinerInspecteur(evenement, conditions, lieuxDispos, lieux);   
                 }
             }
             
-            GUI.backgroundColor = Color.magenta;
-            GUILayout.Button("", GUILayout.Height(5));
-            GUI.backgroundColor = couleurFondDefaut;
-            
-            GUILayout.EndVertical();
-            GUILayout.EndHorizontal();
+            FinirZoneEmbed(Color.magenta);
             return evenement;
         }
     }

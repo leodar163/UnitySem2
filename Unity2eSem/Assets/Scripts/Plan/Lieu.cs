@@ -6,10 +6,21 @@ namespace Plan
     [Serializable]
     public class Lieu
     {
-        public string nom;
-        [SerializeField] private Vector2 position;
-        public Vector2 Position => position * 100;
-        public Sprite icone;
-        public Sprite illustration;
+        [SerializeField] public string nom;
+        [SerializeField] public Vector2 position;
+        public Vector2 PositionProjetee => position * 100;
+        [SerializeField] public Sprite icone;
+        [SerializeField] public Sprite illustration;
+
+#if UNITY_EDITOR
+
+        [HideInInspector] public string nomTemporaire = "";
+
+#endif
+        
+        public Lieu(string nomNvLieu)
+        {
+            nom = nomNvLieu;
+        }
     }
 }

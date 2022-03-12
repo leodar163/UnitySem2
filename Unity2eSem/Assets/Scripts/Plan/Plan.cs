@@ -46,7 +46,7 @@ namespace Plan
             foreach (var evenement in semaine.EvenementsDepart)
             {
                 Lieu lieu = evenement.lieu;
-                if (Instantiate(pinsBase.gameObject, lieu.Position, new Quaternion(), transform)
+                if (Instantiate(pinsBase.gameObject, lieu.PositionProjetee, new Quaternion(), transform)
                     .TryGetComponent(out PinsLieu nvPins))
                 {
                     nvPins.AssignerEvenement(evenement);

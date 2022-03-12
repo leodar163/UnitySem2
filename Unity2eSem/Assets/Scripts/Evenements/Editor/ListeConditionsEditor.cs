@@ -62,6 +62,7 @@ namespace Evenements.Editor
                         "\n(L'action ne peut pas être annulée)", "oui", "annuler"))
                     {
                         conditions.Conditions.Remove(condition);
+                        break;
                     }
                 }
 
@@ -112,13 +113,7 @@ namespace Evenements.Editor
         {
             Color couleurFondDefaut = GUI.backgroundColor;
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(30);
-            GUILayout.BeginVertical();
-
-            GUI.backgroundColor = Color.red;
-            GUILayout.Button("", GUILayout.Height(15));
-            GUI.backgroundColor = couleurFondDefaut;
+            CommencerZoneEmbed(Color.red);            
 
             if (conditions == null)
             {
@@ -199,12 +194,9 @@ namespace Evenements.Editor
                     DessinerInspecteur(conditions);
                 }
             }
-            GUI.backgroundColor = Color.red;
-            GUILayout.Button("", GUILayout.Height(5));
-            GUI.backgroundColor = couleurFondDefaut;
-
-            GUILayout.EndVertical();
-            GUILayout.EndHorizontal();
+            
+            FinirZoneEmbed(Color.red);
+            
             return conditions;
         }
     }

@@ -12,6 +12,7 @@ namespace Evenements.Editor
         public static string cheminConditions = "Assets/Narration/Conditions";
         public static string cheminSemaines = "Assets/Narration/Semaines";
         public static string cheminSemestres = "Assets/Narration/Semestres";
+        public static string cheminLieux = "Assets/Narration/Lieux";
 
         protected static void DessinerSauvegarde(ScriptableObject target)
         {
@@ -60,6 +61,10 @@ namespace Evenements.Editor
             {
                 cheminRetour = cheminSemestres;
             }
+            else if (typeof(T) == typeof(ListeLieux))
+            {
+                cheminRetour = cheminLieux;
+            }
             else
             {
                 throw new ArgumentOutOfRangeException(typeof(T).Name + " n'est pas dérivé de ScriptableNarration");
@@ -91,6 +96,10 @@ namespace Evenements.Editor
             else if (typeScrNarration == typeof(Semestre))
             {
                 cheminRetour = cheminSemestres;
+            }
+            else if (typeScrNarration == typeof(ListeLieux))
+            {
+                cheminRetour = cheminLieux;
             }
             else
             {
@@ -224,6 +233,37 @@ namespace Evenements.Editor
                 AssetDatabase.DeleteAsset(RecupChemin(asset.GetType()) + '/' + asset.name + ".asset");
                 DestroyImmediate(asset, true);
             }
+        }
+
+        protected static void CommencerZoneEmbed(Color couleur)
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;
+            
+            Rect rectHori = EditorGUILayout.BeginHorizontal();
+            GUILayout.Space(30);
+            Rect rectVerti = EditorGUILayout.BeginVertical();
+
+            Rect Indent = new Rect(rectHori.x, rectHori.y - 20,
+                rectHori.width - rectVerti.width - 5, rectHori.height - 20);
+
+            GUI.backgroundColor = couleur / 2;
+            EditeurNivoFenetre.DessinerCarre(rectVerti,couleur/2);
+            
+            GUI.backgroundColor = couleur;
+            GUILayout.Button("", GUILayout.Height(20));
+            GUI.backgroundColor = couleurFondDefaut;
+        }
+
+        protected static void FinirZoneEmbed(Color couleur)
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;   
+            
+            GUI.backgroundColor = couleur;
+            GUILayout.Button("", GUILayout.Height(5));
+            GUI.backgroundColor = couleurFondDefaut;
+            
+            EditorGUILayout.EndVertical();
+            EditorGUILayout.EndHorizontal();
         }
     }
 }
