@@ -16,6 +16,8 @@ namespace Evenements.Editor
         
         private void OnGUI()
         {
+            Plan.Plan.Singleton.NettoyerPins();
+            
             if (GUILayout.Button("Sauvergarder"))
             {
                 Sauvegarder();

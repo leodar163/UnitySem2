@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: Semestre0
   semaines:
+  - {fileID: 11400000, guid: 433271b6a9430e0468664b8dc0289018, type: 2}
   - {fileID: 0}
-  conditions: {fileID: 0}
-  lieux: {fileID: 0}
-  ConditionsDeployees: 0
-  LieuxDeployees: 0
+  conditions: {fileID: 11400000, guid: 8c18f66e260834648814e09d803b9a5e, type: 2}
+  lieux: {fileID: 11400000, guid: d5e4643e5ff0fc144a530426441f54fe, type: 2}
+  ConditionsDeployees: 1
+  LieuxDeployees: 1

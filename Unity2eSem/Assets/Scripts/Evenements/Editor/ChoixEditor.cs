@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Plan;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Evenements.Editor
 {
@@ -87,11 +88,20 @@ namespace Evenements.Editor
                         indexSelecetion, conditionsDispoPlusUn);
                     conditionsChoix[j] = conditions.RecupCondition(conditionsDispoPlusUn[indexSelecetion]);
 
+                    GUI.backgroundColor = Color.red;
+                    if (GUILayout.Button("Supprimer"))
+                    {
+                        conditionsChoix.RemoveAt(j);
+                        break;
+                    }
+                    GUI.backgroundColor = couleurFondDefaut;
+                    
                     GUILayout.EndHorizontal();
                 } 
                 
                 GUI.backgroundColor = Color.green;
-                if (GUILayout.Button("Ajouter " + (i == 0 ? "Condition" : "Conséquence")))
+                if (conditions.Conditions.Count > conditionsChoix.Count && 
+                    GUILayout.Button("Ajouter " + (i == 0 ? "Condition" : "Conséquence")))
                 {
                     Condition conditionDefaut = conditions.RecupCondition(
                         conditions.RecupNomsConditions(conditionsChoix)[0]);
@@ -99,6 +109,7 @@ namespace Evenements.Editor
                     conditionsChoix.Add(conditionDefaut);
                 }
                 GUI.backgroundColor = couleurFondDefaut;
+                GUILayout.Space(10);
             }
         }
 
@@ -112,7 +123,7 @@ namespace Evenements.Editor
                 etude = EditorGUILayout.IntSlider("Etude", choix.Gains.etude, 0, 100)
             };
             choix.Gains = gains;
-            
+            GUILayout.Space(15);
             GUILayout.Label("Coûts");
             Choix.Gain couts = new Choix.Gain
             {

@@ -31,11 +31,58 @@ namespace Evenements.Editor
             }
             DessinerChoixLieu(evenement, lieuxDispos);
             GUILayout.Space(15);
+            DessinerConditions(evenement, conditions);
+            GUILayout.Space(15);
             DessinerDescritpions(evenement);
             GUILayout.Space(30);
             DessinerListeChoix(evenement, lieux, conditions);
         }
 
+        private static void DessinerConditions(Evenement evenement, ListeConditions conditions)
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;
+            
+            GUILayout.Label("Conditions");
+            List<Condition> conditionsChoix =evenement.conditions;
+                    
+            string[] conditionsDispo = conditions.RecupNomsConditions(conditionsChoix);
+                
+            for (int j = 0; j < conditionsChoix.Count; j++)
+            {
+                GUILayout.BeginHorizontal();
+                string[] conditionsDispoPlusUn = new string[conditionsDispo.Length + 1];
+                conditionsDispoPlusUn[0] = conditionsChoix[j].nom;
+                conditionsDispo.CopyTo(conditionsDispoPlusUn, 1);
+
+                int indexSelecetion = 0;
+                indexSelecetion = EditorGUILayout.Popup("condition " + j,
+                    indexSelecetion, conditionsDispoPlusUn);
+                conditionsChoix[j] = conditions.RecupCondition(conditionsDispoPlusUn[indexSelecetion]);
+
+                GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("Supprimer"))
+                {
+                    conditionsChoix.RemoveAt(j);
+                    break;
+                }
+                GUI.backgroundColor = couleurFondDefaut;
+                    
+                GUILayout.EndHorizontal();
+            } 
+                
+            GUI.backgroundColor = Color.green;
+            if (conditions.Conditions.Count > conditionsChoix.Count && 
+                GUILayout.Button("Ajouter Condition"))
+            {
+                Condition conditionDefaut = conditions.RecupCondition(
+                    conditions.RecupNomsConditions(conditionsChoix)[0]);
+                    
+                conditionsChoix.Add(conditionDefaut);
+            }
+            GUI.backgroundColor = couleurFondDefaut;
+            GUILayout.Space(10);
+        }
+        
         private static void DessinerChoixLieu(Evenement evenement, List<Lieu> lieux)
         {
             GUIStyle couleurTexteRouge = new(GUI.skin.label)

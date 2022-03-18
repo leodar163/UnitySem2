@@ -17,7 +17,9 @@ namespace Evenements
         [SerializeField] public string description = "";
 
         [SerializeField][HideInInspector] private List<Choix> choix = new List<Choix>();
-        public List<Choix> listeChoix => choix; 
+        public List<Choix> listeChoix => choix;
+
+        [SerializeField] public List<Condition> conditions = new List<Condition>();
 
         #if UNITY_EDITOR
 
