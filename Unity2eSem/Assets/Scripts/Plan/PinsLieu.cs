@@ -19,6 +19,12 @@ namespace Plan
             evenement = evenementAAssigner;
             iconeLieu.sprite = evenement.lieu.icone;
         }
+
+        public void AssignerLieu(Lieu lieu)
+        {
+            transform.position = lieu.PositionProjetee;
+            iconeLieu.sprite = lieu.icone;
+        }
         
         public void LancerEvenement()
         {

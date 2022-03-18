@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Evenements.Editor
 {
+    using Plan;
     public abstract class ScriptableNarrationEditor : UnityEditor.Editor
     {
         public static string cheminChoix = "Assets/Narration/Choix";
@@ -198,6 +199,7 @@ namespace Evenements.Editor
 
         protected static void SupprimerAssetNarration(ScriptableNarration asset, bool passerBoitDialogue = false)
         {
+            if(!asset) return;
             if (passerBoitDialogue || EditorUtility.DisplayDialog("Supprimer " + asset.GetType().Name, 
                 "T sûr de vouloir surpprimer " + asset.name + " ?" +
                 "\n(L'action ne peut pas être annulée)", "oui", "annuler"))
@@ -236,6 +238,11 @@ namespace Evenements.Editor
                     {
                         SupprimerAssetNarration(_semaine);
                     }
+                }
+
+                if (asset is ListeLieux)
+                {
+                    Plan.Singleton.NettoyerPins();
                 }
 
                 AssetDatabase.DeleteAsset(RecupChemin(asset.GetType()) + '/' + asset.name + ".asset");

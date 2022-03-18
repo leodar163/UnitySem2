@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Plan;
 using UnityEditor;
 using UnityEngine;
 
 namespace Evenements.Editor
 {
+    using Plan;
     public class ListeLieuxEditor : ScriptableNarrationEditor
     {
         public override void OnInspectorGUI()
@@ -23,6 +23,7 @@ namespace Evenements.Editor
                 GUILayout.Space(15);
             }
             DessinerListeLieux(lieux);
+            AfficherDebugListeLieu(lieux);
         }
 
         private static void DessinerListeLieux(ListeLieux lieux)
@@ -156,13 +157,20 @@ namespace Evenements.Editor
                 estDeploye =
                     EditorGUILayout.Foldout(estDeploye, label + " - " + lieux.name);
 
-                GUI.backgroundColor = new Color32(255, 180, 0, 255);
-
                 GUILayoutOption[] optionsBoutons =
                 {
                     GUILayout.Width(80)
                 };
 
+                if(Plan.Singleton.debugListeLieu) GUI.backgroundColor = Color.yellow;
+                    
+                if (GUILayout.Button("Visualiser", optionsBoutons))
+                {
+                    Plan.Singleton.debugListeLieu = !Plan.Singleton.debugListeLieu;
+                    Plan.Singleton.semaineDebug = null;
+                }   
+
+                GUI.backgroundColor = new Color32(255, 180, 0, 255);
                 if (GUILayout.Button("Retirer", optionsBoutons))
                 {
                     if(EditorUtility.DisplayDialog("Retirer Liste Lieux",
@@ -182,7 +190,7 @@ namespace Evenements.Editor
                         "Allez !", "En fait non"))
                     {
                         SupprimerAssetNarration(lieux);
-                        return null;
+                        return lieux;
                     }
                 }
 
@@ -191,7 +199,6 @@ namespace Evenements.Editor
 
                 if (estDeploye)
                 {
-
                     GUILayout.BeginHorizontal();
                     if (lieux.nomTemporaire == "")
                         lieux.nomTemporaire = lieux.name;
@@ -200,7 +207,7 @@ namespace Evenements.Editor
                         GUILayout.TextField(lieux.nomTemporaire,
                             GUILayout.Height(20));
 
-                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
+                    if (GUILayout.Button("Renommer", GUILayout.Height(20), GUILayout.Width(130)))
                     {
                         RenommerAssetNarration(lieux, lieux.nomTemporaire);
                     }
@@ -215,6 +222,19 @@ namespace Evenements.Editor
             //Debug.Log("fini");
             
             return lieux;
+        }
+
+        private static void AfficherDebugListeLieu(ListeLieux lieux)
+        {
+            if(Application.isPlaying) return;
+            if (Plan.Singleton.debugListeLieu)
+            {
+                Plan.Singleton.ChargerListeLieux(lieux);
+            }
+            if (Plan.Singleton.semaineDebug == null && !Plan.Singleton.debugListeLieu)
+            {
+                Plan.Singleton.NettoyerPins();
+            }
         }
     }
 }

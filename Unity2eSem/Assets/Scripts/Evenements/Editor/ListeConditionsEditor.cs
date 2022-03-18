@@ -166,7 +166,7 @@ namespace Evenements.Editor
                     {
                         SupprimerAssetNarration(conditions);
                         ChoixEditor.NettoyerToutesConditions();
-                        return null;
+                        return conditions;
                     }
                 }
 

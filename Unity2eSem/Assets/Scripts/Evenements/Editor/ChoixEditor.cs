@@ -144,7 +144,7 @@ namespace Evenements.Editor
             if (GUILayout.Button("Supprimer", optionsBouton))
             {   
                 SupprimerAssetNarration(choix);
-                return null;
+                return choix;
             }
             GUI.backgroundColor = couleurFondDefaut;
                 

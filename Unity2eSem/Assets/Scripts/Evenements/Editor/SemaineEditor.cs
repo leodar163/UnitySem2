@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
-using Plan;
+
 using UnityEngine;
 
 namespace Evenements.Editor
 {
     using UnityEditor;
+    using Plan;
     
     [CustomEditor(typeof(Semaine))]
     public class SemaineEditor : ScriptableNarrationEditor
@@ -27,6 +28,7 @@ namespace Evenements.Editor
             }
             DessinerListeEvenements(semaine, conditions, lieux);
             semaine.NettoyerEvenementsDepart();
+            AfficherDebugSemaine(semaine);
         }
         
         private static void DessinerListeEvenements(Semaine semaine, ListeConditions conditions, ListeLieux lieux)
@@ -84,24 +86,33 @@ namespace Evenements.Editor
                 
                 estDeploye =
                     EditorGUILayout.Foldout(estDeploye, label + " - " + semaine.name);
-                
-                GUI.backgroundColor = new Color32(255, 180, 0, 255);
 
                 GUILayoutOption[] optionsBoutons =
                 {
                     GUILayout.Width(80)
                 };
                 
+                if(!Plan.Singleton.debugListeLieu && Plan.Singleton.semaineDebug == semaine) 
+                    GUI.backgroundColor = Color.yellow;
+                    
+                if (GUILayout.Button("Visualiser", optionsBoutons))
+                {
+                    Plan.Singleton.semaineDebug = Plan.Singleton.semaineDebug == null || Plan.Singleton.semaineDebug != semaine ?
+                        semaine : null;
+                    Plan.Singleton.debugListeLieu = false;
+                }
+
+                GUI.backgroundColor = new Color32(255, 180, 0, 255);
+                
                 if (GUILayout.Button("Retirer", optionsBoutons))
                 {
-                    semaine = null;
                     return null;
                 }
                 GUI.backgroundColor = Color.red;
                 if (GUILayout.Button("Supprimer", optionsBoutons))
                 {   
                     SupprimerAssetNarration(semaine);
-                    return null;
+                    return semaine;
                 }
 
                 GUI.backgroundColor = couleurFondDefaut;
@@ -131,6 +142,20 @@ namespace Evenements.Editor
             
             FinirZoneEmbed(Color.cyan);
             return semaine;
+        }
+
+        private static void AfficherDebugSemaine(Semaine semaine)
+        {
+            if (Application.isPlaying) return;
+            if (Plan.Singleton.semaineDebug == semaine && !Plan.Singleton.debugListeLieu)
+            {
+                Plan.Singleton.ChargerSemaine(semaine);
+            }
+
+            if (Plan.Singleton.semaineDebug == null && !Plan.Singleton.debugListeLieu)
+            {
+                Plan.Singleton.NettoyerPins();
+            }
         }
     }
 }

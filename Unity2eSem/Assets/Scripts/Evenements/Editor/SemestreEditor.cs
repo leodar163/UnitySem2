@@ -100,14 +100,13 @@ namespace Evenements.Editor
                 
                 if (GUILayout.Button("Retirer", optionsBoutons))
                 {
-                    semestre = null;
                     return null;
                 }
                 GUI.backgroundColor = Color.red;
                 if (GUILayout.Button("Supprimer", optionsBoutons))
                 {   
                     SupprimerAssetNarration(semestre);
-                    return null;
+                    return semestre;
                 }
 
                 GUI.backgroundColor = couleurFondDefaut;

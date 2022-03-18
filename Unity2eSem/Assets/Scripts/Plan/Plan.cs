@@ -9,7 +9,7 @@ namespace Plan
     {
         private static Plan cela;
 
-        public static Plan Instance
+        public static Plan Singleton
         {
             get
             {
@@ -26,6 +26,12 @@ namespace Plan
         private readonly List<PinsLieu> pins = new List<PinsLieu>();
         
         private Semaine semaine;
+        
+        #if UNITY_EDITOR
+        [HideInInspector] public bool debugListeLieu;
+
+        [HideInInspector] public Semaine semaineDebug;
+        #endif
         
         public void ChargerSemaine(Semaine semaineACharger)
         {
@@ -45,21 +51,56 @@ namespace Plan
             
             foreach (var evenement in semaine.EvenementsDepart)
             {
-                Lieu lieu = evenement.lieu;
-                if (Instantiate(pinsBase.gameObject, lieu.PositionProjetee, new Quaternion(), transform)
-                    .TryGetComponent(out PinsLieu nvPins))
-                {
-                    nvPins.AssignerEvenement(evenement);
-                }
+                AjouterPins(evenement);
             }
         }
 
-        private void NettoyerPins()
+        public void ChargerListeLieux(ListeLieux lieux)
         {
-            for (int i = 0; i < pins.Count; i++)
+            NettoyerPins();
+
+            foreach (var lieu in lieux.Lieux)
             {
-                Destroy(pins[i].gameObject);
+                AjouterPins(lieu);
             }
+        }
+
+        private void AjouterPins(Lieu lieu)
+        {
+            if (Instantiate(pinsBase.gameObject, lieu.PositionProjetee, new Quaternion(), transform)
+                .TryGetComponent(out PinsLieu nvPins))
+            {
+                nvPins.AssignerLieu(lieu);
+                pins.Add(nvPins);
+            }
+        }
+        
+        private void AjouterPins(Evenement evenement)
+        {
+            if(!evenement) return;
+            if (Instantiate(pinsBase.gameObject, evenement.lieu.PositionProjetee, new Quaternion(), transform)
+                .TryGetComponent(out PinsLieu nvPins))
+            {
+                nvPins.AssignerEvenement(evenement);
+                pins.Add(nvPins);
+            }
+        }
+        
+        public void NettoyerPins()
+        {
+            foreach (var pin in pins)
+            {
+                if (Application.isPlaying)
+                {
+                    Destroy(pin.gameObject);    
+                }
+                else
+                {
+                    DestroyImmediate(pin.gameObject);
+                }
+                
+            }
+
             pins.Clear();
         }
     }
