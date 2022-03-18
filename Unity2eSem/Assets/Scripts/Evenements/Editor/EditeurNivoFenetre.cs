@@ -10,7 +10,7 @@ namespace Evenements.Editor
 {
     public class EditeurNivoFenetre : EditorWindow
     {
-        private Semestre semestre;
+        private static Semestre semestre;
         private bool semestreDeploye;
         private Vector2 scrollPosition;
         
@@ -39,7 +39,6 @@ namespace Evenements.Editor
         public static void OuvrirFenetre()
         {
             EditeurNivoFenetre fenetre = GetWindow<EditeurNivoFenetre>();
-            
         }
         
         private static void Sauvegarder()
@@ -53,8 +52,6 @@ namespace Evenements.Editor
             assets.AddRange(LoadAllAssetsAtPath(ScriptableNarrationEditor.cheminSemaines));
             assets.AddRange(LoadAllAssetsAtPath(ScriptableNarrationEditor.cheminSemestres));
 
-            
-            
             foreach (var asset in assets)
             {
                 EditorUtility.SetDirty(asset);

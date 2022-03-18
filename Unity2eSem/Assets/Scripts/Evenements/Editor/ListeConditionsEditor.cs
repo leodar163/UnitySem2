@@ -186,7 +186,7 @@ namespace Evenements.Editor
 
                     if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
                     {
-                        RenomerAssetNarration(conditions, conditions.nomTemporaire);
+                        RenommerAssetNarration(conditions, conditions.nomTemporaire);
                     }
 
                     GUILayout.EndHorizontal();

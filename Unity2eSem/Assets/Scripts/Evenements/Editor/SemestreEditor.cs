@@ -123,9 +123,9 @@ namespace Evenements.Editor
                         GUILayout.TextField(semestre.nomTemporaire, 
                             GUILayout.Height(20));
                     
-                    if (GUILayout.Button("Renomer", GUILayout.Height(20), GUILayout.Width(130)))
+                    if (GUILayout.Button("Renommer", GUILayout.Height(20), GUILayout.Width(130)))
                     {
-                        RenomerAssetNarration(semestre, semestre.nomTemporaire);
+                        RenommerAssetNarration(semestre, semestre.nomTemporaire);
                     }
                     
                     GUILayout.EndHorizontal();

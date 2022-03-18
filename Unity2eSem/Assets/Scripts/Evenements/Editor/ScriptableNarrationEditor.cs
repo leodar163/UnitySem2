@@ -135,7 +135,7 @@ namespace Evenements.Editor
 
         }
 
-        protected static void RenomerAssetNarration(ScriptableNarration assetNarration, string nvNom)
+        protected static void RenommerAssetNarration(ScriptableNarration assetNarration, string nvNom)
         {
             //EditorUtility.SaveFilePanel("Renomer " + assetNarration.name, )
             if (!NomEstValide(assetNarration.GetType(), nvNom))
@@ -230,6 +230,14 @@ namespace Evenements.Editor
                     }
                 }
 
+                if (asset is Semestre semestre)
+                {
+                    foreach (var _semaine in semestre.Semaines)
+                    {
+                        SupprimerAssetNarration(_semaine);
+                    }
+                }
+
                 AssetDatabase.DeleteAsset(RecupChemin(asset.GetType()) + '/' + asset.name + ".asset");
                 DestroyImmediate(asset, true);
             }
@@ -246,8 +254,8 @@ namespace Evenements.Editor
             Rect Indent = new Rect(rectHori.x, rectHori.y - 20,
                 rectHori.width - rectVerti.width - 5, rectHori.height - 20);
 
-            GUI.backgroundColor = couleur / 2;
-            EditeurNivoFenetre.DessinerCarre(rectVerti,couleur/2);
+            GUI.backgroundColor = couleur;
+            EditeurNivoFenetre.DessinerCarre(rectVerti,couleur);
             
             GUI.backgroundColor = couleur;
             GUILayout.Button("", GUILayout.Height(20));
