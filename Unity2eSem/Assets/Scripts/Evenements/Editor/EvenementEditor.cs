@@ -128,6 +128,9 @@ namespace Evenements.Editor
 
         private static void DessinerDescritpions(Evenement evenement)
         {
+            GUILayout.Label("Titre");
+            evenement.titre = GUILayout.TextArea(evenement.titre);
+            
             GUILayout.Label("Intro d'infobulle");
             evenement.intro = GUILayout.TextArea(evenement.intro);
             

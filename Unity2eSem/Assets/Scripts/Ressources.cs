@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Ressources : MonoBehaviour
 {
+    private static Ressources cela;
+
+    public static Ressources Singleton
+    {
+        get
+        {
+            if (!cela) cela = FindObjectOfType<Ressources>();
+            if (!cela) cela = new GameObject("Ressource").AddComponent<Ressources>();
+            return cela;
+        }
+    }
+    
     [SerializeField] private float etude;
     [SerializeField] private float santeMentale; 
     [SerializeField] private int argent;

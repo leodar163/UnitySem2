@@ -10,6 +10,8 @@ namespace Evenements
         [SerializeField] public Lieu lieu;
         
         [SerializeField] public Sprite imageOverride;
+
+        [SerializeField] public string titre = "";
         
         [SerializeField] public string intro = "";
 

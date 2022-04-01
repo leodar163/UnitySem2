@@ -30,5 +30,10 @@ namespace Evenements
         {
         
         }
+
+        public void PasserSemaineSuivante()
+        {
+            
+        }
     }
 }
