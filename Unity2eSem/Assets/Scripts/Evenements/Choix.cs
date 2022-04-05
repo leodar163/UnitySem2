@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Evenements
@@ -48,6 +49,24 @@ namespace Evenements
         {
             conditions = conditions.FindAll(condition => condition != null);
             consequences = consequences.FindAll(condition => condition != null);
+        }
+
+        public bool estDebloqued
+        {
+            get
+            {
+                return conditions.All(condition => condition.estRemplie);
+            }
+        }
+
+        public bool aAssezRessources
+        {
+            get
+            {
+                return Ressources.Singleton.Argent >= couts.argent
+                       && Ressources.Singleton.Etude >= couts.etude
+                       && Ressources.Singleton.SanteMentale >= couts.santeMentale;
+            }
         }
     }
 }

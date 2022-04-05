@@ -19,7 +19,9 @@ namespace Evenements.Interface
                 return cela;
             }
         }
-        
+
+        [SerializeField] private Evenement evenementTest;
+        [Space]
         [SerializeField] private Image illustration;
         [SerializeField] private TextMeshProUGUI titre;
         [SerializeField] private TextMeshProUGUI lieu;
@@ -31,24 +33,59 @@ namespace Evenements.Interface
 
         private Evenement evenement;
 
+        private void Start()
+        {
+            if(evenementTest) ChargerEvenement(evenementTest);
+        }
+
         public void ChargerEvenement(Evenement evenementACharger)
         {
-            if (evenementACharger.imageOverride)
+            evenement = evenementACharger;
+            
+            ChargerEvenement();
+        }
+
+        public void ChargerEvenement()
+        {
+            if (!evenement) throw new NullReferenceException("La propriété \"evenement\" n'est pas assignée");
+            
+            if (evenement.imageOverride)
             {
-                illustration.sprite = evenementACharger.imageOverride;
+                illustration.sprite = evenement.imageOverride;
             }
             else
             {
-                illustration.sprite = evenementACharger.lieu.illustration;
+                illustration.sprite = evenement.lieu.illustration;
             }
 
-            titre.text = evenementACharger.titre;
-
-            lieu.text = evenementACharger.lieu.nom;
-
-            description.text = evenementACharger.description;
+            titre.text = evenement.titre;
+            //evenement.lieu.nom = "Bar";
+            lieu.text = evenement.lieu.nom;
             
+            print(evenement.lieu.nom);
+
+            description.text = evenement.description;
             
+            ChargerChoix();
+        }
+        
+        private void ChargerChoix()
+        {
+            foreach (var choix in evenement.listeChoix)
+            {
+                if (choix != null && choix.estDebloqued)
+                {
+                  AjouterChoix(choix);   
+                }
+            }
+        }
+
+        private void AjouterChoix(Choix choixARajouter)
+        {
+            if(Instantiate(choixInterfaceBase, zoneChoix).TryGetComponent(out ChoixInterface nvChoix))
+            {
+                nvChoix.ChargerChoix(choixARajouter);
+            }
         }
     }
 }

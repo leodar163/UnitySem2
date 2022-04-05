@@ -1995,10 +1995,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf6921296145b39652093ab89caaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evenementTest: {fileID: 11400000, guid: 31384c3d5d4dca8419651ec6b5582c7f, type: 2}
   illustration: {fileID: 120811601}
-  titre: {fileID: 0}
-  lieu: {fileID: 0}
-  description: {fileID: 0}
+  titre: {fileID: 122481239}
+  lieu: {fileID: 1021993867}
+  description: {fileID: 1005860571}
   zoneChoix: {fileID: 1634865532}
   choixInterfaceBase: {fileID: 856974303849041118, guid: 338d976005f7614439f250260e40783c, type: 3}
 --- !u!1 &1983598138

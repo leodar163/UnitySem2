@@ -89,7 +89,7 @@ namespace Evenements.Editor
                     if (lieu.nomTemporaire.Length < 1 || listeTest.Count > 0)
                     {
                         if (EditorUtility.DisplayDialog("Nom invalide",
-                            "Le nom choisi est soit trop court, soit existe déjà",
+                            "Le nom choisi est soit trop court, soit existe déjà dans la liste",
                             "Mince"))
                         {
                             return;

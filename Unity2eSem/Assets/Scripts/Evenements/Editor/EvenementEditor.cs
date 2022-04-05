@@ -44,7 +44,15 @@ namespace Evenements.Editor
             
             GUILayout.Label("Conditions");
             List<Condition> conditionsChoix =evenement.conditions;
-                    
+
+            if (!conditions)
+            {
+                GUI.backgroundColor = Color.green;
+                GUILayout.Label("Pas de liste de condition disponible");
+                GUI.backgroundColor = couleurFondDefaut;
+                return;
+            }
+            
             string[] conditionsDispo = conditions.RecupNomsConditions(conditionsChoix);
                 
             for (int j = 0; j < conditionsChoix.Count; j++)

@@ -16,13 +16,16 @@ namespace Evenements.Editor
         
         private void OnGUI()
         {
+            Color couleurFondDefaut = GUI.backgroundColor;
             Plan.Plan.Singleton.NettoyerPins();
             
+            GUI.backgroundColor = Color.black;
             if (GUILayout.Button("Sauvergarder"))
             {
                 Sauvegarder();
             }
 
+            GUI.backgroundColor = couleurFondDefaut;
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);
             
             DessinerSemestre();
@@ -60,7 +63,7 @@ namespace Evenements.Editor
             }
             AssetDatabase.SaveAssets();
             
-            Debug.Log(assets.Count);
+            //Debug.Log(assets.Count);
             Debug.Log("Assets de narration sauvegardés");
         }
         
@@ -87,7 +90,7 @@ namespace Evenements.Editor
                     if (assetPath.Contains(".asset") && !assetPath.Contains(".meta")) 
                     {
                         objects.Add(AssetDatabase.LoadMainAssetAtPath(assetPath));
-                        Debug.Log("Loaded " + assetPath);
+                        //Debug.Log("Loaded " + assetPath);
                     }
                 }
             }

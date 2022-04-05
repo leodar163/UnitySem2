@@ -19,8 +19,11 @@ MonoBehaviour:
     icone: {fileID: 0}
     illustration: {fileID: 0}
     nomTemporaire: Bar
-  imageOverride: {fileID: 0}
-  intro: 
-  description: 
+  imageOverride: {fileID: 21300000, guid: 50e42b9a2a4b172489e281e41080d42e, type: 3}
+  titre: Test
+  intro: Ceci est un test
+  description: "Cet \xE9v\xE8nement est un test pour voir si les \xE9v\xE8nements
+    se chargent bien."
   choix:
   - {fileID: 11400000, guid: c0cdbb13823161049b9df0d95e106772, type: 2}
+  conditions: []
