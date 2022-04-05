@@ -1,3 +1,4 @@
+using Evenements.Interface;
 using UnityEngine;
 
 namespace Evenements
@@ -33,7 +34,7 @@ namespace Evenements
 
         public void PasserSemaineSuivante()
         {
-            
+            EvenementInterface.Singleton.FermerEvenement();
         }
     }
 }

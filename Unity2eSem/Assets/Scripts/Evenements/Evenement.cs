@@ -19,7 +19,15 @@ namespace Evenements
         [SerializeField] public string description = "";
 
         [SerializeField][HideInInspector] private List<Choix> choix = new List<Choix>();
-        public List<Choix> listeChoix => choix;
+
+        public List<Choix> listeChoix
+        {
+            get
+            {
+                choix = choix.FindAll(choix1 => choix1 != null);
+                return choix;
+            }
+        }
 
         [SerializeField] public List<Condition> conditions = new List<Condition>();
 

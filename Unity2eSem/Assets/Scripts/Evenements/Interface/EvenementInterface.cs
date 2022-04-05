@@ -14,7 +14,7 @@ namespace Evenements.Interface
         {
             get
             {
-                if (!cela) cela = FindObjectOfType<EvenementInterface>();
+                if (!cela) cela = FindObjectOfType<EvenementInterface>(true);
                 if (!cela) throw new Exception("Il manque un interface d'événement dans la scene");
                 return cela;
             }
@@ -61,8 +61,6 @@ namespace Evenements.Interface
             titre.text = evenement.titre;
             //evenement.lieu.nom = "Bar";
             lieu.text = evenement.lieu.nom;
-            
-            print(evenement.lieu.nom);
 
             description.text = evenement.description;
             
@@ -71,6 +69,7 @@ namespace Evenements.Interface
         
         private void ChargerChoix()
         {
+            NettoyerChoix();
             foreach (var choix in evenement.listeChoix)
             {
                 if (choix != null && choix.estDebloqued)
@@ -85,7 +84,22 @@ namespace Evenements.Interface
             if(Instantiate(choixInterfaceBase, zoneChoix).TryGetComponent(out ChoixInterface nvChoix))
             {
                 nvChoix.ChargerChoix(choixARajouter);
+                listeChoix.Add(nvChoix);
             }
+        }
+
+        private void NettoyerChoix()
+        {
+            foreach (var choix in listeChoix)
+            {
+                Destroy(choix.gameObject);
+            }
+            listeChoix.Clear();
+        }
+
+        public void FermerEvenement()
+        {
+            gameObject.SetActive(false);
         }
     }
 }
