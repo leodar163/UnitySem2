@@ -1,11 +1,12 @@
 ﻿using System;
+using Ressource;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Evenements.Interface
+namespace Evenements.UI
 {
-    public class ChoixInterface : MonoBehaviour
+    public class ChoixUI : MonoBehaviour
     {
         private Choix choix;
         [SerializeField] private TextMeshProUGUI titre;
@@ -38,7 +39,7 @@ namespace Evenements.Interface
 
             if (choix.evenementSuivant)
             {
-                EvenementInterface.Singleton.ChargerEvenement(choix.evenementSuivant);
+                EvenementUI.Singleton.ChargerEvenement(choix.evenementSuivant);
             }
             else
             {

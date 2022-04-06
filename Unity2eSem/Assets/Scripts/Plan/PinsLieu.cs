@@ -1,6 +1,6 @@
 ﻿using System;
 using Evenements;
-using Evenements.Interface;
+using Evenements.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +30,7 @@ namespace Plan
         public void LancerEvenement()
         {
             if(!evenement) return;
-            EvenementInterface.Singleton.ChargerEvenement(evenement);
+            EvenementUI.Singleton.ChargerEvenement(evenement);
         }
     }
 }

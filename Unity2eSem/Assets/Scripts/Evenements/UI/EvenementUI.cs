@@ -4,17 +4,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Evenements.Interface
+namespace Evenements.UI
 {
-    public class EvenementInterface : MonoBehaviour
+    public class EvenementUI : MonoBehaviour
     {
-        private static EvenementInterface cela;
+        private static EvenementUI cela;
 
-        public static EvenementInterface Singleton
+        public static EvenementUI Singleton
         {
             get
             {
-                if (!cela) cela = FindObjectOfType<EvenementInterface>(true);
+                if (!cela) cela = FindObjectOfType<EvenementUI>(true);
                 if (!cela) throw new Exception("Il manque un interface d'événement dans la scene");
                 return cela;
             }
@@ -28,8 +28,8 @@ namespace Evenements.Interface
         [SerializeField] private TextMeshProUGUI description;
         [Header("Choix")]
         [SerializeField] private RectTransform zoneChoix;
-        [SerializeField] private ChoixInterface choixInterfaceBase;
-        private List<ChoixInterface> listeChoix = new List<ChoixInterface>();
+        [SerializeField] private ChoixUI choixUIBase;
+        private List<ChoixUI> listeChoix = new List<ChoixUI>();
 
         private Evenement evenement;
 
@@ -82,7 +82,7 @@ namespace Evenements.Interface
 
         private void AjouterChoix(Choix choixARajouter)
         {
-            if(Instantiate(choixInterfaceBase, zoneChoix).TryGetComponent(out ChoixInterface nvChoix))
+            if(Instantiate(choixUIBase, zoneChoix).TryGetComponent(out ChoixUI nvChoix))
             {
                 nvChoix.ChargerChoix(choixARajouter);
                 listeChoix.Add(nvChoix);

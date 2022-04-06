@@ -1,5 +1,5 @@
 using System;
-using Evenements.Interface;
+using Evenements.UI;
 using TMPro;
 using UnityEngine;
 
@@ -49,7 +49,7 @@ namespace Evenements
             if (semestre.Semaines == null || semestre.Semaines.Count == 0)
                 throw new NullReferenceException("Impossible de charger le semestre " + semestre.name +
                                                  ":\nLa liste de semaine est soit nulle, soit vide");
-            EvenementInterface.Singleton.OuvrirFenetre(false);
+            EvenementUI.Singleton.OuvrirFenetre(false);
             indexSemaine = 0;
             ChargerSemaine(semestre.Semaines[indexSemaine]);   
         }
@@ -63,7 +63,7 @@ namespace Evenements
         
         public void PasserSemaineSuivante()
         {
-            EvenementInterface.Singleton.OuvrirFenetre(false);
+            EvenementUI.Singleton.OuvrirFenetre(false);
             indexSemaine++;
             if(semestre.Semaines.Count <= indexSemaine) return;
             ChargerSemaine(semestre.Semaines[indexSemaine]);

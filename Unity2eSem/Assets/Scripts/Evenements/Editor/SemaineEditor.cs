@@ -149,7 +149,7 @@ namespace Evenements.Editor
             if (Application.isPlaying) return;
             if (Plan.Singleton.semaineDebug == semaine && !Plan.Singleton.debugListeLieu)
             {
-                Plan.Singleton.ChargerSemaine(semaine);
+                Plan.Singleton.ChargerSemaine(semaine, true);
             }
 
             if (Plan.Singleton.semaineDebug == null && !Plan.Singleton.debugListeLieu)

@@ -24,7 +24,7 @@ namespace Plan
         [SerializeField] private Image imagePlan;
 
         [SerializeField] private PinsLieu pinsBase;
-        private readonly List<PinsLieu> pins = new List<PinsLieu>();
+        [SerializeField] private List<PinsLieu> pins = new List<PinsLieu>();
         
         private Semaine semaine;
         
@@ -39,13 +39,13 @@ namespace Plan
             NettoyerPins();
         }
 
-        public void ChargerSemaine(Semaine semaineACharger)
+        public void ChargerSemaine(Semaine semaineACharger, bool debug = false)
         {
             semaine = semaineACharger;
-            ChargerSemaine();
+            ChargerSemaine(debug);
         }
 
-        public void ChargerSemaine()
+        public void ChargerSemaine(bool debug = false)
         {
             if (!semaine)
             {
@@ -54,8 +54,10 @@ namespace Plan
             }
             
             NettoyerPins();
-            
-            foreach (var evenement in semaine.EvenementsDepart)
+
+            foreach (var evenement in debug  
+                ? semaine.EvenementsDepart
+                : semaine.EvenementsDepart.FindAll(evenement => evenement.estDebloqued))
             {
                 AjouterPins(evenement);
             }

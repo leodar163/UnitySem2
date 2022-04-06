@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Plan;
 using UnityEngine;
 
@@ -30,6 +31,14 @@ namespace Evenements
         }
 
         [SerializeField] public List<Condition> conditions = new List<Condition>();
+
+        public bool estDebloqued
+        {
+            get
+            {
+                return conditions.All(condition => condition.estRemplie);
+            }
+        }
 
         #if UNITY_EDITOR
 

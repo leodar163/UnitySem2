@@ -16,18 +16,18 @@ namespace Evenements.Editor
 
         private void OnDestroy()
         {
-            Plan.Plan.Singleton.NettoyerPins();
+            if(!Application.isPlaying) Plan.Plan.Singleton.NettoyerPins();
         }
 
         private void OnLostFocus()
         {
-            Plan.Plan.Singleton.NettoyerPins();
+            if(!Application.isPlaying) Plan.Plan.Singleton.NettoyerPins();
         }
 
         private void OnGUI()
         {
             Color couleurFondDefaut = GUI.backgroundColor;
-            Plan.Plan.Singleton.NettoyerPins();
+            if(!Application.isPlaying) Plan.Plan.Singleton.NettoyerPins();
             
             GUI.backgroundColor = Color.black;
             if (GUILayout.Button("Sauvergarder"))
