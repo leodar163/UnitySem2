@@ -7,7 +7,7 @@ namespace Evenements
     public class Semestre : ScriptableNarration
     {
         [SerializeField] private List<Semaine> semaines = new List<Semaine>();
-        public List<Semaine> Semaines => semaines;
+        public List<Semaine> Semaines => semaines.FindAll(semaine => semaine != null);
 
         [SerializeField] [HideInInspector] public ListeConditions conditions;
         [SerializeField] [HideInInspector] public ListeLieux lieux;

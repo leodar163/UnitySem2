@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02262c909c6cd6447be996789386cd2f, type: 3}
-  m_Name: ListeConditions0
+  m_Name: ListeConditionsTest
   m_EditorClassIdentifier: 
   nomTemporaire: ListeConditions0
   conditions:
-  - nom: Condition0
+  - nom: ConditionTest1
     estRemplie: 0
-    nomTemporaire: Condition0
+    nomTemporaire: ConditionTest1

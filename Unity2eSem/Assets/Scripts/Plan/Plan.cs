@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Evenements;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +33,12 @@ namespace Plan
 
         [HideInInspector] public Semaine semaineDebug;
         #endif
-        
+
+        private void Awake()
+        {
+            NettoyerPins();
+        }
+
         public void ChargerSemaine(Semaine semaineACharger)
         {
             semaine = semaineACharger;

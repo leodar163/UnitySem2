@@ -65,6 +65,7 @@ namespace Evenements.Interface
             description.text = evenement.description;
             
             ChargerChoix();
+            OuvrirFenetre(true);
         }
         
         private void ChargerChoix()
@@ -97,9 +98,9 @@ namespace Evenements.Interface
             listeChoix.Clear();
         }
 
-        public void FermerEvenement()
+        public void OuvrirFenetre(bool ouvrir)
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(ouvrir);
         }
     }
 }

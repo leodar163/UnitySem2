@@ -13,7 +13,17 @@ namespace Evenements.Editor
         private static Semestre semestre;
         private bool semestreDeploye;
         private Vector2 scrollPosition;
-        
+
+        private void OnDestroy()
+        {
+            Plan.Plan.Singleton.NettoyerPins();
+        }
+
+        private void OnLostFocus()
+        {
+            Plan.Plan.Singleton.NettoyerPins();
+        }
+
         private void OnGUI()
         {
             Color couleurFondDefaut = GUI.backgroundColor;

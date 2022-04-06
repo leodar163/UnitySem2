@@ -151,6 +151,7 @@ namespace Evenements.Editor
                                           assetNarration.name + ".asset", nvNom);
                 assetNarration.name = nvNom;
                 //Debug.Log(ListeLieux.Instance.Lieux[0].nom);
+                AssetDatabase.SaveAssets();
             }
         }
 

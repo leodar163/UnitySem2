@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041116c8619b4dbb83119f275148a025, type: 3}
-  m_Name: Semestre0
+  m_Name: SemestreTest
   m_EditorClassIdentifier: 
   nomTemporaire: Semestre0
   semaines:

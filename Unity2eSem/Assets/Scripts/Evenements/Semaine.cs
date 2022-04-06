@@ -8,9 +8,9 @@ namespace Evenements
     {
         [SerializeField] private List<Evenement> evenementsDepart = new List<Evenement>();
         public List<Evenement> EvenementsDepart => evenementsDepart;
+        [SerializeField] public string Description = "";
         
         #if UNITY_EDITOR
-        
         private bool[] evenementsDeployes;
 
         public bool[] EvenementsDeployes

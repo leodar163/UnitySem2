@@ -1,4 +1,6 @@
+using System;
 using Evenements.Interface;
+using TMPro;
 using UnityEngine;
 
 namespace Evenements
@@ -19,11 +21,16 @@ namespace Evenements
         
         [Tooltip("Semestre lancé au démarage du jeu")]
         [SerializeField] private Semestre semestre;
+
+        [SerializeField] private TextMeshProUGUI descriptionSemaine;
+        [SerializeField] private TextMeshProUGUI numSemaine;
+
+        private int indexSemaine;
         
         // Start is called before the first frame update
         void Start()
         {
-        
+            if(semestre) ChargerSemestre();
         }
 
         // Update is called once per frame
@@ -32,9 +39,34 @@ namespace Evenements
         
         }
 
+        private void ChargerSemestre(Semestre semestreACharger)
+        {
+            semestre = semestreACharger;
+        }
+
+        private void ChargerSemestre()
+        {
+            if (semestre.Semaines == null || semestre.Semaines.Count == 0)
+                throw new NullReferenceException("Impossible de charger le semestre " + semestre.name +
+                                                 ":\nLa liste de semaine est soit nulle, soit vide");
+            EvenementInterface.Singleton.OuvrirFenetre(false);
+            indexSemaine = 0;
+            ChargerSemaine(semestre.Semaines[indexSemaine]);   
+        }
+        
+        private void ChargerSemaine(Semaine semaineACharger)
+        {
+            descriptionSemaine.text = semaineACharger.Description;
+            numSemaine.text = "semaine " + (indexSemaine + 1);
+            Plan.Plan.Singleton.ChargerSemaine(semaineACharger);
+        }
+        
         public void PasserSemaineSuivante()
         {
-            EvenementInterface.Singleton.FermerEvenement();
+            EvenementInterface.Singleton.OuvrirFenetre(false);
+            indexSemaine++;
+            if(semestre.Semaines.Count <= indexSemaine) return;
+            ChargerSemaine(semestre.Semaines[indexSemaine]);
         }
     }
 }

@@ -23,5 +23,6 @@ MonoBehaviour:
   titre: Evenement test suite
   intro: pas besoin
   description: "Ceci et la suite du test d'\xE9v\xE8nement"
-  choix: []
+  choix:
+  - {fileID: 11400000, guid: 48f503d47936e704ca777cb67bb6495c, type: 2}
   conditions: []
