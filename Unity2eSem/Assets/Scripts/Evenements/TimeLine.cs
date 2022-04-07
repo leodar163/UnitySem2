@@ -56,7 +56,7 @@ namespace Evenements
         
         private void ChargerSemaine(Semaine semaineACharger)
         {
-            descriptionSemaine.text = semaineACharger.Description;
+            descriptionSemaine.text = semaineACharger.description;
             numSemaine.text = "semaine " + (indexSemaine + 1);
             Plan.Plan.Singleton.ChargerSemaine(semaineACharger);
         }

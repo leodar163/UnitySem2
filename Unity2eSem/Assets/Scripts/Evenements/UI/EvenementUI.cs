@@ -82,7 +82,7 @@ namespace Evenements.UI
 
         private void AjouterChoix(Choix choixARajouter)
         {
-            if(Instantiate(choixUIBase, zoneChoix).TryGetComponent(out ChoixUI nvChoix))
+            if (Instantiate(choixUIBase, zoneChoix).TryGetComponent(out ChoixUI nvChoix))
             {
                 nvChoix.ChargerChoix(choixARajouter);
                 listeChoix.Add(nvChoix);

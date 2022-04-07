@@ -14,7 +14,7 @@ namespace Evenements.Editor
         {
             Semaine semaine = target as Semaine;
             if(!semaine) return;
-            
+
             DessinerInspecteur(semaine, null, null, true);
         }
 
@@ -26,9 +26,129 @@ namespace Evenements.Editor
                 DessinerSauvegarde(semaine);
                 GUILayout.Space(15);
             }
+            DessinerListeDescription(semaine, conditions);
             DessinerListeEvenements(semaine, conditions, lieux);
             semaine.NettoyerEvenementsDepart();
             AfficherDebugSemaine(semaine);
+        }
+        
+        private static void DessinerListeDescription(Semaine semaine, ListeConditions conditions)
+        {
+            Color couleurFondDefaut = GUI.backgroundColor;
+            Rect rectVerti = EditorGUILayout.BeginVertical();
+
+            GUI.backgroundColor = Color.green;
+            if (GUILayout.Button("Ajouter Description"))
+            {
+                semaine.descriptions.Add(new Semaine.Description());
+            }
+            GUI.backgroundColor = couleurFondDefaut;
+            
+            for (int i = 0; i < semaine.descriptions.Count; i++)
+            {
+                Rect rectElementListe = EditorGUILayout.BeginHorizontal();
+
+                GUILayout.BeginVertical();
+                int tailleBoutons = 20;
+                
+                if (i != 0 && 
+                         GUILayout.Button("^", GUILayout.Width(tailleBoutons)))
+                {
+                    Semaine.Description description = semaine.descriptions[i];
+                    semaine.descriptions.RemoveAt(i);
+                    
+                    semaine.descriptions.Insert(i - 1, description);
+
+                    GUILayout.EndVertical();
+                    EditorGUILayout.EndHorizontal();
+                    return;
+                } 
+                if (i != semaine.descriptions.Count - 1 && 
+                      GUILayout.Button("ˇ",GUILayout.Width(tailleBoutons)))
+                {
+                    Semaine.Description description = semaine.descriptions[i];
+                    semaine.descriptions.RemoveAt(i);
+                    semaine.descriptions.Insert(i + 1 , description);
+                    
+                    GUILayout.EndVertical();
+                    EditorGUILayout.EndHorizontal();
+                    return;
+                }
+                GUILayout.EndVertical();
+                
+                GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("X",GUILayout.Width(tailleBoutons)))
+                {
+                    semaine.descriptions.RemoveAt(i);
+                }
+                GUI.backgroundColor = couleurFondDefaut;
+
+                GUILayout.BeginVertical();
+                GUILayout.Label("Desctiption");
+                semaine.descriptions[i].description = GUILayout.TextArea(semaine.descriptions[i].description);
+                
+                GUILayout.Space(10);
+                
+                GUILayout.Label("Conditions");
+
+                if (conditions)
+                {
+                    List<Condition> conditionsDescription = semaine.descriptions[i].conditions;
+                    
+                    string[] conditionsDispo = conditions.RecupNomsConditions(conditionsDescription);
+                
+                    for (int j = 0; j < conditionsDescription.Count; j++)
+                    {
+                        GUILayout.BeginHorizontal();
+                        string[] conditionsDispoPlusUn = new string[conditionsDispo.Length + 1];
+                        conditionsDispoPlusUn[0] = conditionsDescription[j].nom;
+                        conditionsDispo.CopyTo(conditionsDispoPlusUn, 1);
+
+                        int indexSelecetion = 0;
+                        indexSelecetion = EditorGUILayout.Popup(
+                            indexSelecetion, conditionsDispoPlusUn);
+                        conditionsDescription[j] = conditions.RecupCondition(conditionsDispoPlusUn[indexSelecetion]);
+
+                        GUI.backgroundColor = Color.red;
+                        if (GUILayout.Button("Supprimer"))
+                        {
+                            conditionsDescription.RemoveAt(j);
+                            GUILayout.EndHorizontal();
+                            GUILayout.EndVertical();
+                            break;
+                        }
+                        GUI.backgroundColor = couleurFondDefaut;
+                    
+                        GUILayout.EndHorizontal();
+                    } 
+                
+                    GUI.backgroundColor = Color.green;
+                    if (conditions.Conditions.Count > conditionsDescription.Count && 
+                        GUILayout.Button("Ajouter Condition"))
+                    {
+                        Condition conditionDefaut = conditions.RecupCondition(
+                            conditions.RecupNomsConditions(conditionsDescription)[0]);
+                    
+                        conditionsDescription.Add(conditionDefaut);
+                    }
+                    GUI.backgroundColor = couleurFondDefaut;
+                    GUILayout.Space(10);
+                }
+                else
+                {
+                    GUILayout.Label("Il n'y a pas de liste de condition");
+                }
+                GUILayout.EndVertical();
+                
+                
+                EditeurNivoFenetre.DessinerCarre(rectElementListe, Color.black);
+                GUILayout.FlexibleSpace();
+                EditorGUILayout.EndHorizontal();
+            }
+            
+            EditeurNivoFenetre.DessinerCarre(rectVerti,Color.black);
+
+            EditorGUILayout.EndVertical();
         }
         
         private static void DessinerListeEvenements(Semaine semaine, ListeConditions conditions, ListeLieux lieux)

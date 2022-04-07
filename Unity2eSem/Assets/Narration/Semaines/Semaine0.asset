@@ -16,4 +16,11 @@ MonoBehaviour:
   evenementsDepart:
   - {fileID: 11400000, guid: 31384c3d5d4dca8419651ec6b5582c7f, type: 2}
   - {fileID: 0}
-  Description: 
+  description: 
+  descriptions:
+  - conditions: []
+    description: 
+  - conditions: []
+    description: 
+  - conditions: []
+    description: 

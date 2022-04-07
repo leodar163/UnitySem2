@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Evenements
@@ -8,9 +9,24 @@ namespace Evenements
     {
         [SerializeField] private List<Evenement> evenementsDepart = new List<Evenement>();
         public List<Evenement> EvenementsDepart => evenementsDepart.FindAll(evenement => evenement);
-        [SerializeField] public string Description = "";
+        [SerializeField] public string description = "";
         
-        #if UNITY_EDITOR
+        [Serializable]
+        public class Description
+        {
+            [SerializeField] public List<Condition> conditions = new List<Condition>();
+            [SerializeField] public string description = "";
+
+            public Description()
+            {
+                description = "";
+                conditions = new List<Condition>();
+            }
+        }
+
+        [SerializeField] public List<Description> descriptions = new List<Description>();
+
+#if UNITY_EDITOR
         private bool[] evenementsDeployes;
 
         public bool[] EvenementsDeployes
