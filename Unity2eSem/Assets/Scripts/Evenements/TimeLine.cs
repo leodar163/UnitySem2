@@ -22,9 +22,6 @@ namespace Evenements
         [Tooltip("Semestre lancé au démarage du jeu")]
         [SerializeField] private Semestre semestre;
 
-        [SerializeField] private TextMeshProUGUI descriptionSemaine;
-        [SerializeField] private TextMeshProUGUI numSemaine;
-
         private int indexSemaine;
         
         // Start is called before the first frame update
@@ -56,8 +53,8 @@ namespace Evenements
         
         private void ChargerSemaine(Semaine semaineACharger)
         {
-            descriptionSemaine.text = semaineACharger.description;
-            numSemaine.text = "semaine " + (indexSemaine + 1);
+            BoiteDescription.Singleton.descriptionPersistente = semaineACharger.description;
+            BoiteDescription.Singleton.SetNumeroSemaine(indexSemaine + 1);
             Plan.Plan.Singleton.ChargerSemaine(semaineACharger);
         }
         

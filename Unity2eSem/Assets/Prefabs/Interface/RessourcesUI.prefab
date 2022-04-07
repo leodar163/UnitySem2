@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 8172800177111114928}
   - component: {fileID: 8172800177111114930}
   - component: {fileID: 8172800177111114931}
+  - component: {fileID: 8191403943769776623}
   m_Layer: 5
   m_Name: IconeArgent
   m_TagString: Untagged
@@ -383,6 +384,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8191403943769776623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172800177111114929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e7aedc9e9b44c19f4184cbffd7f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageAHurler: "Ma rgent. On dit que l'argent ne fait pas le bonheur, mais j'en
+    ai quand-m\xEAme besoin pour me nourrir, me loger et toutes ces choses \xE0 peine
+    primordiales."
 --- !u!1 &8172800177128707096
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8172800177128707099}
   - component: {fileID: 8172800177128707098}
+  - component: {fileID: 5079169105410600288}
   m_Layer: 5
   m_Name: LigneSanteMentale
   m_TagString: Untagged
@@ -448,6 +465,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5079169105410600288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172800177128707096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e7aedc9e9b44c19f4184cbffd7f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageAHurler: "Ma sant\xE9 mentale. Si je veux tenir le semestre, j'ai int\xE9r\xEAt
+    \xE0 en prendre soin."
 --- !u!1 &8172800177132459802
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8172800177691201872}
   - component: {fileID: 8172800177691201875}
+  - component: {fileID: 1672045204139295648}
   m_Layer: 5
   m_Name: LigneEtude
   m_TagString: Untagged
@@ -882,6 +914,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1672045204139295648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172800177691201873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e7aedc9e9b44c19f4184cbffd7f304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageAHurler: "Mon niveau d'\xE9tude. Plus il est haut, plus j'ai de chance de
+    finir mon semestre avec brio !"
 --- !u!1 &8172800177799536951
 GameObject:
   m_ObjectHideFlags: 0

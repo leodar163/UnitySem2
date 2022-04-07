@@ -6,19 +6,24 @@ using UnityEngine.UI;
 
 namespace Plan
 {
+    [RequireComponent(typeof(HurleurDescription))]
     public class PinsLieu : MonoBehaviour
     {
         [Header("Interface")]
         [SerializeField] private Image iconePins;
         [SerializeField] private Image iconeLieu;
         [SerializeField] private Button bouton;
-        [Header("Narration")] 
+        [Header("Narration")]
         [SerializeField] private Evenement evenement;
-
+        [Header("Message")] 
+        [SerializeField] private HurleurDescription hurleur;
+        
+        
         public void AssignerEvenement(Evenement evenementAAssigner)
         {
             evenement = evenementAAssigner;
             iconeLieu.sprite = evenement.lieu.icone;
+            hurleur.messageAHurler = evenementAAssigner.intro;
         }
 
         public void AssignerLieu(Lieu lieu)

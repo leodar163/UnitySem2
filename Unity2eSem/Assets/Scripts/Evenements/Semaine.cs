@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Evenements
@@ -9,19 +10,40 @@ namespace Evenements
     {
         [SerializeField] private List<Evenement> evenementsDepart = new List<Evenement>();
         public List<Evenement> EvenementsDepart => evenementsDepart.FindAll(evenement => evenement);
-        [SerializeField] public string description = "";
+        
+        public string description
+        {
+            get
+            {
+                foreach (var _description in descriptions)
+                {
+                    if (_description.estDebloqued) return _description.description;
+                }
+
+                return "Aucune description de semaine débloquée. Pense à rajouter une descirption \"par défaut\"";
+            }
+        }
         
         [Serializable]
         public class Description
         {
-            [SerializeField] public List<Condition> conditions = new List<Condition>();
-            [SerializeField] public string description = "";
+            [SerializeField] public List<Condition> conditions;
+            [SerializeField] public string description;
 
             public Description()
             {
                 description = "";
                 conditions = new List<Condition>();
             }
+
+            public bool estDebloqued
+            {
+                get
+                {
+                    return conditions.All(condition => condition.estRemplie);
+                }
+            }
+            
         }
 
         [SerializeField] public List<Description> descriptions = new List<Description>();
