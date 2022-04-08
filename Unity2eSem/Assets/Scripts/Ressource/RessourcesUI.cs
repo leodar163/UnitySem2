@@ -10,6 +10,8 @@ namespace Ressource
         [SerializeField] private Slider barreSanteMentale;
         [SerializeField] private Slider barreEtude;
         [SerializeField] private TextMeshProUGUI quantiteArgent;
+        [SerializeField] private TextMeshProUGUI quantiteSanteMentale;
+        [SerializeField] private TextMeshProUGUI quantiteEtude;
 
         private void Start()
         {

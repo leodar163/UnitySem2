@@ -80,6 +80,9 @@ namespace Evenements.Editor
                 if (GUILayout.Button("X",GUILayout.Width(tailleBoutons)))
                 {
                     semaine.descriptions.RemoveAt(i);
+                    GUILayout.EndVertical();
+                    EditorGUILayout.EndHorizontal();
+                    return;
                 }
                 GUI.backgroundColor = couleurFondDefaut;
 
