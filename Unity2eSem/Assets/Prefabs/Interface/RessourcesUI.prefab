@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7430647593959436498}
   - component: {fileID: 8678694144736849310}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Quantite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8177464642665322981}
   - component: {fileID: 7349486591378345066}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Quantite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,6 +539,8 @@ MonoBehaviour:
   barreSanteMentale: {fileID: 8172800177616629742}
   barreEtude: {fileID: 8172800177556830103}
   quantiteArgent: {fileID: 8172800178240311420}
+  quantiteSanteMentale: {fileID: 8678694144736849310}
+  quantiteEtude: {fileID: 7349486591378345066}
 --- !u!1 &8172800176782056646
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3040833103034732186}
   - component: {fileID: 3040833103034732180}
   - component: {fileID: 856974303849041118}
+  - component: {fileID: 5451203753684882121}
   m_Layer: 5
   m_Name: InterfaceChoix
   m_TagString: Untagged
@@ -137,6 +138,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titre: {fileID: 3040833103610762612}
   bouton: {fileID: 3040833103034732180}
+--- !u!114 &5451203753684882121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040833103034732184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1ce1561e6d4f21ab73e69918a53e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageAHurler: 
 --- !u!1 &3040833103610762618
 GameObject:
   m_ObjectHideFlags: 0

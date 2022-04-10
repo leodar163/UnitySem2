@@ -10,7 +10,7 @@ namespace Evenements.Editor
 {
     public class EditeurNivoFenetre : EditorWindow
     {
-        private static Semestre semestre;
+        [SerializeField] private Semestre semestre;
         private bool semestreDeploye;
         private Vector2 scrollPosition;
 

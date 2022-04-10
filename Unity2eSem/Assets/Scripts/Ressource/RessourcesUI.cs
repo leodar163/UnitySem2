@@ -35,7 +35,9 @@ namespace Ressource
         private void MAJUIRessources()
         {
             barreEtude.value = Ressources.Singleton.Etude;
+            quantiteEtude.text = Ressources.Singleton.Etude.ToString();
             barreSanteMentale.value = Ressources.Singleton.SanteMentale;
+            quantiteSanteMentale.text = Ressources.Singleton.SanteMentale.ToString();
             quantiteArgent.text = Ressources.Singleton.Argent.ToString();
         }
 

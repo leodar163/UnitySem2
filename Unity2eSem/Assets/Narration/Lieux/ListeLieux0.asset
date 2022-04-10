@@ -15,7 +15,7 @@ MonoBehaviour:
   nomTemporaire: ListeLieux0
   lieux:
   - nom: Bar
-    position: {x: 1.75, y: 2.03}
+    position: {x: 8.11, y: 6.24}
     icone: {fileID: 0}
     illustration: {fileID: 0}
     nomTemporaire: Bar
