@@ -56,8 +56,8 @@ namespace Plan
             NettoyerPins();
 
             foreach (var evenement in debug  
-                ? semaine.EvenementsDepart
-                : semaine.EvenementsDepart.FindAll(evenement => evenement.estDebloqued))
+                ? semaine.EvenementsDepart.FindAll(evenement => evenement)
+                : semaine.EvenementsDepart.FindAll(evenement => evenement).FindAll(evenement => evenement.estDebloqued))
             {
                 AjouterPins(evenement);
             }
@@ -85,7 +85,7 @@ namespace Plan
         
         private void AjouterPins(Evenement evenement)
         {
-            if(!evenement) return;
+            if(!evenement || evenement.lieu == null) return;
             if (Instantiate(pinsBase.gameObject, evenement.lieu.PositionProjetee, new Quaternion(), transform)
                 .TryGetComponent(out PinsLieu nvPins))
             {

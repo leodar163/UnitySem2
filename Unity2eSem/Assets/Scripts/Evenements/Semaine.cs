@@ -9,7 +9,7 @@ namespace Evenements
     public class Semaine : ScriptableNarration
     {
         [SerializeField] private List<Evenement> evenementsDepart = new List<Evenement>();
-        public List<Evenement> EvenementsDepart => evenementsDepart.FindAll(evenement => evenement);
+        public List<Evenement> EvenementsDepart => evenementsDepart;
         
         public string description
         {

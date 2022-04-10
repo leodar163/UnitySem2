@@ -1,5 +1,6 @@
 using System;
 using Evenements.UI;
+using Evenements.UI.Animation;
 using TMPro;
 using UnityEngine;
 
@@ -53,6 +54,7 @@ namespace Evenements
         
         private void ChargerSemaine(Semaine semaineACharger)
         {
+            if(semaineACharger == null) return;
             BoiteDescription.Singleton.descriptionPersistente = semaineACharger.description;
             BoiteDescription.Singleton.SetNumeroSemaine(indexSemaine + 1);
             Plan.Plan.Singleton.ChargerSemaine(semaineACharger);
@@ -62,8 +64,12 @@ namespace Evenements
         {
             EvenementUI.Singleton.OuvrirFenetre(false);
             indexSemaine++;
-            if(semestre.Semaines.Count <= indexSemaine) return;
-            ChargerSemaine(semestre.Semaines[indexSemaine]);
+            if(semestre.Semaines.Count <= indexSemaine || semestre.Semaines[indexSemaine] == null) return;
+            Plan.Plan.Singleton.NettoyerPins();
+            TransitionSemaine.Singleton.TransitionnerSemaine(indexSemaine + 1).AddListener(() =>
+            {
+                ChargerSemaine(semestre.Semaines[indexSemaine]);
+            });
         }
     }
 }

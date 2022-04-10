@@ -111,7 +111,7 @@ namespace Evenements.Editor
             return cheminRetour;
         }
 
-        protected static T CreerAssetNarration<T>() where T : ScriptableNarration
+        public static T CreerAssetNarration<T>() where T : ScriptableNarration
         {
             if (CreateInstance(typeof(T)) is not T nvScriptNarration) return null;
 
