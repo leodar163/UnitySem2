@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
-  m_Name: Choix0
+  m_Name: Choix3
   m_EditorClassIdentifier: 
-  nomTemporaire: "p\xE9t\xE9"
-  Description: Choix Test
+  nomTemporaire: pisser
+  Description: 
   conditions: []
   consequences: []
-  montrerEvenementSuivant: 1
-  evenementSuivant: {fileID: 11400000, guid: 6bd1bd76c2e0cab48a89ca09b16104f2, type: 2}
+  montrerEvenementSuivant: 0
+  evenementSuivant: {fileID: 0}
   couts:
-    argent: 2
+    argent: 0
     santeMentale: 0
     etude: 0
   gains:
     argent: 0
-    santeMentale: 15
+    santeMentale: 0
     etude: 0
