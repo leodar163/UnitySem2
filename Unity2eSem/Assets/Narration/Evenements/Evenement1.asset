@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: Evenement1
+  m_EditorClassIdentifier: 
+  nomTemporaire: Evenement1
+  listeLieux: {fileID: 11400000, guid: d5e4643e5ff0fc144a530426441f54fe, type: 2}
+  indexLieu: 1
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: 
+  description: 
+  choix: []
+  conditions: []

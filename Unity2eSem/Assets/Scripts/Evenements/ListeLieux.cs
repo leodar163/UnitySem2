@@ -40,5 +40,10 @@ namespace Evenements
 
             return noms.ToArray();
         }
+
+        public Lieu RecupLieu(int index)
+        {
+            return index >= 0 && index < lieux.Count ? lieux[index] : null;
+        }
     }
 }

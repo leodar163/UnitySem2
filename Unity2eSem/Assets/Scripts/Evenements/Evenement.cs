@@ -8,8 +8,12 @@ namespace Evenements
     [CreateAssetMenu(fileName = "NvlEvenement", menuName = "Evénement/Evenement")]
     public class Evenement : ScriptableNarration
     {
-        [SerializeField] public Lieu lieu;
+        [SerializeField] public ListeLieux listeLieux;
         
+        [SerializeField] public int indexLieu;
+
+        public Lieu lieu => !listeLieux ? null : listeLieux.RecupLieu(indexLieu);
+
         [SerializeField] public Sprite imageOverride;
 
         [SerializeField] public string titre = "";

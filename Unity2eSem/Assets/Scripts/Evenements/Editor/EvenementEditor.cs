@@ -16,20 +16,20 @@ namespace Evenements.Editor
             Evenement evenement = target as Evenement;
             if(!evenement) return;
 
-            DessinerInspecteur(evenement, null, null, null, true);
+            DessinerInspecteur(evenement, null, null, true);
         }
 
         
         
-        public static void DessinerInspecteur(Evenement evenement, ListeConditions conditions, 
-            List<Lieu> lieuxDispos, ListeLieux lieux, bool afficherSauvegarde = false)
+        public static void DessinerInspecteur(Evenement evenement, ListeConditions conditions,
+            ListeLieux lieux, bool afficherSauvegarde = false)
         {
             if(afficherSauvegarde)
             {
                 DessinerSauvegarde(evenement);
                 GUILayout.Space(15);
             }
-            DessinerChoixLieu(evenement, lieuxDispos);
+            DessinerChoixLieu(evenement, lieux);
             GUILayout.Space(15);
             DessinerConditions(evenement, conditions);
             GUILayout.Space(15);
@@ -91,8 +91,10 @@ namespace Evenements.Editor
             GUILayout.Space(10);
         }
         
-        private static void DessinerChoixLieu(Evenement evenement, List<Lieu> lieux)
+        private static void DessinerChoixLieu(Evenement evenement, ListeLieux lieux)
         {
+            evenement.listeLieux = lieux;
+            
             GUIStyle couleurTexteRouge = new(GUI.skin.label)
             {
                 normal =
@@ -100,37 +102,36 @@ namespace Evenements.Editor
                     textColor = Color.red
                 }
             };
-            
-            
+
             if (lieux != null)
             {
-                if (lieux.Count == 0)
+                if (lieux.Lieux.Count == 0)
                 {
                     GUILayout.Label("Pas assez de lieux dans la liste des lieux", couleurTexteRouge);
-                    evenement.lieu = null;
+                    evenement.indexLieu = -1;
                 }
                 else
                 {
-                    int indexSelectionLieu = evenement.lieu != null ? lieux.LastIndexOf(evenement.lieu) : 0;
+                    int indexSelectionLieu = evenement.lieu == null ?  0 : evenement.indexLieu;
                     indexSelectionLieu = indexSelectionLieu < 0 ? 0 : indexSelectionLieu;
                     
-                    string[] optionsLieux = new string[lieux.Count];
+                    string[] optionsLieux = new string[lieux.Lieux.Count];
                     
-                    for (int i = 0; i < lieux.Count; i++)
+                    for (int i = 0; i < lieux.Lieux.Count; i++)
                     {
-                        optionsLieux[i] = lieux[i].nom;
+                        optionsLieux[i] = lieux.Lieux[i].nom;
                     }
                     
                     indexSelectionLieu = EditorGUILayout.Popup("Lieu", indexSelectionLieu, optionsLieux);
                     //Debug.Log(indexSelectionLieu);
-                    evenement.lieu = lieux[indexSelectionLieu];
+                    evenement.indexLieu = indexSelectionLieu;
                 }
             }
             else
             {
                 
                 GUILayout.Label("Il n'a pas de liste de lieux assignée dans la scene", couleurTexteRouge);
-                evenement.lieu = null;
+                evenement.indexLieu = -1;
             }
         }
 
@@ -252,7 +253,7 @@ namespace Evenements.Editor
                     
                     GUILayout.EndHorizontal();
                     GUILayout.Space(15);
-                    DessinerInspecteur(evenement, conditions, lieuxDispos, lieux);   
+                    DessinerInspecteur(evenement, conditions, lieux);   
                 }
             }
             
