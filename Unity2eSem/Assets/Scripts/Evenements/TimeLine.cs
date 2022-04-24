@@ -36,6 +36,26 @@ namespace Evenements
         {
         
         }
+        
+        #if UNITY_EDITOR
+        private void OnGUI()
+        {
+            if(!semestre) return;
+            int hauteur = 30;
+            GUIStyle style = new GUIStyle()
+            {
+                fontSize = 12,
+                alignment = TextAnchor.MiddleCenter
+            };
+            foreach (var condition in semestre.conditions.Conditions)
+            {
+                GUI.Label(new Rect(Screen.width / 2, hauteur,100, 70), 
+                    condition.nom + " : " + condition.estRemplie, style);
+                hauteur += 20;
+            }
+                
+        }
+        #endif
 
         private void ChargerSemestre(Semestre semestreACharger)
         {
