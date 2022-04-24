@@ -53,7 +53,7 @@ namespace Evenements.Editor
                 return;
             }
             
-            string[] conditionsDispo = conditions.RecupNomsConditions(conditionsChoix);
+            string[] conditionsDispo = conditions.RecupNomsConditionsExlusif(conditionsChoix);
                 
             for (int j = 0; j < conditionsChoix.Count; j++)
             {
@@ -83,7 +83,7 @@ namespace Evenements.Editor
                 GUILayout.Button("Ajouter Condition"))
             {
                 Condition conditionDefaut = conditions.RecupCondition(
-                    conditions.RecupNomsConditions(conditionsChoix)[0]);
+                    conditions.RecupNomsConditionsExlusif(conditionsChoix)[0]);
                     
                 conditionsChoix.Add(conditionDefaut);
             }

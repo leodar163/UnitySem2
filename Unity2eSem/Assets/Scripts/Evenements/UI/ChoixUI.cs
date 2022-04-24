@@ -75,11 +75,13 @@ namespace Evenements.UI
             if (choix.Gains.etude > 0)          Ressources.Singleton.Etude += choix.Gains.etude;
             if (choix.Gains.santeMentale > 0)   Ressources.Singleton.SanteMentale += choix.Gains.santeMentale;
 
+            ListeConditions listeConditions = TimeLine.Singleton.listeConditions;
+            
             if (choix.Consequences != null)
             {
-                foreach (var condition in choix.Consequences)
+                foreach (var consequence in choix.Consequences)
                 {
-                    condition.estRemplie = true;
+                    listeConditions.RecupCondition(consequence.nom).estRemplie = true;
                 }
             }
 

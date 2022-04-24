@@ -17,7 +17,6 @@ MonoBehaviour:
   conditions: []
   consequences:
   - nom: Amir en pote
-    estRemplie: 0
     nomTemporaire: Amir en pote
   montrerEvenementSuivant: 0
   evenementSuivant: {fileID: 0}

@@ -16,7 +16,6 @@ MonoBehaviour:
   Description: "Inviter Lou pour aller au mus\xE9e"
   conditions:
   - nom: Avoir Numero de Lou
-    estRemplie: 0
     nomTemporaire: Avoir Numero de Lou
   consequences: []
   montrerEvenementSuivant: 1

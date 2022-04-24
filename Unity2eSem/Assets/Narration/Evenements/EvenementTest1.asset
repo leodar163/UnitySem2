@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
-  m_Name: Evenement0
+  m_Name: EvenementTest1
   m_EditorClassIdentifier: 
-  nomTemporaire: "Pr\xE9-rentr\xE9e"
+  nomTemporaire: Evenement12
   listeLieux: {fileID: 11400000, guid: d5e4643e5ff0fc144a530426441f54fe, type: 2}
   indexLieu: 0
   imageOverride: {fileID: 0}
-  titre: "Encore un discours de pr\xE9-rentr\xE9e"
-  intro: "Nouvelle ann\xE9e, nouvelle rentr\xE9e,j'ai l'impression que je commence
-    \xE0 m'y faire\u2026 "
-  description: "Le jour de la pr\xE9-rentr\xE9e c'est toujours la m\xEAme chose,
-    travailler pour avoir le semestre sinon c'est foutu blablabla..."
+  titre: 
+  intro: 
+  description: 
   choix:
-  - {fileID: 11400000, guid: c0cdbb13823161049b9df0d95e106772, type: 2}
-  - {fileID: 11400000, guid: bd6914eb4af7368429c6de4294a09750, type: 2}
+  - {fileID: 11400000, guid: 46e826003f01b4841bb4b5a6fdc57223, type: 2}
+  - {fileID: 11400000, guid: 74144beeb6aeb7d47b130cad6c7c7eb1, type: 2}
   conditions: []

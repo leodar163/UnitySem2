@@ -434,7 +434,7 @@ MonoBehaviour:
   quandArgentChange:
     m_PersistentCalls:
       m_Calls: []
-  etude: 0
+  etude: 20
   santeMentale: 50
   argent: 4
 --- !u!4 &783027770

@@ -19,7 +19,6 @@ MonoBehaviour:
   descriptions:
   - conditions:
     - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
-      estRemplie: 0
       nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
     description: "Ok, premier partiel cette semaine ! Les premiers sont toujours
       les plus durs... Deux heures dans un entrep\xF4t craignos avec une table tout

@@ -28,8 +28,20 @@ namespace Evenements
 
             return noms;
         }
+
+        public string[] ParserNomConditions(List<Condition> conditionsAParser)
+        {
+            string[] noms = new string[conditionsAParser.Count];
+            
+            for (int i = 0; i < conditionsAParser.Count; i++)
+            {
+                noms[i] = conditionsAParser[i].nom;
+            }
+
+            return noms;
+        }
         
-        public string[] RecupNomsConditions(List<Condition> exclusions)
+        public string[] RecupNomsConditionsExlusif(List<Condition> exclusions)
         {
             List<string> noms = new List<string>();
             
@@ -48,7 +60,18 @@ namespace Evenements
         {
             return conditions.Find(condition => condition.nom == nom);
         }
-        
+
+        public Condition[] RecupConditions(string[] noms)
+        {
+            Condition[] conditionsRetour = new Condition[noms.Length];
+
+            for (int i = 0; i < noms.Length; i++)
+            {
+                conditionsRetour[i] = RecupCondition(noms[i]);
+            }
+
+            return conditionsRetour;
+        }
         
         public void ReinitConditions()
         {
@@ -63,7 +86,18 @@ namespace Evenements
     public class Condition
     {
         [SerializeField] [HideInInspector] public string nom = "nvlleCondition";
-        public bool estRemplie;
+
+        private bool remplie;
+        
+        public bool estRemplie
+        {
+            get => remplie;
+            set
+            {
+                Debug.Log(value);
+                remplie = value;
+            }
+        }
         
         #if UNITY_EDITOR
 
@@ -73,6 +107,7 @@ namespace Evenements
 
         public Condition(string nomCondition)
         {
+            Debug.Log("construite");
             nom = nomCondition;
         }
     }

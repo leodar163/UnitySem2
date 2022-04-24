@@ -21,7 +21,6 @@ MonoBehaviour:
   descriptions:
   - conditions:
     - nom: Avoir Numero de Lou
-      estRemplie: 0
       nomTemporaire: Avoir Numero de Lou
     description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
       perdre le rythme, par contre rencontrer Lou, \xE7a m'a vraiment fait plaisir.
@@ -29,7 +28,6 @@ MonoBehaviour:
       et je bouge, y'a l'air d'avoir des trucs int\xE9ressants en ville !"
   - conditions:
     - nom: Amir en pote
-      estRemplie: 0
       nomTemporaire: Amir en pote
     description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
       perdre le rythme. En m\xEAme temps, on a pas mal trainer \xE0 la fac avec Amir,

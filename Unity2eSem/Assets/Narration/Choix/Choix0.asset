@@ -17,7 +17,6 @@ MonoBehaviour:
   conditions: []
   consequences:
   - nom: Avoir Numero de Lou
-    estRemplie: 1
     nomTemporaire: Avoir Numero de Lou
   montrerEvenementSuivant: 1
   evenementSuivant: {fileID: 11400000, guid: afe0487ee61027b4e975ef75bee045cf, type: 2}

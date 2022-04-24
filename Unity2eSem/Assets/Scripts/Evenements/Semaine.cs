@@ -40,7 +40,8 @@ namespace Evenements
             {
                 get
                 {
-                    return conditions.All(condition => condition.estRemplie);
+                    return conditions.All(condition => 
+                        TimeLine.Singleton.listeConditions.RecupCondition(condition.nom).estRemplie);
                 }
             }
             

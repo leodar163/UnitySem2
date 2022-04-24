@@ -24,17 +24,24 @@ namespace Evenements
         [SerializeField] private Semestre semestre;
 
         private int indexSemaine;
-        
+
+        private Condition[] conditions;
+
+        public ListeConditions listeConditions => !semestre ? null : semestre.conditions;
+
         // Start is called before the first frame update
         void Start()
         {
-            if(semestre) ChargerSemestre();
+            if (semestre)
+            {
+                ChargerSemestre();
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-        
+            
         }
         
         #if UNITY_EDITOR
@@ -52,6 +59,8 @@ namespace Evenements
                 GUI.Label(new Rect(Screen.width / 2, hauteur,100, 70), 
                     condition.nom + " : " + condition.estRemplie, style);
                 hauteur += 20;
+                //condition.estRemplie = true;
+                //print(condition.estRemplie);
             }
                 
         }

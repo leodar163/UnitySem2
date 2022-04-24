@@ -72,7 +72,7 @@ namespace Evenements.Editor
                 GUILayout.Label(i == 0 ? "Conditions" : "Conséquences");
                 List<Condition> conditionsChoix = i == 0 ? choix.Conditions : choix.Consequences;
                     
-                string[] conditionsDispo = conditions.RecupNomsConditions(conditionsChoix);
+                string[] conditionsDispo = conditions.RecupNomsConditionsExlusif(conditionsChoix);
                 
                 for (int j = 0; j < conditionsChoix.Count; j++)
                 {
@@ -102,7 +102,7 @@ namespace Evenements.Editor
                     GUILayout.Button("Ajouter " + (i == 0 ? "Condition" : "Conséquence")))
                 {
                     Condition conditionDefaut = conditions.RecupCondition(
-                        conditions.RecupNomsConditions(conditionsChoix)[0]);
+                        conditions.RecupNomsConditionsExlusif(conditionsChoix)[0]);
                     
                     conditionsChoix.Add(conditionDefaut);
                 }

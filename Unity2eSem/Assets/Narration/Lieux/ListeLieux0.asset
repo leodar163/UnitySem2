@@ -19,3 +19,8 @@ MonoBehaviour:
     icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
     illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
     nomTemporaire: Bar
+  - nom: Lieu0
+    position: {x: 3.05, y: 3.1}
+    icone: {fileID: 510185450, guid: ead0a75031fb56042b0a269967f58201, type: 3}
+    illustration: {fileID: 21300000, guid: ee2bb47cad109a34086742e40eef2597, type: 3}
+    nomTemporaire: Lieu0

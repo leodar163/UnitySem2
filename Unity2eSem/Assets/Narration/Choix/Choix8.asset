@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
-  m_Name: Choix7
+  m_Name: Choix8
   m_EditorClassIdentifier: 
-  nomTemporaire: "On se reverra vite,  c'est s\xFBr !"
-  Description: "On se reverra vite, \rc'est s\xFBr !"
-  conditions: []
-  consequences:
-  - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
-    nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+  nomTemporaire: Choix8
+  Description: 
+  conditions:
+  - nom: ConditionTest1
+    nomTemporaire: ConditionTest1
+  consequences: []
   montrerEvenementSuivant: 0
   evenementSuivant: {fileID: 0}
   couts:
@@ -26,5 +26,5 @@ MonoBehaviour:
     etude: 0
   gains:
     argent: 0
-    santeMentale: 40
+    santeMentale: 0
     etude: 0

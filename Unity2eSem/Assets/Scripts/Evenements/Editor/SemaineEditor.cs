@@ -98,7 +98,7 @@ namespace Evenements.Editor
                 {
                     List<Condition> conditionsDescription = semaine.descriptions[i].conditions;
                     
-                    string[] conditionsDispo = conditions.RecupNomsConditions(conditionsDescription);
+                    string[] conditionsDispo = conditions.RecupNomsConditionsExlusif(conditionsDescription);
                 
                     for (int j = 0; j < conditionsDescription.Count; j++)
                     {
@@ -130,7 +130,7 @@ namespace Evenements.Editor
                         GUILayout.Button("Ajouter Condition"))
                     {
                         Condition conditionDefaut = conditions.RecupCondition(
-                            conditions.RecupNomsConditions(conditionsDescription)[0]);
+                            conditions.RecupNomsConditionsExlusif(conditionsDescription)[0]);
                     
                         conditionsDescription.Add(conditionDefaut);
                     }

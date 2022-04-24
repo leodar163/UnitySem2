@@ -15,7 +15,9 @@ MonoBehaviour:
   nomTemporaire: "\xC9couter le discours de pr\xE9-rentr\xE9e"
   Description: "\xC9couter le discours de pr\xE9-rentr\xE9e"
   conditions: []
-  consequences: []
+  consequences:
+  - nom: ConditionTest1
+    nomTemporaire: ConditionTest1
   montrerEvenementSuivant: 1
   evenementSuivant: {fileID: 11400000, guid: 6bd1bd76c2e0cab48a89ca09b16104f2, type: 2}
   couts:
