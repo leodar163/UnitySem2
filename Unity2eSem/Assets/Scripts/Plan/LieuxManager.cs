@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace Plan
@@ -46,7 +45,9 @@ namespace Plan
                         },
                         fontSize = 18
                     };
-                    Handles.Label(lieu.PositionProjetee + decalage,lieu.nom, styleLabel);
+                    #if UNITY_EDITOR
+                    UnityEditor.Handles.Label(lieu.PositionProjetee + decalage,lieu.nom, styleLabel);
+                    #endif
                 }
             }
         }

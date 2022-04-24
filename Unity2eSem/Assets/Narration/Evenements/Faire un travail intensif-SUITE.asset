@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: Faire un travail intensif-SUITE
   listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
-  indexLieu: 1
+  indexLieu: 0
   imageOverride: {fileID: 0}
   titre: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer...
   intro: 
