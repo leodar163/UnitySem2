@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
-  m_Name: '"NR115 Is Missing"-SUITE'
+  m_Name: Evenement7
   m_EditorClassIdentifier: 
   nomTemporaire: '"NR115 Is Missing"-SUITE'
-  lieu:
-    nom: Bar
-    position: {x: 9.77, y: 4.75}
-    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
-    nomTemporaire: Bar
+  listeLieux: {fileID: 0}
+  indexLieu: -1
   imageOverride: {fileID: 0}
   titre: 
   intro: 
@@ -28,7 +24,4 @@ MonoBehaviour:
     alors que c'\xE9tait le Kurde...enfin, je crois\u2026"
   choix:
   - {fileID: 11400000, guid: 0c983c02b5663194dae20772510b0942, type: 2}
-  conditions:
-  - nom: Amir en pote
-    estRemplie: 0
-    nomTemporaire: Amir en pote
+  conditions: []

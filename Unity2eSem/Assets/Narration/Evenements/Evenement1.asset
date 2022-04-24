@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Evenement1
   m_EditorClassIdentifier: 
   nomTemporaire: "Parler \xE0 un \xE9tudiant \xE0 c\xF4t\xE9-SUITE"
-  lieu:
-    nom: "Universit\xE9"
-    position: {x: 15.49, y: 7.5}
-    icone: {fileID: 0}
-    illustration: {fileID: 0}
-    nomTemporaire: "Universit\xE9"
+  listeLieux: {fileID: 0}
+  indexLieu: 0
   imageOverride: {fileID: 0}
   titre: 
   intro: 

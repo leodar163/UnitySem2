@@ -15,10 +15,7 @@ MonoBehaviour:
   nomTemporaire: "J'esp\xE8re qu'on se reverra !"
   Description: "J'esp\xE8re qu'on se reverra vite !"
   conditions: []
-  consequences:
-  - nom: Amir en pote
-    estRemplie: 0
-    nomTemporaire: Amir en pote
+  consequences: []
   montrerEvenementSuivant: 0
   evenementSuivant: {fileID: 0}
   couts:

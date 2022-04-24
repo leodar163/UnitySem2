@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Expo Kubrine
   m_EditorClassIdentifier: 
   nomTemporaire: Expo Kubrine
-  lieu:
-    nom: BU
-    position: {x: 17.43, y: 7.39}
-    icone: {fileID: -197847103, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: dd9fec57d7a16ba429f959c8e15f6522, type: 3}
-    nomTemporaire: BU
+  listeLieux: {fileID: 0}
+  indexLieu: 0
   imageOverride: {fileID: 0}
   titre: 
   intro: "Le Mus\xE9e du Mirage propose \rune expo temporaire sur Kubin. "

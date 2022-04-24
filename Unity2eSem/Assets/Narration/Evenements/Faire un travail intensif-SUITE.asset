@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Faire un travail intensif-SUITE
   m_EditorClassIdentifier: 
   nomTemporaire: Faire un travail intensif-SUITE
-  lieu:
-    nom: Bar
-    position: {x: 9.77, y: 4.75}
-    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
-    nomTemporaire: Bar
+  listeLieux: {fileID: 0}
+  indexLieu: 0
   imageOverride: {fileID: 0}
   titre: 
   intro: 

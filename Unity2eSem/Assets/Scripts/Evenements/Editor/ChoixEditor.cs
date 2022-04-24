@@ -187,18 +187,5 @@ namespace Evenements.Editor
             
             return choix;
         }
-
-        public static void NettoyerToutesConditions()
-        {
-            Object[] tousAssets = AssetDatabase.LoadAllAssetsAtPath(cheminChoix);
-
-            foreach (var asset in tousAssets)
-            {
-                if (asset is Choix choix)
-                {
-                    choix.NettoyezConditions();
-                }
-            }
-        }
     }
 }

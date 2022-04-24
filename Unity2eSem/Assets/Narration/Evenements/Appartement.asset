@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Appartement
   m_EditorClassIdentifier: 
   nomTemporaire: Appartement
-  lieu:
-    nom: "Cin\xE9ma"
-    position: {x: 8.09, y: 8.62}
-    icone: {fileID: -961691903, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: ce0a5b08f19765a498c0f0c4ae2c27fa, type: 3}
-    nomTemporaire: "Cin\xE9ma"
+  listeLieux: {fileID: 0}
+  indexLieu: 0
   imageOverride: {fileID: 0}
   titre: 
   intro: "La meilleure fa\xE7on de se reposer, \rc'est encore de rien faire chez

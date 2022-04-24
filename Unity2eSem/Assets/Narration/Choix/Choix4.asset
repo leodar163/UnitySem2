@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
-  m_Name: '"NR115 Is Missing"'
+  m_Name: Choix4
   m_EditorClassIdentifier: 
   nomTemporaire: '"NR115 Is Missing"'
   Description: '"NR115 Is Missing"'
-  conditions:
-  - nom: Amir en pote
-    estRemplie: 0
-    nomTemporaire: Amir en pote
+  conditions: []
   consequences: []
   montrerEvenementSuivant: 1
   evenementSuivant: {fileID: 11400000, guid: 6ec17b6c59f69a647b4f41605e4f1a52, type: 2}

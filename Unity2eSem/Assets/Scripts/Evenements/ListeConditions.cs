@@ -13,6 +13,10 @@ namespace Evenements
         
         public static readonly string pathFichiers = "Assets/Narration/Conditions";
         
+        #if UNITY_EDITOR
+        public bool retired;
+        #endif
+        
         public string[] RecupNomsConditions()
         {
             string[] noms = new string[conditions.Count];

@@ -48,8 +48,17 @@ namespace Evenements
 
         public void NettoyezConditions()
         {
-            conditions = conditions.FindAll(condition => condition != null);
-            consequences = consequences.FindAll(condition => condition != null);
+            conditions.Clear();
+            consequences.Clear();
+
+            if (evenementSuivant)
+            {
+                evenementSuivant.conditions.Clear();
+                foreach (var choix in evenementSuivant.listeChoix)
+                {
+                    choix.NettoyezConditions();
+                }
+            }
         }
 
         public bool estDebloqued

@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Evenement0
   m_EditorClassIdentifier: 
   nomTemporaire: "Pr\xE9-rentr\xE9e"
-  lieu:
-    nom: Bar
-    position: {x: 9.77, y: 4.75}
-    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
-    nomTemporaire: Bar
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 0
   imageOverride: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
   titre: "Universit\xE9"
   intro: "Nouvelle ann\xE9e, nouvelle rentr\xE9e,j'ai l'impression que je commence

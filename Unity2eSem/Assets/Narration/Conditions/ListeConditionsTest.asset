@@ -17,3 +17,4 @@ MonoBehaviour:
   - nom: ConditionTest1
     estRemplie: 0
     nomTemporaire: ConditionTest1
+  retired: 0

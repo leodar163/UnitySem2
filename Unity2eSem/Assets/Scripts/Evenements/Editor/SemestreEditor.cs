@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Evenements.Editor
@@ -33,6 +34,12 @@ namespace Evenements.Editor
         {
             semestre.conditions = ListeConditionsEditor.DessinerEmbedInspecteur(semestre.conditions, ref semestre.ConditionsDeployees,
                 semestre.conditions != null ? semestre.conditions.name : "Conditions");
+            if(!semestre.conditions) SupprimerConditions(semestre);
+            else if (semestre.conditions.retired)
+            {
+                semestre.conditions.retired = false;
+                SupprimerConditions(semestre);
+            }
         }
 
         private static void DessinerLieux(Semestre semestre)
@@ -136,6 +143,30 @@ namespace Evenements.Editor
             
             FinirZoneEmbed(Color.grey);
             return semestre;
+        }
+
+        private static void SupprimerConditions(Semestre semestre)
+        {
+            foreach (var semaine in semestre.Semaines)
+            {
+                if(!semaine) continue;
+                foreach (var desc in semaine.descriptions)
+                {
+                    desc.conditions.Clear();
+                }
+
+                foreach (var evenement in semaine.EvenementsDepart)
+                {
+ 
+                    if(!evenement) continue;
+                    evenement.conditions.Clear();
+                    
+                    foreach (var choix in evenement.listeChoix)
+                    {
+                        choix.NettoyezConditions();
+                    }
+                }
+            }
         }
     }
 }

@@ -155,7 +155,7 @@ namespace Evenements.Editor
                         "Retirer la liste va réinitialiser toutes les conditions des choix. T sûr du coup ?",
                         "Allez !", "En fait non"))
                     {
-                        ChoixEditor.NettoyerToutesConditions();
+                        conditions.retired = true;
                         return null;    
                     }
                     
@@ -169,7 +169,7 @@ namespace Evenements.Editor
                         "Allez !", "En fait non"))
                     {
                         SupprimerAssetNarration(conditions);
-                        ChoixEditor.NettoyerToutesConditions();
+                        conditions.retired = true;
                         return conditions;
                     }
                 }

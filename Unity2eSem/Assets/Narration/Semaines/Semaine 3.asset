@@ -19,18 +19,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4738e55c6807514d8e77d7c03d20615, type: 2}
   - {fileID: 0}
   descriptions:
-  - conditions:
-    - nom: Avoir Numero de Lou
-      estRemplie: 1
-      nomTemporaire: Avoir Numero de Lou
+  - conditions: []
     description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
       perdre le rythme, par contre rencontrer Lou, \xE7a m'a vraiment fait plaisir.
       Si on peut se revoir vite, c'est encore mieux. Le temps de trainer sur Twitter
       et je bouge, y'a l'air d'avoir des trucs int\xE9ressants en ville !"
-  - conditions:
-    - nom: Amir en pote
-      estRemplie: 0
-      nomTemporaire: Amir en pote
+  - conditions: []
     description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
       perdre le rythme. En m\xEAme temps, on a pas mal trainer \xE0 la fac avec Amir,
       j'ai l'impression de faire continuellement un cahier de vacances. Bon, je devrais
