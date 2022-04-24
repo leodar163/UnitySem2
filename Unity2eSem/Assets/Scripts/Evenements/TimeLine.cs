@@ -47,6 +47,7 @@ namespace Evenements
             if (semestre.Semaines == null || semestre.Semaines.Count == 0)
                 throw new NullReferenceException("Impossible de charger le semestre " + semestre.name +
                                                  ":\nLa liste de semaine est soit nulle, soit vide");
+            semestre.conditions.ReinitConditions();
             EvenementUI.Singleton.OuvrirFenetre(false);
             indexSemaine = 0;
             ChargerSemaine(semestre.Semaines[indexSemaine]);   

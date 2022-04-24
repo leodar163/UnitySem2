@@ -48,6 +48,7 @@ namespace Evenements
 
         public void NettoyezConditions()
         {
+            Debug.Log("Conditions supprimées");
             conditions.Clear();
             consequences.Clear();
 

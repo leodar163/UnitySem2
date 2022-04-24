@@ -46,8 +46,6 @@ namespace Evenements.Editor
         //Bon cette fonction faudra la tester à terme... Pk j'suis pas sûr de son entier fonctionnement
         private static void DessinerConditions(Choix choix, ListeConditions conditions)
         {
-            choix.NettoyezConditions();
-            
             Color couleurFondDefaut = GUI.backgroundColor;
             
             GUIStyle couleurTexteRouge = new(GUI.skin.label)
