@@ -16,6 +16,10 @@ namespace Evenements.Editor
 
         public static void DessinerInspecteur(ListeConditions conditions, bool afficherSauvegarde = false)
         {
+            if (GUILayout.Button("Réinit liste"))
+            {
+                conditions.ReinitConditions();
+            }
             if (afficherSauvegarde)
             {
                 DessinerSauvegarde(conditions);

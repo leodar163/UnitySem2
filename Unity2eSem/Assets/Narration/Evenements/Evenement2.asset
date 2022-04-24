@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: Evenement2
   m_EditorClassIdentifier: 
   nomTemporaire: Evenement test suite
-  lieu:
-    nom: Bar
-    position: {x: 8.11, y: 6.24}
-    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
-    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
-    nomTemporaire: Bar
+  listeLieux: {fileID: 0}
+  indexLieu: 0
   imageOverride: {fileID: 21300000, guid: 50e42b9a2a4b172489e281e41080d42e, type: 3}
   titre: Evenement test suite
   intro: pas besoin

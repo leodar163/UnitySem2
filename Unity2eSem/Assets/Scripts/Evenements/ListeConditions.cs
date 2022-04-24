@@ -44,6 +44,15 @@ namespace Evenements
         {
             return conditions.Find(condition => condition.nom == nom);
         }
+        
+        
+        public void ReinitConditions()
+        {
+            foreach (var condition in conditions)
+            {
+                condition.estRemplie = false;
+            }
+        }
     }
     
     [Serializable]
@@ -63,6 +72,4 @@ namespace Evenements
             nom = nomCondition;
         }
     }
-    
-    
 }
