@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
+  m_Name: "Parler \xE0 Charlie "
+  m_EditorClassIdentifier: 
+  nomTemporaire: "Parler \xE0 Charlie "
+  Description: "Parler \xE0 Charlie "
+  conditions: []
+  consequences: []
+  montrerEvenementSuivant: 1
+  evenementSuivant: {fileID: 11400000, guid: 2bdc2ac69cb9eeb4b945b12abe5841bc, type: 2}
+  couts:
+    argent: 0
+    santeMentale: 0
+    etude: 5
+  gains:
+    argent: 0
+    santeMentale: 5
+    etude: 0

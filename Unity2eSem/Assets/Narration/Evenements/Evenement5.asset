@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: '"Puissance Anaconda"-SUITE'
+  m_EditorClassIdentifier: 
+  nomTemporaire: '"Puissance Anaconda"-SUITE'
+  lieu:
+    nom: Bar
+    position: {x: 9.77, y: 4.75}
+    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
+    nomTemporaire: Bar
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: 
+  description: "Waaaw j'ai jamais vu autant de puissance et d'anacondas dans un seul
+    film. C'\xE9tait MORTEL!!!! J'ai pas vraiment compris pourquoi le chien flic
+    devait se faire passer pour le m\xE9chant, mais c'est s\xFBrement pas important. "
+  choix:
+  - {fileID: 11400000, guid: a0ca9fed7dbcbcd4da4d6987f9768462, type: 2}
+  conditions: []

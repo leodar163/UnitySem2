@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8740046d20a94e8c96003c15dbcbac31, type: 3}
+  m_Name: Semaine 2
+  m_EditorClassIdentifier: 
+  nomTemporaire: Semaine 2
+  evenementsDepart:
+  - {fileID: 11400000, guid: 8726d6ef5fb742141b75784d90f60436, type: 2}
+  - {fileID: 11400000, guid: 95ec73e40d68bf04aadec3123792b7b3, type: 2}
+  - {fileID: 11400000, guid: 1bb59e3fe003f8b43a6272bbd286327b, type: 2}
+  - {fileID: 0}
+  descriptions:
+  - conditions: []
+    description: "La routine de la fac c'est vraiment un CAUCHEMAR ! Se r\xE9veiller
+      \xE0 8h pour 2h de cours et un TD \xE0 15h30 c'est TROP ! Le partiel est encore
+      loin, je sais pas trop ce que je pourrais faire aujourd'hui \xE0 part soigner
+      mon futur trouble du sommeil\u2026"

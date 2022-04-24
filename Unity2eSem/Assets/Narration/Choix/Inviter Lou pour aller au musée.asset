@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
+  m_Name: "Inviter Lou pour aller au mus\xE9e"
+  m_EditorClassIdentifier: 
+  nomTemporaire: "Inviter Lou pour aller au mus\xE9e"
+  Description: "Inviter Lou pour aller au mus\xE9e"
+  conditions:
+  - nom: Avoir Numero de Lou
+    estRemplie: 1
+    nomTemporaire: Avoir Numero de Lou
+  consequences: []
+  montrerEvenementSuivant: 1
+  evenementSuivant: {fileID: 11400000, guid: d0e19abf885994641879ebd4df5b29dc, type: 2}
+  couts:
+    argent: 3
+    santeMentale: 0
+    etude: 0
+  gains:
+    argent: 0
+    santeMentale: 0
+    etude: 0

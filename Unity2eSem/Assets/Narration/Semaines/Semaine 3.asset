@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8740046d20a94e8c96003c15dbcbac31, type: 3}
+  m_Name: Semaine 3
+  m_EditorClassIdentifier: 
+  nomTemporaire: Semaine 3
+  evenementsDepart:
+  - {fileID: 11400000, guid: 1f05a36c072cd704b8fc6398ff5b0675, type: 2}
+  - {fileID: 11400000, guid: c1e9f00235c5e8549b72ba68048fd48d, type: 2}
+  - {fileID: 11400000, guid: b4738e55c6807514d8e77d7c03d20615, type: 2}
+  - {fileID: 0}
+  descriptions:
+  - conditions:
+    - nom: Avoir Numero de Lou
+      estRemplie: 1
+      nomTemporaire: Avoir Numero de Lou
+    description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
+      perdre le rythme, par contre rencontrer Lou, \xE7a m'a vraiment fait plaisir.
+      Si on peut se revoir vite, c'est encore mieux. Le temps de trainer sur Twitter
+      et je bouge, y'a l'air d'avoir des trucs int\xE9ressants en ville !"
+  - conditions:
+    - nom: Amir en pote
+      estRemplie: 0
+      nomTemporaire: Amir en pote
+    description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
+      perdre le rythme. En m\xEAme temps, on a pas mal trainer \xE0 la fac avec Amir,
+      j'ai l'impression de faire continuellement un cahier de vacances. Bon, je devrais
+      bouger, y'a l'air d'avoir des trucs int\xE9ressants en ville."
+  - conditions: []
+    description: "Bizarre\u2026 Je sais pas si je suis en train de reprendre ou de
+      perdre le rythme. \xC7a fait que deux semaines, mais j'ai l'impression que
+      \xE7a fait un an. Je traine un peu sur Twitter et je bouge, y'a l'air d'avoir
+      des trucs int\xE9ressants en ville !"

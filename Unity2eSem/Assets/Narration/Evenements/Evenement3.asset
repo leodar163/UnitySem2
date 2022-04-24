@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: "Je devrais peut-\xEAtre lui demander son num\xE9ro ?"
+  m_EditorClassIdentifier: 
+  nomTemporaire: "Je devrais peut-\xEAtre lui demander son num\xE9ro ?"
+  lieu:
+    nom: Bar
+    position: {x: 9.77, y: 4.75}
+    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
+    nomTemporaire: Bar
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: 
+  description: "\xC0 la sortie de la BU, on discute encore un peu. Je r\xE9p\xE8te
+    un peu dans ma t\xEAte pour pas me rater, y'a un blanc et d'un coup c'est Lou
+    qui demande mon num\xE9ro. Je reste naturel, d\xE9tendu, calme, serein et je
+    r\xE9ponds \"Euh...ben...oui  avec plaisir\", puis on se dit au revoir.\r\n"
+  choix:
+  - {fileID: 11400000, guid: 63c68b29a9ac52f44a7e42a7986cbe95, type: 2}
+  conditions: []

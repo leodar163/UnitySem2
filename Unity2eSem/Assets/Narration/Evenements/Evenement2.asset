@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
   m_Name: Evenement2
   m_EditorClassIdentifier: 
-  nomTemporaire: Evenement test suite
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  nomTemporaire: "\xC9couter le discours de pr\xE9-rentr\xE9e-SUITE"
+  lieu:
+    nom: "Universit\xE9"
+    position: {x: 15.49, y: 7.5}
+    icone: {fileID: 0}
+    illustration: {fileID: 0}
+    nomTemporaire: "Universit\xE9"
   imageOverride: {fileID: 21300000, guid: 50e42b9a2a4b172489e281e41080d42e, type: 3}
-  titre: Evenement test suite
-  intro: pas besoin
-  description: "Ceci et la suite du test d'\xE9v\xE8nement"
+  titre: 
+  intro: 
+  description: "Plus de TD cette ann\xE9e, plus de th\xE9orie de la com, deux projets
+    pro\u2026 Ouais l\xE0, \xE7a va \xEAtre chaud, j'ai int\xE9r\xEAt \xE0 m'accrocher
+    si je veux d\xE9crocher le partiel."
   choix:
   - {fileID: 11400000, guid: 48f503d47936e704ca777cb67bb6495c, type: 2}
   conditions: []

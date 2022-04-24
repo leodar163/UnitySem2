@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8740046d20a94e8c96003c15dbcbac31, type: 3}
+  m_Name: Semaine 4
+  m_EditorClassIdentifier: 
+  nomTemporaire: Semaine 4
+  evenementsDepart:
+  - {fileID: 11400000, guid: 0f8ffa3fd24789a49b975afc83293c2b, type: 2}
+  - {fileID: 0}
+  descriptions:
+  - conditions:
+    - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+      estRemplie: 0
+      nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+    description: "Ok, premier partiel cette semaine ! Les premiers sont toujours
+      les plus durs... Deux heures dans un entrep\xF4t craignos avec une table tout
+      les 10 m\xE8tres, \xE7a va \xEAtre TOP... Remarque, si je r\xE9ussis on pourrait
+      peut-\xEAtre sortir avec Lou pour f\xEAter \xE7a...Bon, j'y go, faut que je
+      choppe le bus !"
+  - conditions: []
+    description: "Ok, premier partiel cette semaine ! Les premiers sont toujours
+      les plus durs... Deux heures dans un entrep\xF4t craignos avec une table tout
+      les 10 m\xE8tres, \xE7a va \xEAtre TOP\u2026 Bon, j'y go, faut que je choppe
+      le bus !"

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: Expo Kubrine
+  m_EditorClassIdentifier: 
+  nomTemporaire: Expo Kubrine
+  lieu:
+    nom: BU
+    position: {x: 17.43, y: 7.39}
+    icone: {fileID: -197847103, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: dd9fec57d7a16ba429f959c8e15f6522, type: 3}
+    nomTemporaire: BU
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: "Le Mus\xE9e du Mirage propose \rune expo temporaire sur Kubin. "
+  description: "Le Mirage fait une expo sur Alfred\r Kubin !!! Avec gravures et illustrations\r
+    originales !! Il faut absolument que j'y\r aille, \xE7a va \xEAtre mortel !!
+    Y'aura peut-\xEAtre des\r choses int\xE9ressantes sur sa\r vie en tant qu'artiste."
+  choix:
+  - {fileID: 11400000, guid: 29696729ab1ba2b44ba8bf6fcb20c66f, type: 2}
+  - {fileID: 11400000, guid: 871dfe43ad2017144932a05268826ff8, type: 2}
+  conditions: []

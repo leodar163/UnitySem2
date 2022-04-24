@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: Appartement
+  m_EditorClassIdentifier: 
+  nomTemporaire: Appartement
+  lieu:
+    nom: "Cin\xE9ma"
+    position: {x: 8.09, y: 8.62}
+    icone: {fileID: -961691903, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: ce0a5b08f19765a498c0f0c4ae2c27fa, type: 3}
+    nomTemporaire: "Cin\xE9ma"
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: "La meilleure fa\xE7on de se reposer, \rc'est encore de rien faire chez
+    soi. "
+  description: "Aujourd'hui, pas de sortie. C'est short et claquettes. Je devrais
+    peut-\xEAtre bosser un peu pour m'avancer ou faire une sieste, \xE7a pourrait
+    aussi \xEAtre cool. Je suis quand m\xEAme un peu fatigu\xE9\u2026"
+  choix:
+  - {fileID: 11400000, guid: 4d7b03af0cd5b2443a9cc2cac34ae9e4, type: 2}
+  - {fileID: 11400000, guid: 36d833e96a97c074780ae5e7764bab0b, type: 2}
+  conditions: []

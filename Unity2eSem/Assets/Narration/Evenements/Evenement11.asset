@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: "\"Comment \xE7a se fait que tu  connaisses Kubin ?\"-SUITE"
+  m_EditorClassIdentifier: 
+  nomTemporaire: "\"Comment \xE7a se fait que tu  connaisses Kubin ?\"-SUITE"
+  lieu:
+    nom: Bar
+    position: {x: 9.77, y: 4.75}
+    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
+    nomTemporaire: Bar
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: 
+  description: "\"J'aime beaucoup le genre fantasy surr\xE9aliste. Quand j'\xE9tais
+    aux\r Beaux Arts, j'avais eu un cours sur l'art 20\xE8me et j'avais vu \rpas
+    mal de ses \u0153uvres avant de d\xE9crocher.\" Le temps passe\r trop vite, on
+    a \xE0 peine le temps de parler de\r ses \xE9tudes, de ma famille \xE9clat\xE9e,
+    du fait que c'est angoissant de\r boire de la Guiness et de  vivre dans on monde
+    foutu, qu'on a \rd\xE9j\xE0 termin\xE9 la visite. Lou me raccompagne\r \xE0 l'arr\xEAt
+    de bus et me dit au revoir\u2026\r\n "
+  choix:
+  - {fileID: 11400000, guid: 6c733146fcb2f4c43b3d76ec44696487, type: 2}
+  conditions: []

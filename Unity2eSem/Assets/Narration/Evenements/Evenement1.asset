@@ -12,12 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
   m_Name: Evenement1
   m_EditorClassIdentifier: 
-  nomTemporaire: Evenement1
-  listeLieux: {fileID: 11400000, guid: d5e4643e5ff0fc144a530426441f54fe, type: 2}
-  indexLieu: 0
+  nomTemporaire: "Parler \xE0 un \xE9tudiant \xE0 c\xF4t\xE9-SUITE"
+  lieu:
+    nom: "Universit\xE9"
+    position: {x: 15.49, y: 7.5}
+    icone: {fileID: 0}
+    illustration: {fileID: 0}
+    nomTemporaire: "Universit\xE9"
   imageOverride: {fileID: 0}
   titre: 
   intro: 
-  description: 
-  choix: []
+  description: "La personne \xE0 c\xF4t\xE9 de moi \xE0 l'air de faire psycho. Elle
+    n'arr\xEAte pas de griffonner des trucs sur son carnet.\"Tu bosses sur le Je
+    du Moi ?\" \"Non, sur le prisme aristot\xE9licien de la raison\". Y'a eu un court
+    silence, puis reprend : \"Je m'appelle Lou\". Au final, on a beaucoup parl\xE9."
+  choix:
+  - {fileID: 11400000, guid: 287f2fb68c1c33249a8675534e987cbc, type: 2}
+  - {fileID: 11400000, guid: d80b031c93fb0f34e95465398083f568, type: 2}
   conditions: []

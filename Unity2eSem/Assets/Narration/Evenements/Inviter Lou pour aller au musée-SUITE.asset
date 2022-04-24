@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7d2026e1fd49a47892d8a19cc0a8fc, type: 3}
+  m_Name: "Inviter Lou pour aller au mus\xE9e-SUITE"
+  m_EditorClassIdentifier: 
+  nomTemporaire: "Inviter Lou pour aller au mus\xE9e-SUITE"
+  lieu:
+    nom: Bar
+    position: {x: 9.77, y: 4.75}
+    icone: {fileID: 660959494, guid: c7f9cd6b4e0d4a14891e7fd1c1103f55, type: 3}
+    illustration: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
+    nomTemporaire: Bar
+  imageOverride: {fileID: 0}
+  titre: 
+  intro: 
+  description: "On avait d\xE9j\xE0 parl\xE9 de Kubine\r avec Lou dans mes souvenirs.\r
+    Quand je l'ai appel\xE9, Lou \ravait l'air super emball\xE9.\r J'ai pris les
+    billets et on a fonc\xE9 !"
+  choix:
+  - {fileID: 11400000, guid: 6d95cf44236ccaa418fb351cf4dbd7b9, type: 2}
+  - {fileID: 11400000, guid: ced920fd40cfcb741a91f40c2c2f7e8d, type: 2}
+  conditions: []
