@@ -41,6 +41,6 @@ MonoBehaviour:
     nomTemporaire: Appartement
   - nom: "Universit\xE9"
     position: {x: 15.49, y: 7.5}
-    icone: {fileID: 0}
-    illustration: {fileID: 0}
+    icone: {fileID: -1900509830, guid: ead0a75031fb56042b0a269967f58201, type: 3}
+    illustration: {fileID: 21300000, guid: 9458a8092a949ca449c5292d5743b51f, type: 3}
     nomTemporaire: "Universit\xE9"

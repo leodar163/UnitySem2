@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Faire un travail intensif-SUITE
   m_EditorClassIdentifier: 
   nomTemporaire: Faire un travail intensif-SUITE
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 1
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer...
   intro: 
   description: "Apr\xE8s quatre heures de travail pr\xE9paratoire \xE0 s'arracher
-    les cheveux sur les rh\xE9toriques du \rdiscours. Je peux affirmer que si \xE7a
-    tombe au partiel, je vais \xEAtre\r magistral. Platon se retournera dans sa toge\u2026
-    Ce d\xE9bile\u2026\r"
+    les cheveux sur les rh\xE9toriques du discours. Je peux affirmer que si \xE7a
+    tombe au partiel, je vais \xEAtre magistral. Platon se retournerais dans sa toge\u2026
+    Ce d\xE9bile\u2026"
   choix:
   - {fileID: 11400000, guid: aaf6f33186747af40903b1d9260d3130, type: 2}
   conditions: []

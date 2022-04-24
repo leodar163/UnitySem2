@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Partiel
   m_EditorClassIdentifier: 
   nomTemporaire: Partiel
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 5
   imageOverride: {fileID: 0}
-  titre: 
-  intro: "Aujourd'hui ce sont les r\xE9sultats des\r partiels\u2026"
+  titre: "Aujourd'hui :  r\xE9sultats de partiel."
+  intro: "Aujourd'hui ce sont les r\xE9sultats des partiels\u2026"
   description: "La date fatidique est enfin arriv\xE9e. \xC7a devrait aller, enfin
     je crois, enfin j'esp\xE8re, enfin je sais pas\u2026 On verra bien\u2026"
   choix:

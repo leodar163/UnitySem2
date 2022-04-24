@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: "Pr\xE9-rentr\xE9e"
   listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
-  indexLieu: 0
-  imageOverride: {fileID: 21300000, guid: 8dde68e1dab1adc41868327b57e11cc1, type: 3}
-  titre: "Universit\xE9"
+  indexLieu: 5
+  imageOverride: {fileID: 0}
+  titre: "Encore un discours de pr\xE9-rentr\xE9e"
   intro: "Nouvelle ann\xE9e, nouvelle rentr\xE9e,j'ai l'impression que je commence
     \xE0 m'y faire\u2026 "
   description: "Le jour de la pr\xE9-rentr\xE9e c'est toujours la m\xEAme chose,

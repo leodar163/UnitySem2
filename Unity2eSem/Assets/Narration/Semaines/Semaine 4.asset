@@ -17,7 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f8ffa3fd24789a49b975afc83293c2b, type: 2}
   - {fileID: 0}
   descriptions:
-  - conditions: []
+  - conditions:
+    - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+      estRemplie: 0
+      nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
     description: "Ok, premier partiel cette semaine ! Les premiers sont toujours
       les plus durs... Deux heures dans un entrep\xF4t craignos avec une table tout
       les 10 m\xE8tres, \xE7a va \xEAtre TOP... Remarque, si je r\xE9ussis on pourrait

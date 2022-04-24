@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 'Bar le Gibraltar '
   m_EditorClassIdentifier: 
   nomTemporaire: 'Bar le Gibraltar '
-  listeLieux: {fileID: 0}
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
   indexLieu: 0
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Hortense et Charlie veulent qu'on aille au Gibraltar.
   intro: Hortense et Charlie veulent qu'on aille au Gibraltar.
   description: "C'est pas mon bar pr\xE9f\xE9r\xE9, mais la carte des cocktails est
     top. Ce sera soit un Blip, soit un BlueMoon."

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: "\xC9couter le discours de pr\xE9-rentr\xE9e-SUITE"
   listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
-  indexLieu: 0
-  imageOverride: {fileID: 21300000, guid: 50e42b9a2a4b172489e281e41080d42e, type: 3}
-  titre: 
+  indexLieu: 5
+  imageOverride: {fileID: 0}
+  titre: "Encore un discours de pr\xE9-rentr\xE9e"
   intro: 
   description: "Plus de TD cette ann\xE9e, plus de th\xE9orie de la com, deux projets
     pro\u2026 Ouais l\xE0, \xE7a va \xEAtre chaud, j'ai int\xE9r\xEAt \xE0 m'accrocher

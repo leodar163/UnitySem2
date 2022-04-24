@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: "Inviter Lou pour aller au mus\xE9e"
   Description: "Inviter Lou pour aller au mus\xE9e"
-  conditions: []
+  conditions:
+  - nom: Avoir Numero de Lou
+    estRemplie: 0
+    nomTemporaire: Avoir Numero de Lou
   consequences: []
   montrerEvenementSuivant: 1
   evenementSuivant: {fileID: 11400000, guid: d0e19abf885994641879ebd4df5b29dc, type: 2}

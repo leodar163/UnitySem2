@@ -15,12 +15,15 @@ MonoBehaviour:
   nomTemporaire: "Je devrais peut-\xEAtre lui demander son num\xE9ro ?"
   Description: "Je devrais peut-\xEAtre lui demander son num\xE9ro ?"
   conditions: []
-  consequences: []
+  consequences:
+  - nom: Avoir Numero de Lou
+    estRemplie: 1
+    nomTemporaire: Avoir Numero de Lou
   montrerEvenementSuivant: 1
   evenementSuivant: {fileID: 11400000, guid: afe0487ee61027b4e975ef75bee045cf, type: 2}
   couts:
     argent: 0
-    santeMentale: 10
+    santeMentale: 0
     etude: 5
   gains:
     argent: 0

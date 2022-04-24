@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Expo Kubrine
   m_EditorClassIdentifier: 
   nomTemporaire: Expo Kubrine
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
-  intro: "Le Mus\xE9e du Mirage propose \rune expo temporaire sur Kubin. "
-  description: "Le Mirage fait une expo sur Alfred\r Kubin !!! Avec gravures et illustrations\r
-    originales !! Il faut absolument que j'y\r aille, \xE7a va \xEAtre mortel !!
-    Y'aura peut-\xEAtre des\r choses int\xE9ressantes sur sa\r vie en tant qu'artiste."
+  titre: "Expo Kubin au mus\xE9e du Mirage"
+  intro: "Le Mus\xE9e du Mirage propose une expo temporaire sur Kubin. "
+  description: "Le Mirage fait une expo sur Alfred Kubin !!! Avec gravures et illustrations
+    originales !! Il faut absolument que j'y aille, \xE7a va \xEAtre mortel !! Y'aura
+    peut-\xEAtre des choses int\xE9ressantes sur sa vie en tant qu'artiste."
   choix:
   - {fileID: 11400000, guid: 29696729ab1ba2b44ba8bf6fcb20c66f, type: 2}
   - {fileID: 11400000, guid: 871dfe43ad2017144932a05268826ff8, type: 2}

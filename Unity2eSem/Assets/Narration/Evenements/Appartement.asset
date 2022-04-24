@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Appartement
   m_EditorClassIdentifier: 
   nomTemporaire: Appartement
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 4
   imageOverride: {fileID: 0}
-  titre: 
-  intro: "La meilleure fa\xE7on de se reposer, \rc'est encore de rien faire chez
-    soi. "
+  titre: "Tranquille \xE0 l'appart"
+  intro: "La meilleure fa\xE7on de se reposer, c'est encore de rien faire chez soi. "
   description: "Aujourd'hui, pas de sortie. C'est short et claquettes. Je devrais
     peut-\xEAtre bosser un peu pour m'avancer ou faire une sieste, \xE7a pourrait
     aussi \xEAtre cool. Je suis quand m\xEAme un peu fatigu\xE9\u2026"

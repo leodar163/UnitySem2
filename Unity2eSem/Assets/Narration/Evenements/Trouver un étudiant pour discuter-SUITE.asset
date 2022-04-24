@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "Trouver un \xE9tudiant pour discuter-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "Trouver un \xE9tudiant pour discuter-SUITE"
-  listeLieux: {fileID: 0}
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
   indexLieu: 0
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Hortense et Charlie veulent qu'on aille au Gibraltar.
   intro: 
   description: "Pendant que Charlie et Hortense sont au comptoir, je vais voir le
     type au fond du bar. Il me semble l'avoir vu en amphi. Je crois qu'il s'appelle

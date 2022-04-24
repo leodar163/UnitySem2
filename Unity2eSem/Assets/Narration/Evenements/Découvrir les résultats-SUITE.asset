@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "D\xE9couvrir les r\xE9sultats-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "D\xE9couvrir les r\xE9sultats-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 5
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Aujourd'hui :  r\xE9sultats de partiel."
   intro: 
   description: "Putain j'ai valid\xE9 le semestre !!!! C'est bon \xE7a y'est !! Je
     l'ai ! J'ai mon ann\xE9e enfiiiin, c'est fini ! YES !! PUTAIN LETSGO !!"

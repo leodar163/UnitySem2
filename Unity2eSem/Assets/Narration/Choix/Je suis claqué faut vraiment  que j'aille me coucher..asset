@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Je suis claqu\xE9 faut vraiment  que j'aille me coucher."
   m_EditorClassIdentifier: 
   nomTemporaire: "Je suis claqu\xE9 faut vraiment  que j'aille me coucher."
-  Description: "Je suis claqu\xE9 faut vraiment \rque j'aille me coucher."
+  Description: "Je suis claqu\xE9, faut vraiment que j\u2019aille me coucher."
   conditions: []
   consequences: []
   montrerEvenementSuivant: 0

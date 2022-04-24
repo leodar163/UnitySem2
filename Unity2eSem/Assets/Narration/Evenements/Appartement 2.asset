@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Appartement 2
   m_EditorClassIdentifier: 
   nomTemporaire: Appartement 2
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 4
   imageOverride: {fileID: 0}
-  titre: 
-  intro: "J'ai vraiment boss\xE9 comme un chien aujourd'hui.\r J'en peux plus, il
-    faut que je rentre chez moi..."
-  description: "Je sais pas si j'dois continuer de bosser l'oral de la semaine prochaine\r
+  titre: "Tranquille \xE0 l'appart"
+  intro: "J'ai vraiment boss\xE9 comme un chien aujourd'hui.J'en peux plus, il faut
+    que je rentre chez moi..."
+  description: "Je sais pas si j'dois continuer de bosser l'oral de la semaine prochaine
     ou si je me mate les J\xE9suites \xE0 Woippy \xE0 la t\xE9l\xE9 en \xE9tant chill
     af"
   choix:

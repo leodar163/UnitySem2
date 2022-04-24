@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Evenement6
   m_EditorClassIdentifier: 
   nomTemporaire: "\"A la lisi\xE8re du c\u0153ur\" -SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: -1
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 2
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Choisir un film au cin\xE9"
   intro: 
   description: "Putain mais c'\xE9tait naze !! Qui joue comme \xE7a ? Pourquoi la
     juge elle est d\xE9bile ? Elle a les preuves sous le nez cette BOUFONNE!!! Et
     l'autre c'est pire ! Comment vous faites pour rien voir ? J'ai mal \xE0 la t\xEAte\u2026
-    J'en ai marre, je rentre."
+    J'en ai marre, je rentre.\r"
   choix:
   - {fileID: 11400000, guid: af8aa5a5b5196534e87b69601828ee12, type: 2}
   conditions: []

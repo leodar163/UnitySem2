@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: "Parler \xE0 Charlie-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "Parler \xE0 Charlie-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 5
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Encore un discours de pr\xE9-rentr\xE9e"
   intro: 
   description: "Charlie n'est pas hyper attentive et moins non plus, de toute fa\xE7on,
     on conna\xEEt la chanson\u2026 On a boss\xE9 ensemble au Chronoshop cet \xE9t\xE9
     mais j'ai l'impression qu'on s'est pas parl\xE9 depuis un an, j'ai h\xE2te qu'on
-    sorte comment avant !"
+    sorte comme avant !"
   choix:
   - {fileID: 11400000, guid: a8b1f4ceaf3b6184eae51fb75b937a36, type: 2}
   conditions: []

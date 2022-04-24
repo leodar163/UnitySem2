@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Evenement3
   m_EditorClassIdentifier: 
   nomTemporaire: "Je devrais peut-\xEAtre lui demander son num\xE9ro ?"
-  listeLieux: {fileID: 0}
-  indexLieu: -1
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 1
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer...
   intro: 
   description: "\xC0 la sortie de la BU, on discute encore un peu. Je r\xE9p\xE8te
     un peu dans ma t\xEAte pour pas me rater, y'a un blanc et d'un coup c'est Lou

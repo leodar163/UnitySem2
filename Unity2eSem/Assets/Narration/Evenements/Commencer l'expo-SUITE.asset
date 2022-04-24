@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Commencer l'expo-SUITE
   m_EditorClassIdentifier: 
   nomTemporaire: Commencer l'expo-SUITE
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
-  description: "L'exposition est vraiment folle,\r y'avait plein d'\u0153uvres que
-    \rj'avais jamais vu ! En regardant ces gravures de\r pr\xE8s, je pense presque
-    avoir\r compris sa m\xE9thode de \rgravure. Pour une fois que \rles mus\xE9es
-    s'int\xE9ressent au \rmouvement pr\xE9-surr\xE9aliste !"
+  description: "L'exposition est vraiment folle, y'avait plein d'\u0153uvres que
+    j'avais jamais vu ! En regardant ces gravures de pr\xE8s, je pense presque avoir
+    compris sa m\xE9thode de gravure. Pour une fois que les mus\xE9es s'int\xE9ressent
+    au mouvement pr\xE9-surr\xE9aliste !"
   choix:
   - {fileID: 11400000, guid: 568a82219fdf06344aa1a768a6e611a5, type: 2}
   conditions: []

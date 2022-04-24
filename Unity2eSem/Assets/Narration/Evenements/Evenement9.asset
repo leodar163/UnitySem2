@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Evenement9
   m_EditorClassIdentifier: 
   nomTemporaire: "Poser des questions \xE0 Lou-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
-  description: "Pendant qu'on se balade entre\r les \u0153uvres, je r\xE9fl\xE9chis
-    \xE0 ce \rque je pourrais lui dire. J'ai \renvie de lui poser pleins de \rquestions
-    pour vraiment faire\r connaissance. "
+  description: "Pendant qu'on se balade entre les \u0153uvres, je r\xE9fl\xE9chis
+    \xE0 ce que je pourrais lui dire. J'ai envie de lui poser pleins de questions
+    pour vraiment faire connaissance. "
   choix:
   - {fileID: 11400000, guid: 94ad1b536b459aa4895e5db24d26cf1c, type: 2}
   - {fileID: 11400000, guid: 7bcf246a5732e3545b0c6cd39f8e9711, type: 2}

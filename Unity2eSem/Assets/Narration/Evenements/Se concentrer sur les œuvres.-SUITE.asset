@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: "Se concentrer sur les \u0153uvres.-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "Se concentrer sur les \u0153uvres.-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
-  description: "L'exposition est vraiment folle,\r y'avait plein d'\u0153uvres qu'on
-    \rj'avais jamais vu !On arr\xEAtait pas \rde courir entre les \u0153uvres. Lou
-    \ravait l'air m\xE9dus\xE9 devant les \rillustrations...ou compl\xE9tement \rd\xE9fonc\xE9
-    ? Pour une fois que \rles mus\xE9es s'int\xE9ressent au \rmouvement pr\xE9-surr\xE9aliste
-    !"
+  description: "L'exposition est vraiment folle,y'avait plein d'\u0153uvres qu'on
+    avait jamais vu ! On arr\xEAtait pas de courir entre les \u0153uvres. Lou avait
+    l'air m\xE9dus\xE9 devant les illustrations...ou compl\xE9tement d\xE9fonc\xE9
+    ? Pour une fois que les mus\xE9es s'int\xE9ressent au mouvement pr\xE9-surr\xE9aliste
+    !\r"
   choix:
   - {fileID: 11400000, guid: 85baa60c84e8cea4883446d2d27fd676, type: 2}
   conditions: []

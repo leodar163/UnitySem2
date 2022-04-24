@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Evenement11
   m_EditorClassIdentifier: 
   nomTemporaire: "\"Comment \xE7a se fait que tu  connaisses Kubin ?\"-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: -1
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
   description: "\"J'aime beaucoup le genre fantasy surr\xE9aliste. Quand j'\xE9tais
-    aux\r Beaux Arts, j'avais eu un cours sur l'art 20\xE8me et j'avais vu \rpas
-    mal de ses \u0153uvres avant de d\xE9crocher.\" Le temps passe\r trop vite, on
-    a \xE0 peine le temps de parler de\r ses \xE9tudes, de ma famille \xE9clat\xE9e,
-    du fait que c'est angoissant de\r boire de la Guiness et de  vivre dans on monde
-    foutu, qu'on a \rd\xE9j\xE0 termin\xE9 la visite. Lou me raccompagne\r \xE0 l'arr\xEAt
-    de bus et me dit au revoir\u2026\r\n "
+    aux Beaux Arts, j'avais eu un cours sur l'art 20\xE8me et j'avais vu pas mal
+    de ses \u0153uvres avant de d\xE9crocher.\" Le temps passe trop vite, on a \xE0
+    peine le temps de parler de ses \xE9tudes, de ma famille \xE9clat\xE9e, du fait
+    que c'est angoissant de boire de la Guiness et de vivre dans un monde foutu,
+    qu'on a d\xE9j\xE0 termin\xE9 la visite. Lou me raccompagne \xE0 l'arr\xEAt de
+    bus et me dit au revoir\u2026"
   choix:
   - {fileID: 11400000, guid: 6c733146fcb2f4c43b3d76ec44696487, type: 2}
   conditions: []

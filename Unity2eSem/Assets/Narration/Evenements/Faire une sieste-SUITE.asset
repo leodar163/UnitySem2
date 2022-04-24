@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Faire une sieste-SUITE
   m_EditorClassIdentifier: 
   nomTemporaire: Faire une sieste-SUITE
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 4
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Tranquille \xE0 l'appart"
   intro: 
   description: "Apr\xE8s avoir mang\xE9 deux tartines, je me pose tranquillement
     dans mon lit et je ferme les yeux. Bon, c'est s\xFBr, j'aurais d\xFB mettre un
     r\xE9veil pour ne pas me r\xE9veiller dans la lune mais au moins je suis bien
     repos\xE9 \xE0 balle.\r\n"
-  choix: []
+  choix:
+  - {fileID: 11400000, guid: e365679f4927ff447ac9581214096a80, type: 2}
   conditions: []

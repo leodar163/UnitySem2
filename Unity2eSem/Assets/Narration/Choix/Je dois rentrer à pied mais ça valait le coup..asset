@@ -15,7 +15,13 @@ MonoBehaviour:
   nomTemporaire: "Je dois rentrer \xE0 pied mais \xE7a valait le coup."
   Description: "Je dois rentrer \xE0 pied mais \xE7a valait le coup."
   conditions: []
-  consequences: []
+  consequences:
+  - nom: Avoir Numero de Lou
+    estRemplie: 1
+    nomTemporaire: Avoir Numero de Lou
+  - nom: Num de Lou
+    estRemplie: 1
+    nomTemporaire: Num de Lou
   montrerEvenementSuivant: 0
   evenementSuivant: {fileID: 0}
   couts:

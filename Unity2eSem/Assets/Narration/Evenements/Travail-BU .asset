@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomTemporaire: 'Travail-BU '
   listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
-  indexLieu: 0
+  indexLieu: 1
   imageOverride: {fileID: 0}
-  titre: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer un peu, sinon
-    je vais me noyer.
-  intro: 
+  titre: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer...
+  intro: Avec la tonne de cours qu'on a, je ferais mieux de m'avancer...
   description: " Je pourrais faire des fiches pour le cours de th\xE9orie de la com'
     ou avancer le TD de programmation. Tout sauf lire Walter Benjamin\u2026 mais
     \xE7a, on verra plus tard."

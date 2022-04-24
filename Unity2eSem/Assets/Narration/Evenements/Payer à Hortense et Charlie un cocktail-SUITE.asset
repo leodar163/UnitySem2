@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "Payer \xE0 Hortense et Charlie un cocktail-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "Payer \xE0 Hortense et Charlie un  cocktail"
-  listeLieux: {fileID: 0}
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
   indexLieu: 0
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Hortense et Charlie veulent qu'on aille au Gibraltar.
   intro: 
   description: "Pour Hortense une bi\xE8re, pour Charlie un Redbro et pour moi un
     Blip. Je crois que j'ai bu trop vite. Il faut vite combattre le mal par le mal,

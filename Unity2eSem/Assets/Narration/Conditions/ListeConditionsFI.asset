@@ -15,7 +15,7 @@ MonoBehaviour:
   nomTemporaire: ListeConditions0
   conditions:
   - nom: Avoir Numero de Lou
-    estRemplie: 1
+    estRemplie: 0
     nomTemporaire: Avoir Numero de Lou
   - nom: Amir en pote
     estRemplie: 0
@@ -23,4 +23,7 @@ MonoBehaviour:
   - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
     estRemplie: 0
     nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+  - nom: Num de Lou
+    estRemplie: 0
+    nomTemporaire: Num de Lou
   retired: 0

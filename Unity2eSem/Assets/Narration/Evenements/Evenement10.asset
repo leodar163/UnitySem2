@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Evenement10
   m_EditorClassIdentifier: 
   nomTemporaire: Alors est ce que t'a quelqu'un ?-SUITE
-  listeLieux: {fileID: 0}
-  indexLieu: -1
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
-  description: "Lou m'a regard\xE9 deux secondes sans\r rien dire : \"Euuh t'es s\xE9rieux\r
-    pourquoi tu me demandes \xE7a ?\"\r. J'ai paniqu\xE9, je sais plus\r ce que j'ai
-    dit et elle poursuit : \"Je sors d'une \rrelation douloureuse et \rj'ai clairement
-    pas envie de \rretrouver quelqu'un\". Elle quitte\r le mus\xE9e sans dire un
-    mot et\r sans se retourner..."
+  description: "Lou m'a regard\xE9 deux secondes sans rien dire : \"Euuh t'es s\xE9rieux
+    pourquoi tu me demandes \xE7a ?\" J'ai paniqu\xE9, je sais plus ce que j'ai dit
+    et elle poursuit : \"Je sors d'une relation douloureuse et j'ai clairement pas
+    envie de retrouver quelqu'un\". Elle quitte le mus\xE9e sans dire un mot et sans
+    se retourner\u2026"
   choix:
   - {fileID: 11400000, guid: c87c3b04a19dfc24c904720ecc8d4fd5, type: 2}
   conditions: []

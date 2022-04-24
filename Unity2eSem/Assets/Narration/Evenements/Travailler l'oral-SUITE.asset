@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Travailler l'oral-SUITE
   m_EditorClassIdentifier: 
   nomTemporaire: Travailler l'oral-SUITE
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 4
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Tranquille \xE0 l'appart"
   intro: 
   description: "Putain cet oral me fout le seum, mais j'ai pas le choix. Mine de
     rien, j'ai pas mal avanc\xE9 et \xE7a m'all\xE8ge pour la semaine prochaine.

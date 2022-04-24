@@ -20,8 +20,8 @@ MonoBehaviour:
   evenementSuivant: {fileID: 11400000, guid: 1f617e4d6e1c3604ebed36fab9531b55, type: 2}
   couts:
     argent: 2
-    santeMentale: 20
-    etude: 10
+    santeMentale: 15
+    etude: 0
   gains:
     argent: 0
     santeMentale: 0

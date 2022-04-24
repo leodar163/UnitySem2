@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Evenement4
   m_EditorClassIdentifier: 
   nomTemporaire: Commander un Blip avec Charlie-SUITE
-  listeLieux: {fileID: 0}
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
   indexLieu: 0
   imageOverride: {fileID: 0}
-  titre: 
+  titre: Hortense et Charlie veulent qu'on aille au Gibraltar.
   intro: 
   description: "Charlie a pris un Redbro et moi un Blip. On commence \xE0 boire direct,
     sinon je sais qu'Hortense voudra nous les piquer. J'en prends encore deux ou

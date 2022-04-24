@@ -15,7 +15,10 @@ MonoBehaviour:
   nomTemporaire: "On se reverra vite,  c'est s\xFBr !"
   Description: "On se reverra vite, \rc'est s\xFBr !"
   conditions: []
-  consequences: []
+  consequences:
+  - nom: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
+    estRemplie: 0
+    nomTemporaire: "Lou vous appr\xE9cie plus apr\xE8s le mus\xE9e"
   montrerEvenementSuivant: 0
   evenementSuivant: {fileID: 0}
   couts:

@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 0}
   descriptions:
   - conditions: []
-    description: "C'est la rentr\xE9e blablaba"
+    description: "Quand j'\xE9tais \xE0 l'\xE9cole, je devais \xE9crire \"Max\" au-dessus
+      de mon porte-manteau \xE0 la rentr\xE9e. Aujourd'hui, je dois signer une feuille
+      d'\xE9margement. C'est s\xFBrement pour \xE7a que je suis pas motiv\xE9...ou
+      parce que j'ai peut-\xEAtre un partiel \xE0 la fin du mois, je sais pas\u2026\r"
   - conditions: []
     description: 
   - conditions: []

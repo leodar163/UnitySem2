@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5914a76aca82243a760d136b60e061, type: 3}
-  m_Name: Faire un travail intensif
+  m_Name: 'Je serai en forme pour demain '
   m_EditorClassIdentifier: 
-  nomTemporaire: Faire un travail intensif
-  Description: Faire un travail intensif
+  nomTemporaire: 'Je serai en forme pour demain '
+  Description: Je serai en forme pour demain !
   conditions: []
   consequences: []
-  montrerEvenementSuivant: 1
-  evenementSuivant: {fileID: 11400000, guid: b669289f519bb984b804711ee74b7297, type: 2}
+  montrerEvenementSuivant: 0
+  evenementSuivant: {fileID: 0}
   couts:
     argent: 0
-    santeMentale: 15
+    santeMentale: 0
     etude: 0
   gains:
     argent: 0
     santeMentale: 0
-    etude: 20
+    etude: 0

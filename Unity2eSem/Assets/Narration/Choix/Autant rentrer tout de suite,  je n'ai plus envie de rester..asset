@@ -20,7 +20,7 @@ MonoBehaviour:
   evenementSuivant: {fileID: 0}
   couts:
     argent: 0
-    santeMentale: 50
+    santeMentale: 40
     etude: 0
   gains:
     argent: 0

@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Evenement7
   m_EditorClassIdentifier: 
   nomTemporaire: '"NR115 Is Missing"-SUITE'
-  listeLieux: {fileID: 0}
-  indexLieu: -1
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 2
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Choisir un film au cin\xE9"
   intro: 
   description: "C'\xE9tait trop bien ! J'ai eu la chance d'avoir crois\xE9 Amir,
     il m'a expliqu\xE9 plein de trucs du bouquin que je ne connaissais pas. Heureusement
-    qu'il est cal\xE9 en polar, sinon j'aurais pris le Lituanien pour le traitre
+    qu'il est cal\xE9 en polar, sinon j'aurais pris le Lituanien pour le tra\xEEtre
     alors que c'\xE9tait le Kurde...enfin, je crois\u2026"
   choix:
   - {fileID: 11400000, guid: 0c983c02b5663194dae20772510b0942, type: 2}

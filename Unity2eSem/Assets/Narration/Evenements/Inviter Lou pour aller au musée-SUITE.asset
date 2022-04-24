@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: "Inviter Lou pour aller au mus\xE9e-SUITE"
   m_EditorClassIdentifier: 
   nomTemporaire: "Inviter Lou pour aller au mus\xE9e-SUITE"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 3
   imageOverride: {fileID: 0}
-  titre: 
+  titre: "Expo Kubin au mus\xE9e du Mirage"
   intro: 
-  description: "On avait d\xE9j\xE0 parl\xE9 de Kubine\r avec Lou dans mes souvenirs.\r
-    Quand je l'ai appel\xE9, Lou \ravait l'air super emball\xE9.\r J'ai pris les
-    billets et on a fonc\xE9 !"
+  description: "On avait d\xE9j\xE0 parl\xE9 de Kubine avec Lou dans mes souvenirs.
+    Quand je l'ai appel\xE9, Lou avait l'air super emball\xE9. J'ai pris les billets
+    et on a fonc\xE9 !"
   choix:
   - {fileID: 11400000, guid: 6d95cf44236ccaa418fb351cf4dbd7b9, type: 2}
   - {fileID: 11400000, guid: ced920fd40cfcb741a91f40c2c2f7e8d, type: 2}

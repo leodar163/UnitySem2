@@ -434,9 +434,9 @@ MonoBehaviour:
   quandArgentChange:
     m_PersistentCalls:
       m_Calls: []
-  etude: 10
-  santeMentale: 50
-  argent: 5
+  etude: 20
+  santeMentale: 25
+  argent: 4
 --- !u!4 &783027770
 Transform:
   m_ObjectHideFlags: 0

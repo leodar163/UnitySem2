@@ -21,7 +21,7 @@ MonoBehaviour:
   couts:
     argent: 0
     santeMentale: 0
-    etude: 10
+    etude: 5
   gains:
     argent: 0
     santeMentale: 10

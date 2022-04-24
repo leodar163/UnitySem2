@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Faudra qu'on aille au bar un de ces jours !
   m_EditorClassIdentifier: 
   nomTemporaire: Faudra qu'on aille au bar un de ces jours !
-  Description: "Faudra qu'on aille au bar\r un de ces jours !"
+  Description: "Faudra qu'on aille au bar un de ces jours !\r"
   conditions: []
   consequences: []
   montrerEvenementSuivant: 0

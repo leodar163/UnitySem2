@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: "Cin\xE9ma"
   m_EditorClassIdentifier: 
   nomTemporaire: "CIn\xE9ma"
-  listeLieux: {fileID: 0}
-  indexLieu: 0
+  listeLieux: {fileID: 11400000, guid: 438ef99304d21414b93ca4c9e8d18124, type: 2}
+  indexLieu: 2
   imageOverride: {fileID: 0}
-  titre: 
-  intro: "J'ai plus la force de bosser, je \rvais plut\xF4t regarder un film."
-  description: "J'ai pas regard\xE9 les sorties du \rmoments\u2026 Bon, je vais voir
-    le titre\r des films et je choisirai celui qui \xE0 \rl'air le mieux."
+  titre: "Choisir un film au cin\xE9"
+  intro: "J'ai plus la force de bosser, je vais plut\xF4t regarder un film."
+  description: "J'ai pas regard\xE9 les sorties du moment\u2026 Bon, je vais voir
+    le titre des films et je choisirai celui qui \xE0 l'air le mieux."
   choix:
   - {fileID: 11400000, guid: c150c06de88b26b44a270ef5e4ee6cac, type: 2}
   - {fileID: 11400000, guid: 58f4210155dad2a41ad0e49dbce96075, type: 2}
